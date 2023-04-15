@@ -5,9 +5,10 @@ import SideBar from "./components/SideBar";
 import ClassComponents from "./views/LifeCycle/ClassComponents";
 import FunctionComponents from "./views/LifeCycle/FunctionComponents";
 import "./App.css";
+import Payment from "./payment/pages/Main";
 
 function App() {
-  return <FunctionComponents />;
+  return <Payment />;
 }
 
 export default App;
