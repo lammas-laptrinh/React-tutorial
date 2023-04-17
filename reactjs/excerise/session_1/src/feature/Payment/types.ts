@@ -1,6 +1,5 @@
 
 export interface PaymentDetails {
-  id: string
   cardNumber: number,
   expirationDate: Date,
   cvv: number,
