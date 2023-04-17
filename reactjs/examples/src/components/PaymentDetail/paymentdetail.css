@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+   font-family: 'Poppins', sans-serif;
+}
+
+.item-box{
+    display: flex;
+}
+
+label{
+    font-size: 11px;
+}
+input{
+    margin-bottom: 20px;
+    
+}
+
+.PaymentDetail{
+    margin-top: 40px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-radius: 10px;
+    position: fixed;
+    width: 60%;
+    margin-left: 20%;
+    top: 30px;
+    left: 0;
+    z-index: 999;
+
+}
+.form-right{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.form-left{
+    margin-top: 20px;
+}
+
+
+.title{
+   background-color: rgba(90, 39, 39, 0.393);
+   height: 200px;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   position: relative;
+   border-radius: 10px;
+}
+
+.Profession-plan{
+   display: flex;
+   margin-top: -40px;
+   z-index: 9999;
+   position: absolute;
+   background-color: #fff;
+   border-radius: 8px;
+   margin-left: 40px;
+   width: 200px;
+   height: 80px;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+}
+.img{
+    text-align: center;
+    margin: 10px;
+    background-color: aqua;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+}
+.discount{
+    flex: 1;
+}
+.inner-bottom{
+    background-color: #ddd;
+    margin-left: 20px;
+    margin-top: 70px;  
+    margin-bottom: 10px; 
+}
+li{
+    font-size: 13px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+.form-right{
+    background-color: #ddd;
+    
+}
+.total p{
+    display: inline-block;
+   text-align: end;
+}
+.errorMsg{
+    font-size: 10px;
+    color: red;
+}
+.item-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
