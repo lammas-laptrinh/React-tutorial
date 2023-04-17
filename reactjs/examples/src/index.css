@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -21,17 +21,17 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
+} */
 
 body {
-  margin: 0;
+  /* margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; */
 }
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -66,4 +66,140 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Paymentleft-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Playmentright {
+  position: absolute;
+}
+
+.Playmentright .Playmentright-top {
+  text-align: center;
+  background-color: #454545;
+}
+
+.Playmentright .Playmentright-top .Playmentright-top-title p {
+  color: white;
+}
+
+.Playmentright .Playmentright-boot {
+  background-color: #B7B7B7;
+}
+
+.Playmentright-top-title2 {
+  display: flex;
+  align-items: center;
+}
+
+.DashBoard {
+  display: flex;
+}
+
+.DashBoard .DashBoard-title h1 {
+  font-size: 30px !important;
+  color: black;
+}
+
+.DashBoard .DashBoard-timkiem {
+  margin-left: 20px;
+}
+
+.navbar {}
+
+.navbar .navbar-tile {
+  color: blue;
+  font-weight: 500;
+}
+
+.navbar .navbar-icon ul li {
+  display: inline;
+  margin-left: 20px;
+  list-style: none;
+}
+
+.navbar .navbar-icon ul li svg {
+  font-size: 20px
+}
+
+.Revenue {
+  display: flex;
+}
+
+.Revenueleft {
+  background-color: #FF6000;
+  height: 292px;
+  width: 391px;
+  margin: 0 8px;
+  /* text-align: center; */
+  border-radius: 7%;
+
+}
+
+.Revenueright {
+  margin-left: 10px;
+  background-color: white;
+  border-radius: 1%;
+  height: 439px;
+  width: 1286px;
+}
+
+/* .Revenueright-title {
+  color: white;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 17px;
+} */
+.Revenueleft-title1 {
+  color: white;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.Revenueright-title p {
+  color: black;
+  margin-left: 10px;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.side-bar-container {
+  font-size: 20px;
+
+}
+
+.side-bar-title {
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 30px;
+  width: 71px;
+  margin-left: 30%;
+}
+
+.side-bar-items {
+  margin-top: 25px;
+  font-size: 30px;
+}
+.Book_List h1{
+  color: black;
+  font-size: 30px;
+}
+
+.modelplay{
+  display: flex;
+}
+
+.modelplay .modelplay-Playmentright{
+  margin-left: 50px;
 }
