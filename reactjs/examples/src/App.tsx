@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import SideBar from "./components/SideBar";
-import ClassComponents from "./views/LifeCycle/ClassComponents";
-import FunctionComponents from "./views/LifeCycle/FunctionComponents";
-import "./App.css";
 import React from "react";
-import { SideBarItemProps } from "./components/SideBar/types";
+import Menu from "./components/Menu";
+import FormSignIn from "./components/Form/FormSignIn";
+// import { Sidebarr } from "./components/SideBar";
+// import DashboardMain from "./components/Dashboard/DashboardMain";
+// import ErrorBoundary from "antd/es/alert/ErrorBoundary";
 
-const dummyData = [
-  { id: 0, name: "Test1", icon: "" },
-  { id: 1, name: "Test2", icon: "" },
-  { id: 2, name: "Test3", icon: "" },
-  { id: 3, name: "Test4", icon: "" },
-];
-function App() {
-  const [items, setItems] = React.useState<any>([]);
-  useEffect(() => {
-    // read file or call APIs
-
-    setItems(dummyData);
-  }, []);
-  return <SideBar items={items} />;
-}
+const App: React.FC = () => {
+  return (
+    // <Sidebarr />;
+    // <Menu></Menu>
+    // <Form></Form>
+    <FormSignIn />
+    // <ErrorBoundary>
+    //   <DashboardMain />
+    // </ErrorBoundary>
+  );
+};
 
 export default App;
