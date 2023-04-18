@@ -34,15 +34,9 @@ const items: MenuItem[] = [
 ];
 
 export default function CustomSider() {
-
-    const [collapsed, setCollapsed] = useState(false);
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
-
     return (
         <Layout style={{ minHeight: '100vh' }}>
-            <AntdSider collapsible collapsed={collapsed} onCollapse={(value: any) => setCollapsed(value)}>
+            <AntdSider>
                 <div style={{
                     maxWidth: '70px',
                     minHeight: '30px',

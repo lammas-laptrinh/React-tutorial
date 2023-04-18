@@ -1,37 +1,19 @@
 import React, { useState } from 'react';
-import { Menu, Badge, Avatar } from 'antd';
-import { BellOutlined, UserOutlined, LogoutOutlined, DownOutlined } from '@ant-design/icons';
+import { Dropdown, message } from 'antd';
+import { UserOutlined, LogoutOutlined, BellOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Button, Dropdown, message, Space, Tooltip } from 'antd';
+
 
 const handleMenuClick: MenuProps['onClick'] = (e) => {
-  message.info('Click on menu item.');
-  console.log('click', e);
+  message.info('LOGOUTED');
 };
 
 const items: MenuProps['items'] = [
   {
-    label: '1st menu item',
+    label: 'Log out',
     key: '1',
-    icon: <UserOutlined />,
-  },
-  {
-    label: '2nd menu item',
-    key: '2',
-    icon: <UserOutlined />,
-  },
-  {
-    label: '3rd menu item',
-    key: '3',
-    icon: <UserOutlined />,
+    icon: <LogoutOutlined />,
     danger: true,
-  },
-  {
-    label: '4rd menu item',
-    key: '4',
-    icon: <UserOutlined />,
-    danger: true,
-    disabled: true,
   },
 ];
 
@@ -40,44 +22,19 @@ const menuProps = {
   onClick: handleMenuClick,
 };
 
-
-type MenuItem = { key: string; label: string; icon?: JSX.Element };
-
 const Navbar: React.FC = () => {
-  const [notificationCount, setNotificationCount] = useState(0);
-
-
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 16 }}>
-      <div>Logo</div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Badge count={notificationCount}>
-          <Dropdown menu={menuProps}>
-            <Button>
-              <Space>
-                Button
-                <DownOutlined />
-              </Space>
-            </Button>
-          </Dropdown>
-        </Badge>
-        <Avatar
-          style={{ marginLeft: 16 }}
-          size={32}
-          icon={<UserOutlined />}
-          onClick={() => console.log('Avatar clicked')}
-        >
-          User
-        </Avatar>
-        <Dropdown menu={menuProps}>
-          <Button>
-            <Space>
-              Button
-              <DownOutlined />
-            </Space>
-          </Button>
-        </Dropdown>
+    <div style={{ display: 'flex', margin: 16 }}>
+      <div style={{ minWidth: '100px' }}>Version 1.0.0</div>
+      <div style={{ display: 'flex', marginLeft: 900 }}>
+        <div style={{ marginRight: 50 }}><ExclamationCircleOutlined /></div>
+        <div style={{ marginRight: 50 }}><BellOutlined /></div>
+        <div >
+          <Dropdown.Button menu={menuProps} placement='bottomLeft' icon={<UserOutlined />}>
+            Username
+          </Dropdown.Button>
+        </div>
       </div>
     </div>
   );

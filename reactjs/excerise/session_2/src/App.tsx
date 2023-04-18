@@ -1,9 +1,9 @@
-import Main from "./feature/Dashboard/pages/Main";
+import MainLayout from "./feature/Layout/mainLayout/MainLayout";
 import "./App.css";
 
 function App() {
   return (<div>
-    <Main></Main>
+    <MainLayout></MainLayout>
   </div>
 
   )
