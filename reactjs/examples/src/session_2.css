@@ -1,0 +1,102 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.AppHeader {
+  position: fixed;
+  top: 5px;
+  left: 200px;
+  right: 0;
+  height: 50px;
+  color: #fff;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+}
+
+.PageContent {
+  position: fixed;
+  top: 60px;
+  left: 200px;
+  right: 0;
+  height: 350px;
+  color: #333;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Footer {
+  position: fixed;
+  top: 425px;
+  left: 200px;
+  right: 0;
+  height: 410px;
+  color: #333;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Revenue {
+  display: flex;
+}
+
+.Revenueleft {
+  background-color: #ff6000;
+  height: 292px;
+  width: 391px;
+  margin: 0 8px;
+  /* text-align: center; */
+  border-radius: 7%;
+}
+
+.Revenueright {
+  margin-left: 10px;
+  background-color: white;
+  border-radius: 1%;
+  height: 439px;
+  width: 1286px;
+}
+
+/* .Revenueright-title {
+  color: white;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 17px;
+} */
+.Revenueleft-title1 {
+  color: white;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.Revenueright-title p {
+  color: black;
+  margin-left: 10px;
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.Footer h1 {
+  color: black;
+  position: fixed;
+  font-size: 24px;
+  margin: 10px;
+  top: 440px;
+}

@@ -1,11 +1,19 @@
 import React from "react";
-import { SideBarProps } from "./types";
+import { SideBarItemProps, SideBarProps } from "./types";
 import SideBarItem from "./SideBarItem";
+import SideBarTitle from "./SideBarTitle";
 
 export default function SideBar(props: SideBarProps) {
   return (
     <div className="side-bar-container">
-      <SideBarItem id={0} name="Test1" icon="" />
+      <div className="side-bar-title">
+        <SideBarTitle text="DTD" />
+      </div>
+      <div className="side-bar-items">
+        {props.items.map((item: SideBarItemProps) => {
+          return <SideBarItem {...item} />;
+        })}
+      </div>
     </div>
   );
 }
