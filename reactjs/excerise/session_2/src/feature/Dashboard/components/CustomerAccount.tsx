@@ -1,9 +1,5 @@
 import { Table } from 'antd';
 
-interface DayRevenueProps {
-    rows: any[];
-}
-
 export default function CustomerAccount(props: { data: any[] }) {
 
     const columns = [

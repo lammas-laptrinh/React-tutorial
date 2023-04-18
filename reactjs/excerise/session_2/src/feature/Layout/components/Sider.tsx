@@ -52,7 +52,7 @@ export default function CustomSider() {
                     color: 'orange',
                     fontWeight: 'bold',
                 }}>Taiki</div>
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} style={{ minHeight: '100vh' }} />
             </AntdSider>
         </Layout>
     );

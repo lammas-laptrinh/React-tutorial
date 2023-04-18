@@ -16,7 +16,7 @@ export default function MainLayout() {
                 height: '100vh',
             }}
         >
-            <div style={{ gridArea: 'navbar', maxHeight: '50px' }}>
+            <div style={{ gridArea: 'navbar', maxHeight: '50px', minWidth: '100vw' }}>
                 <Navbar />
             </div>
             <div style={{ gridArea: 'sider' }}>
