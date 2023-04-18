@@ -1,0 +1,84 @@
+.payment-items-introduce{
+    width: 100%;
+    height: 700px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: aliceblue;
+}
+.payment-introduce{
+    width: 100%;
+    height: 100%;
+}
+label{
+    display: block;
+}
+.banner{
+    width: 100%;
+    height: 40%;
+    margin-left: auto;
+    z-index: 1;
+    margin-right: auto;
+    position: relative;
+}
+.banner .bannerProfess{
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.banner .bannerProfess .logo-wrapper{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .bannerProfess .logo-wrapper .logo-banner{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+.banner .bannerTitle{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: rgb(103,101,150);
+    background: linear-gradient(90deg, rgba(103,101,150,1) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .bannerTitle .span-title{
+color: #ffffff;
+width: 300px;
+font-size: 20px;
+text-align: center;
+}
+
+.introduce-text{
+    width: 100%;
+    box-sizing: border-box;
+    height: 60%;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(225, 213, 221);
+}
+.introduce-text ul {
+    margin-top: 0px;
+    padding: 40px;
+}
+.ul-wrapper{
+    display: flex;
+}
+.introduce-text li {
+    font-size: 18px;
+    margin-top: 40px;
+    color: #000;
+}

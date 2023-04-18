@@ -1,0 +1,16 @@
+
+.revenue_container{
+    width: 400px;
+    height: 300px;
+    background-color: rgb(164, 155, 143);
+    border-radius: 20px;
+}
+.revenue_container{
+    padding: 10px;
+}
+.revenue_container .revenue-span span{
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 500;
+}
