@@ -7,9 +7,10 @@ import FunctionComponents from "./views/LifeCycle/FunctionComponents";
 import "./App.css";
 import PaymentDetail from "./components/PaymentDetail/PaymentDetail";
 import FetchData from "./components/FetchData/FetchData";
+import DashBoardPage from "./components/Page/DashBoardPage";
 
 function App() {
-  return <FetchData />;
+  return <DashBoardPage />;
 }
 
 export default App;
