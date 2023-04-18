@@ -6,9 +6,10 @@ import ClassComponents from "./views/LifeCycle/ClassComponents";
 import FunctionComponents from "./views/LifeCycle/FunctionComponents";
 import "./App.css";
 import PaymentDetail from "./components/PaymentDetail/PaymentDetail";
+import FetchData from "./components/FetchData/FetchData";
 
 function App() {
-  return <PaymentDetail />;
+  return <FetchData />;
 }
 
 export default App;
