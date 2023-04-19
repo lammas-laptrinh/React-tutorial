@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 export default function FunctionComponents() {
   const [isLoading, setLoading] = React.useState(false);
+  
   useEffect(() => {
     console.log("componentDidMount");
     return () => {

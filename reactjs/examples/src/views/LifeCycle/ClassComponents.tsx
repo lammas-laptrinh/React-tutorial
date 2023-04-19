@@ -6,7 +6,9 @@ interface State {
 interface Props {
   propsTitle: string;
 }
+
 export default class ClassComponents extends Component<Props, State> {
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -45,6 +47,7 @@ export default class ClassComponents extends Component<Props, State> {
     nextState: Readonly<{}>,
     nextContext: any
   ): boolean {
+
     //Mặc định thì component sẽ được re-render khi props hoặc state thay đổi
     // để không cho nó update theo mặc định ta dùng hàm này
     // component sẽ re-render nếu component cha của nó được re-render dù cho state hay props của component con có thay đổi hay không.

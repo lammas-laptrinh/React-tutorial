@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { NewBooking } from '../types/types'
 import { DocumentData, QuerySnapshot, onSnapshot } from 'firebase/firestore';
-import { dashboardCollection } from '../firebase/controller';
 import Table from 'react-bootstrap/Table';
+import { dashboardCollection } from '../../firebase/controller';
+import { NewBooking } from '../../types/types';
 function Booking() {
-
-
     const [book, setbook] = useState<NewBooking[]>([])
     useEffect(
         () =>
-            onSnapshot(dashboardCollection, (snapshot: QuerySnapshot<DocumentData>) => {
+            onSnapshot(dashboardCollection, (snapshot:QuerySnapshot<DocumentData>) => {
                 setbook(
-                    snapshot.docs.map((doc) => {
-                        return {
-                            id: doc.id,
-                            ...doc.data(),
-                        };
+                    snapshot.docs.map((doc) =>{
+                        return{
+                            id:doc.id,
+                            ...doc.data()
+                        }
                     })
-                );
+                )
             }),
         []
     );
@@ -47,7 +45,7 @@ function Booking() {
 
 
                                 <tr>
-                                    <td> {item.Avatar}</td>
+                                    <td>{item.Avatar}</td>
                                     <td>{item.Ten}</td>
                                     <td>{item.sdt}</td>
                                     <td>{item.LoaiPhong}</td>
@@ -62,8 +60,6 @@ function Booking() {
                         })
                     }
                     
-
-
 
                 </tbody>
             </Table>

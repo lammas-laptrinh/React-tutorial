@@ -13,11 +13,12 @@ export interface date {
 }
 
 export interface NewBooking {
-    Avatar: string,
-    Ten:string,
-    sdt:number,
-    LoaiPhong:string,
-    Checkin:string,
-    Checkout:string,
-    TrangThai:boolean,
+    Avatar? : string,
+    Checkin?:string,
+    Checkout?:string,
+    LoaiPhong?:string,
+    Ten?:string,
+    TrangThai?:boolean,
+    sdt?:number,
+    id?:string
 }

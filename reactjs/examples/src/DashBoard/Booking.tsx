@@ -47,7 +47,8 @@ function Booking() {
 
 
                                 <tr>
-                                    <td> {item.Avatar}</td>
+                                    <td>
+                                        <img src={item.Avatar} alt="" /></td>
                                     <td>{item.Ten}</td>
                                     <td>{item.sdt}</td>
                                     <td>{item.LoaiPhong}</td>
