@@ -1,7 +1,8 @@
+import BookingList from "./Members/TTB/pages/main";
 import Router from "./Router";
 
 function App() {
-  return <Router />;
+  return <BookingList />;
 }
 
 export default App;
