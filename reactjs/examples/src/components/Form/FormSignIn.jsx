@@ -61,26 +61,26 @@ const FormSignIn = () => {
                 name="firstName"
                 placeholder="Enter your first name"
                 id="firstName"
-              ></Input>
+              />
               <Input
                 label="Last name"
                 name="lastName"
                 placeholder="Enter your last name"
                 id="lastName"
-              ></Input>
+              />
               <Input
                 label="Email address"
                 name="email"
                 placeholder="Enter your email address"
                 id="email"
                 type="email"
-              ></Input>
+              />
               <Textarea
                 label="Introduce yourself"
                 name="intro"
                 placeholder="Enter your email introduce"
                 id="intro"
-              ></Textarea>
+              />
               <Select name="job" label="Select your job">
                 <option value="frontend">Frontend Developer</option>
                 <option value="backend">Backend Developer</option>
