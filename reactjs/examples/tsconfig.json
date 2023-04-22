@@ -20,6 +20,10 @@
       "@src/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "../../../../Fill/Components/Dashboard",
+    "../../../../Fill/firebase.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
