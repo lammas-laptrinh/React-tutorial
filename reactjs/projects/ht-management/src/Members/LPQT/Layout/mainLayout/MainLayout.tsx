@@ -1,6 +1,9 @@
 import Sider from '../components/Sider';
 import Navbar from '../components/Navbar';
-import Main from '../../Dashboard/pages/Main';
+import Dashboard from '../../Dashboard/routes';
+import { Route, Routes } from 'react-router-dom';
+import NotFound from '../../../../Pages/Error/NotFound';
+import Room from '../../Rooms/routes';
 
 export default function MainLayout() {
     return (
@@ -23,7 +26,11 @@ export default function MainLayout() {
                 <Sider />
             </div>
             <div style={{ gridArea: 'main' }}>
-                <Main />
+                <Routes>
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="trang-chu" element={<Dashboard />} />
+                    <Route path="room" element={<Room />} />
+                </Routes>
             </div>
         </div>
     );

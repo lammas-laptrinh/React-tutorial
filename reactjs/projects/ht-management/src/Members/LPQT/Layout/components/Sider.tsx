@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Sider: AntdSider } = Layout;
 
@@ -14,24 +15,31 @@ type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
     label: React.ReactNode,
     key: React.Key,
+    href: string,
     icon?: React.ReactNode,
     children?: MenuItem[],
 ): MenuItem {
     return {
         key,
         icon,
+        href,
         children,
-        label,
+        label: (
+            <Link to={href}>
+                {label}
+            </Link>
+        ),
     } as MenuItem;
 }
 
 const items: MenuItem[] = [
-    getItem('Dashboard', '1', <PieChartOutlined />),
-    getItem('User', '2', <UserOutlined />),
-    getItem('File', '9', <FileOutlined />),
+    getItem('Dashboard', '1', '/trang-chu', <PieChartOutlined />),
+    getItem('Room', '2', '/room', <UserOutlined />),
+    getItem('File', '9', '/files', <FileOutlined />),
 ];
 
 export default function CustomSider() {
+
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <AntdSider>
