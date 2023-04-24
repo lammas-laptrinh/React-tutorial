@@ -6,9 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Badge, Drawer, List, Space, Typography } from "antd";
 
-type Props = {};
-
-export default function AppHeader({}: Props) {
+export default function AppHeader() {
   return (
     <div className="AppHeader" style={{ right: "50px" }}>
       <Typography.Title style={{ fontSize: 16, color: "#1a75ff" }}>
@@ -27,10 +25,10 @@ export default function AppHeader({}: Props) {
         </Badge>
       </Space>
       <Drawer title="Comments" maskClosable>
-        <List></List>
+        <List />
       </Drawer>
       <Drawer title="Notifications" maskClosable>
-        <List></List>
+        <List />
       </Drawer>
     </div>
   );
