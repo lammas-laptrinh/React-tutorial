@@ -1,8 +1,7 @@
-
-import MainLayout from "./Members/LPQT/Layout/mainLayout/MainLayout";
+import Router from "./Members/LPQT/Router";
 
 function App() {
-  return <MainLayout />;
+  return <Router />;
 }
 
 export default App;
