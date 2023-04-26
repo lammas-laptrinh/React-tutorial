@@ -1,0 +1,23 @@
+.action-button{
+    background-color: red;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 30px;
+    border: none;
+    height: 30px;
+    position: absolute;
+    top: -13px;
+    right: -8px;
+}
+.action-button:hover{
+    background-color: rgb(170, 124, 213);
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.content p{
+    font-size: 18px;
+}

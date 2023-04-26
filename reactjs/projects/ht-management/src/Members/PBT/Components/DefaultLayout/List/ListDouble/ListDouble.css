@@ -1,0 +1,24 @@
+.list-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.list-description {
+    font-size: 18px;
+}
+.req-button {
+    background-color: red;
+    color: #ffffff;
+    border: none;
+}
+.req-button:hover {
+    opacity: 0.5s;
+    color: #ffffff;
+}
+.icon-peoples{
+    font-size: 20px;
+    margin-right: 4px;
+    margin-top: 10px;
+}
+.icon-peoples:hover{
+    color: blueviolet;
+}
