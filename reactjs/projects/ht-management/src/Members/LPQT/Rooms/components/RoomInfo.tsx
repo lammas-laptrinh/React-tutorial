@@ -2,7 +2,7 @@
 import { RoomProps } from "../type"
 import { Button, Rate } from 'antd';
 import { Avatar, Divider, Tooltip, DatePicker } from 'antd';
-import { AntDesignOutlined, UserOutlined, CaretUpOutlined, KeyOutlined,IdcardOutlined } from '@ant-design/icons';
+import { AntDesignOutlined, UserOutlined, CaretUpOutlined, KeyOutlined, IdcardOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
@@ -16,6 +16,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import ClearIcon from '@mui/icons-material/Clear';
 
 export default function RoomInfo({ row }: RoomProps) {
+    //handle Description
     const [showFullDescription, setFullDescription] = useState(false);
     const showFullDescriptionHandler = () => {
         setFullDescription(!showFullDescription);
@@ -24,15 +25,18 @@ export default function RoomInfo({ row }: RoomProps) {
         ? row.description
         : row.description?.slice(0, 90);
 
-
+    //handle Day
     dayjs.extend(customParseFormat);
     const { RangePicker } = DatePicker;
     const dateFormat = 'YYYY/MM/DD';
     return (
         <div style={{ minHeight: '100vh' }}>
+            {/*  this is room Detail Tittle */}
             <div style={{ fontWeight: 'bold', fontSize: 30 }}>{row.roomType} - {row.name}</div>
+            {/* this is the rate Star. it had set default at 4.5 */}
             <Rate allowHalf defaultValue={4.5} />
             <Divider />
+            {/*  these are the sample avatar things, i had set 7 avatars */}
             <div style={{ display: 'flex' }}>
                 <div style={{ flex: 1 }}>
                     <Avatar.Group maxCount={5} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
@@ -57,11 +61,13 @@ export default function RoomInfo({ row }: RoomProps) {
                         <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
                     </Avatar.Group>
                 </div>
+                {/* this is the review.count. It had set default at 32 */}
                 <div style={{ flex: 1, fontWeight: 'bold', fontSize: 25, marginLeft: 400 }}>
                     32 Reviews
                 </div>
             </div>
             <br />
+            {/* this is Description part */}
             <div style={{ maxWidth: 780, fontSize: 20 }}>
                 <div className="lead">{description}</div>
                 <br />
@@ -70,6 +76,7 @@ export default function RoomInfo({ row }: RoomProps) {
                 </div>
             </div>
             <br />
+            {/* This is the box showing the benefits of the room */}
             <div style={{ maxWidth: 780, minHeight: 100, backgroundColor: '#e1eaf7', borderRadius: 15, display: 'flex', flexDirection: 'row' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: 85 }}>
                     <ScheduleIcon style={{ fontSize: 50 }} />
@@ -97,6 +104,7 @@ export default function RoomInfo({ row }: RoomProps) {
                     GYM
                 </div>
             </div>
+            {/*  This is User's Room Detail part */}
             <div style={{ marginTop: 95, fontSize: 20, fontWeight: 'bold' }}>
                 User's Room Detail
             </div>
@@ -143,7 +151,6 @@ export default function RoomInfo({ row }: RoomProps) {
                             :
                             <Chip icon={<DoneIcon />} label={(row.status)} size="small" color='warning' />
                         }
-
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import { Room } from "../type";
 
 export default function Detail() {
     const { roomId } = useParams<{ roomId: string }>();
+    //the Sample Data made from me, just because it 2 lazy to setup firebase Data :<
     const roomData: Room[] = [
         {
             id: 'St_1',
@@ -77,6 +78,7 @@ export default function Detail() {
     // Find the room object with the matching id
     const matchedRoom = roomData.find((room) => room.id === roomId);
 
+    //This is the main Detail Page that had been assembled from many components. also it url is room/:roomId
     return (
         <div style={{ display: 'flex' }}>
             <div style={{ flex: 0.3, marginRight: '40px' }}>
