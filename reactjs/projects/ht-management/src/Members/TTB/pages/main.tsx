@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     DesktopOutlined,
     FileOutlined,
     PieChartOutlined,
     TeamOutlined,
     UserOutlined,
+    UnorderedListOutlined,
+    AppstoreOutlined,
 } from '@ant-design/icons';
-import { Col, MenuProps, Row, Table } from 'antd';
-import { Layout, theme } from 'antd';
+import { Button, Col, MenuProps, Row, Space } from 'antd';
+import { Layout } from 'antd';
 import Search from 'antd/es/input/Search';
 // import { collection, getDocs, query } from "firebase/firestore";
 // import { db } from '../../../firebase';
 import SideBar from '../components/sidebar';
 import Header from '../components/header';
+import Room from '../components/room';
+import { Rooms } from '../types';
 const { Content } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -42,76 +46,83 @@ const items: MenuItem[] = [
     getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
     getItem('Files', '9', <FileOutlined />),
 ];
-const columns = [
-    {
-        title: 'Avatar',
-        dataIndex: 'avatar',
-        key: 'avatar',
-    },
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-    },
-    {
-        title: 'Phone',
-        dataIndex: 'phone',
-        key: 'phone',
-    },
-    {
-        title: 'RoomType',
-        dataIndex: 'roomType',
-        key: 'roomType',
-    },
-    {
-        title: 'CheckIn',
-        dataIndex: 'checkIn',
-        key: 'checkIn',
-    },
-    {
-        title: 'CheckOut',
-        dataIndex: 'checkOut',
-        key: 'checkOut',
-    },
-    {
-        title: 'Status',
-        dataIndex: 'status',
-        key: 'status',
-    },
-];
-function formatDate(timestamp: { seconds: number, nanoseconds: number }) {
-    const date = new Date(timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000);
-    return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-}
-const BookingList: React.FC = () => {
-    // const [collapsed, setCollapsed] = useState(false);
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
-
-    const [data, setData] = useState([]);
-
-    // useEffect(() => {
-    //     const fetchCollection = async () => {
-    //         const q = query(collection(db, "BookingList"));
-    //         const querySnapshot = await getDocs(q);
-    //         const documents: any = [];
-    //         querySnapshot.forEach((doc) => {
-    //             const formattedCheckin = formatDate(doc.data().checkIn); // format timestamp
-    //             const formattedCheckout = formatDate(doc.data().checkOut);
-    //             const newData: any = {
-    //                 ...doc.data(),
-    //                 checkIn: formattedCheckin, checkOut: formattedCheckout
-    //             }
-
-    //             documents.push(newData); // add document data to array
-    //         });
-    //         setData(documents);
-    //     };
-    //     fetchCollection();
-    // }, [db]);
 
 
+const rooms: Rooms[] = [
+    {
+        id: "1",
+        roomName: 'Room 1',
+        bedAmount: 3,
+        checkinDate: '11/12',
+        checkoutDate: '16/12',
+        roomType: 'Standard',
+        serviceCount: 2,
+        service: ['service 1', 'service 2']
+    },
+    {
+        id: "2",
+        roomName: 'Room 2',
+        bedAmount: 3,
+        checkinDate: '18/12',
+        checkoutDate: '20/12',
+        roomType: 'Double',
+        serviceCount: 0,
+    },
+    {
+        id: "3",
+        roomName: 'Room 3',
+        bedAmount: 3,
+        checkinDate: '18/12',
+        checkoutDate: '20/12',
+        roomType: 'King',
+        serviceCount: 0,
+    },
+    {
+        id: "4",
+        roomName: 'Room 4',
+        bedAmount: 3,
+        checkinDate: '12/12',
+        checkoutDate: '16/12',
+        roomType: 'Standard',
+        serviceCount: 0,
+    },
+    {
+        id: "5",
+        roomName: 'Room 5',
+        bedAmount: 3,
+        checkinDate: '12/12',
+        checkoutDate: '16/12',
+        roomType: 'King',
+        serviceCount: 3,
+        service: ['service 1', 'service 2', 'service 3']
+    },
+]
+
+export default function Main() {
+    const [roomList, setRoomList] = useState<Rooms[]>(rooms);
+    const [view, setView] = useState<FlexDirection>('row');
+
+    const handleSearch = (roomId: string) => {
+        const foundRooms = rooms.filter((room: { id: string; }) => room.id === roomId);
+        setRoomList(foundRooms);
+        if (roomId === "") {
+            setRoomList(rooms)
+        }
+    };
+    type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+
+    const styles: React.CSSProperties = {
+        textAlign: "left",
+        display: "flex",
+        fontSize: 20,
+        flexDirection: view,
+    };
+    function handleLineClick() {
+        setView("column")
+    }
+    function handleGridClick() {
+        setView("row")
+    }
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <SideBar name='DTD' item={items} />
@@ -119,16 +130,53 @@ const BookingList: React.FC = () => {
                 <Header version='Version 1.0.0' username='Nguyễn Văn B' />
                 <Content style={{ margin: '0 16px' }}>
                     <Row style={{ marginLeft: 20 }}>
-                        <Col span={24} style={{ textAlign: 'left', display: 'flex', flexDirection: 'row' }}>
-                            <h1>DashBoard</h1>
-                            <Search placeholder="input search text" style={{ marginLeft: 20, width: 200, alignItems: 'center', display: 'flex' }} />
+                        <Col span={12} style={{ textAlign: 'left', display: 'flex', flexDirection: 'row', fontSize: 20 }}>
+                            <h2>Rooms</h2>
+                            <Search placeholder="tìm kiếm" onChange={(e) => handleSearch(e.target.value)} style={{ marginLeft: 20, width: 200, alignItems: 'center', display: 'flex' }} />
                         </Col>
-                    </Row>  
-                    {/* <Table dataSource={data} columns={columns} style={{ marginTop: 50 }} />; */}
+                        <Col span={12} style={{ textAlign: 'left', display: 'flex', flexDirection: 'row-reverse', fontSize: 20 }}>
+                            <Space>
+                                <Button onClick={handleLineClick} icon={<UnorderedListOutlined />}>
+                                    Line
+                                </Button>
+                            </Space>
+                            <Space>
+                                <Button onClick={handleGridClick} icon={<AppstoreOutlined />}>
+                                    Grid
+                                </Button>
+                            </Space>
+                            <h2 style={{ marginRight: 10 }}>View: </h2>
+                        </Col>
+                        <h2>Standard</h2>
+                        <Col span={24} style={styles}>
+                            {roomList
+                                .filter((room: Rooms) => room.roomType === 'Standard')
+                                .map((room: Rooms) => (
+                                    <Room key={room.id} room={room} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
+                                ))
+                            }
+                        </Col>
+                        <h2>Double</h2>
+                        <Col span={24} style={styles}>
+                            {roomList
+                                .filter((room: Rooms) => room.roomType === 'Double')
+                                .map((room: Rooms) => (
+                                    <Room room={room} key={room.id} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
+                                ))
+                            }
+                        </Col>
+                        <h2>King</h2>
+                        <Col span={24} style={styles}>
+                            {roomList
+                                .filter((room: Rooms) => room.roomType === 'King')
+                                .map((room: Rooms) => (
+                                    <Room room={room} key={room.id} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
+                                ))
+                            }
+                        </Col>
+                    </Row>
                 </Content>
             </Layout>
         </Layout>
     );
 };
-
-export default BookingList;

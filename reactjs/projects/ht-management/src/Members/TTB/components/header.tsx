@@ -12,7 +12,7 @@ export default function Header(props: { version: string; username: string }) {
         <Header style={{ padding: 0, background: colorBgContainer }}>
             <Row style={{ marginLeft: 20 }}>
                 <Col span={12} style={{ textAlign: 'left', color: 'blue' }}>{props.version}</Col>
-                <Col span={12}>
+                <Col span={12} style={{ textAlign: 'right' }}>
                     <BellOutlined style={{ fontSize: 22, margin: 20 }} />
                     <InfoCircleOutlined style={{ fontSize: 22, margin: 20 }} />
                     {props.username}
