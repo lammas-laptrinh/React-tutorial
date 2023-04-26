@@ -4,7 +4,9 @@
 // import PrivateRoute from "./PrivateRoute";
 // import NotFound from "../Pages/Error/NotFound";
 
-import Hello from "@assets/phamyenthanh/VJP_Session3_PhamYenThanh/components/Hello";
+import Hello from "@assets/phamyenthanh/VJP_Session4_PhamYenThanh/components/Hello";
+
+
 
 export default function Router() {
   return (
@@ -18,7 +20,7 @@ export default function Router() {
     //   </Routes>
     // </BrowserRouter>
     <>
-      <Hello />
+      <Hello/>
     </>
   );
 }
