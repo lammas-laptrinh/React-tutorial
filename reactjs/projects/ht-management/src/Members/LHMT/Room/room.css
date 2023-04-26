@@ -1,0 +1,69 @@
+.roomManager {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.AppHeader {
+  position: fixed;
+  top: 5px;
+  left: 200px;
+  right: 0;
+  height: 50px;
+  color: #fff;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+}
+
+.PageContent {
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  right: 0;
+  height: 100%;
+  color: #333;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gutter-box {
+  padding: 8px 0;
+  background: #00a0e9;
+}
+
+.Standards {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.Doubles {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.Kings {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.table {
+  top: 50px;
+  width: 300%;
+}
