@@ -8,7 +8,6 @@ import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
-const { Sider: AntdSider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -35,14 +34,13 @@ function getItem(
 const items: MenuItem[] = [
     getItem('Dashboard', '1', '/trang-chu', <PieChartOutlined />),
     getItem('Room', '2', '/room', <UserOutlined />),
-    getItem('File', '9', '/files', <FileOutlined />),
+    getItem('Service', '9', '/service', <FileOutlined />),
 ];
 
 export default function CustomSider() {
 
     return (
-        <Layout style={{ minHeight: '100vh' }}>
-            <AntdSider>
+        <Layout style={{ minHeight: '100vh', backgroundColor:'#001529' }}>
                 <div style={{
                     maxWidth: '70px',
                     minHeight: '30px',
@@ -59,7 +57,7 @@ export default function CustomSider() {
                     fontWeight: 'bold',
                 }}>Taiki</div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} style={{ minHeight: '100vh' }} />
-            </AntdSider>
+            
         </Layout>
     );
 };
