@@ -7,7 +7,20 @@ export type Room = {
     roomType?: string;
     img?: string;
     description?: string;
+    serviceCount?:number;
+    service?:Service[]
 };
+export type Service = {
+    id: string;
+    serviceType?:ServiceType;
+    detail?: string;
+    roomId?: string;
+};
+export type ServiceType = {
+    id: string;
+    serviceTypeName?:string;
+};
+
 export type RoomProps = {
     row: Room;
 };
