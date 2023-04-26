@@ -55,9 +55,33 @@ const Standard: React.FC = () => {
             const displayBadge = room.notify === true;
             return (
               <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
-                {/* Ràng buộc hiển thị grid/list view */}
-                {displayBadge ? (
-                  <Badge count={3}>
+                <NavLink to="/standard-detail">
+                  {/* Ràng buộc hiển thị grid/list view */}
+                  {displayBadge ? (
+                    <Badge count={3}>
+                      <Card
+                        title={room.name}
+                        extra={<a href="#">More</a>}
+                        style={{
+                          width: 200,
+                          height: 160,
+                          borderColor: "#ABAFB7",
+                        }}
+                      >
+                        <Space className="flex items-center justify-center">
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                        </Space>
+                        <Title
+                          level={5}
+                          className="flex items-center justify-center mt-4"
+                        >
+                          {room.checkIn} - {room.checkOut}
+                        </Title>
+                      </Card>
+                    </Badge>
+                  ) : (
                     <Card
                       title={room.name}
                       extra={<a href="#">More</a>}
@@ -79,30 +103,8 @@ const Standard: React.FC = () => {
                         {room.checkIn} - {room.checkOut}
                       </Title>
                     </Card>
-                  </Badge>
-                ) : (
-                  <Card
-                    title={room.name}
-                    extra={<a href="#">More</a>}
-                    style={{
-                      width: 200,
-                      height: 160,
-                      borderColor: "#ABAFB7",
-                    }}
-                  >
-                    <Space className="flex items-center justify-center">
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                    </Space>
-                    <Title
-                      level={5}
-                      className="flex items-center justify-center mt-4"
-                    >
-                      {room.checkIn} - {room.checkOut}
-                    </Title>
-                  </Card>
-                )}
+                  )}
+                </NavLink>
               </Col>
             );
           })}
@@ -159,7 +161,7 @@ const Standard: React.FC = () => {
                           <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
                             <Image preview={false} src={feature} />
                           </div>
-                          <NavLink to="/">
+                          <NavLink to="/standard-detail">
                             <Button size="large">READ MORE</Button>
                           </NavLink>
                         </div>
@@ -207,7 +209,7 @@ const Standard: React.FC = () => {
                         <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
                           <Image preview={false} src={feature} />
                         </div>
-                        <NavLink to="/">
+                        <NavLink to="/standard-detail">
                           <Button size="large">READ MORE</Button>
                         </NavLink>
                       </div>

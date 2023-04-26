@@ -72,12 +72,36 @@ const Double: React.FC = () => {
             // Ràng buộc remind
             return (
               <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
-                {displayRemind ? (
-                  <Popover
-                    placement="rightTop"
-                    content={content}
-                    trigger="hover"
-                  >
+                <NavLink to="/double-detail">
+                  {displayRemind ? (
+                    <Popover
+                      placement="rightTop"
+                      content={content}
+                      trigger="hover"
+                    >
+                      <Card
+                        title={room.name}
+                        extra={<a href="#">More</a>}
+                        style={{
+                          width: 200,
+                          height: 160,
+                          borderColor: "#ABAFB7",
+                        }}
+                      >
+                        <Space className="flex items-center justify-center">
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                        </Space>
+                        <Title
+                          level={5}
+                          className="flex items-center justify-center mt-4"
+                        >
+                          {room.checkIn} - {room.checkOut}
+                        </Title>
+                      </Card>
+                    </Popover>
+                  ) : (
                     <Card
                       title={room.name}
                       extra={<a href="#">More</a>}
@@ -99,30 +123,8 @@ const Double: React.FC = () => {
                         {room.checkIn} - {room.checkOut}
                       </Title>
                     </Card>
-                  </Popover>
-                ) : (
-                  <Card
-                    title={room.name}
-                    extra={<a href="#">More</a>}
-                    style={{
-                      width: 200,
-                      height: 160,
-                      borderColor: "#ABAFB7",
-                    }}
-                  >
-                    <Space className="flex items-center justify-center">
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                    </Space>
-                    <Title
-                      level={5}
-                      className="flex items-center justify-center mt-4"
-                    >
-                      {room.checkIn} - {room.checkOut}
-                    </Title>
-                  </Card>
-                )}
+                  )}
+                </NavLink>
               </Col>
             );
           })}
@@ -184,7 +186,7 @@ const Double: React.FC = () => {
                           <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
                             <Image preview={false} src={feature} />
                           </div>
-                          <NavLink to="/">
+                          <NavLink to="/double-detail">
                             <Button size="large">READ MORE</Button>
                           </NavLink>
                         </div>
@@ -232,7 +234,7 @@ const Double: React.FC = () => {
                         <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
                           <Image preview={false} src={feature} />
                         </div>
-                        <NavLink to="/">
+                        <NavLink to="/double-detail">
                           <Button size="large">READ MORE</Button>
                         </NavLink>
                       </div>
