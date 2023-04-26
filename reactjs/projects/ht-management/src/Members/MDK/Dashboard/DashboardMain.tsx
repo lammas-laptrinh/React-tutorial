@@ -3,6 +3,7 @@ import { Col, Row } from "antd";
 import { Layout, Space, Typography } from "antd";
 import HeaderMain from "./HeaderMain";
 import SidebarMain from "./SidebarMain";
+import SearchMain from "./SearchMain";
 import RoomList from "../RoomList";
 import View from "../Sort/View";
 
@@ -27,6 +28,9 @@ const DashboardMain: React.FC = () => {
             </Space>
             <View />
           </Space>
+          <div className="mt-6 mb-6 ml-[2rem]">
+            <SearchMain />
+          </div>
           <div className="ml-[2rem]">
             <RoomList />
           </div>
