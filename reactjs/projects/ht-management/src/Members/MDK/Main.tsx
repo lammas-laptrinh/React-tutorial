@@ -1,11 +1,14 @@
 import React from "react";
 import DashboardMain from "./Dashboard/DashboardMain";
+import { GridProvider } from "@src/context/view_context";
 
 const Main: React.FC = () => {
   return (
-    <>
-      <DashboardMain />
-    </>
+    <div>
+      <GridProvider>
+        <DashboardMain />
+      </GridProvider>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import { Layout, Space, Typography } from "antd";
 import HeaderMain from "./HeaderMain";
 import SidebarMain from "./SidebarMain";
 import RoomList from "../RoomList";
+import View from "../Sort/View";
 
 const { Title } = Typography;
 
@@ -24,6 +25,7 @@ const DashboardMain: React.FC = () => {
                 Room List
               </Title>
             </Space>
+            <View />
           </Space>
           <div className="ml-[2rem]">
             <RoomList />
