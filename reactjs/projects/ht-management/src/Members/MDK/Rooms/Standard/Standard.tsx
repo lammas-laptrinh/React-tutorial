@@ -15,6 +15,7 @@ const Standard: React.FC = () => {
   interface Room {
     id: string;
     name: string;
+    notify: boolean;
     checkIn: string;
     checkOut: string;
   }
@@ -28,6 +29,7 @@ const Standard: React.FC = () => {
         roomsData.push({
           id: doc.id,
           name: doc.data().name,
+          notify: doc.data().notify,
           checkIn: doc.data().checkIn,
           checkOut: doc.data().checkOut,
         });
@@ -46,52 +48,16 @@ const Standard: React.FC = () => {
           Standard
         </Title>
       </Col>
-      {/* Ràng buộc grid view */}
+      {/* Ràng buộc hiển thị grid/list view */}
       {grid_view ? (
         <>
           {rooms.map((room, index) => {
+            const displayBadge = room.notify === true;
             return (
-              <Col style={{ flex: "0 0 20%" }} key={room.id}>
-                <Card
-                  title={room.name}
-                  extra={<a href="#">More</a>}
-                  style={{
-                    width: 200,
-                    height: 160,
-                    borderColor: "#ABAFB7",
-                  }}
-                >
-                  <Space className="flex items-center justify-center">
-                    <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                    <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                    <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                  </Space>
-                  <Title
-                    level={5}
-                    className="flex items-center justify-center mt-4"
-                  >
-                    {room.checkIn} - {room.checkOut}
-                  </Title>
-                </Card>
-              </Col>
-            );
-          })}
-        </>
-      ) : (
-        <>
-          {rooms.map((room, index) => {
-            return (
-              <Col
-                style={{ flex: "0 0 100%", marginBottom: "1.5rem" }}
-                key={room.id}
-              >
-                <Row
-                  style={{
-                    border: " 0.1rem solid rgba(170, 170, 170, 0.4)",
-                    padding: "2rem",
-                  }}
-                >
-                  <Col span={6}>
+              <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
+                {/* Ràng buộc hiển thị grid/list view */}
+                {displayBadge ? (
+                  <Badge count={3}>
                     <Card
                       title={room.name}
                       extra={<a href="#">More</a>}
@@ -113,24 +79,141 @@ const Standard: React.FC = () => {
                         {room.checkIn} - {room.checkOut}
                       </Title>
                     </Card>
-                  </Col>
-                  <Col span={18}>
-                    <div>
-                      <Title level={5}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dicta at ipsum quae iste totam quam illum officia
-                        blanditiis. Ullam voluptas et magnam totam quia facere
-                        vitae illo culpa minus eum?
-                      </Title>
-                      <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
-                        <Image preview={false} src={feature} />
+                  </Badge>
+                ) : (
+                  <Card
+                    title={room.name}
+                    extra={<a href="#">More</a>}
+                    style={{
+                      width: 200,
+                      height: 160,
+                      borderColor: "#ABAFB7",
+                    }}
+                  >
+                    <Space className="flex items-center justify-center">
+                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                      <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                    </Space>
+                    <Title
+                      level={5}
+                      className="flex items-center justify-center mt-4"
+                    >
+                      {room.checkIn} - {room.checkOut}
+                    </Title>
+                  </Card>
+                )}
+              </Col>
+            );
+          })}
+        </>
+      ) : (
+        <>
+          {rooms.map((room, index) => {
+            const displayBadge = room.notify === true;
+            return (
+              <Col
+                style={{ flex: "0 0 100%", marginBottom: "1.5rem" }}
+                key={room.id}
+              >
+                {/* Ràng buộc hiển thị badge */}
+                {displayBadge ? (
+                  <Badge count={3}>
+                    <Row
+                      style={{
+                        border: " 0.1rem solid rgba(170, 170, 170, 0.4)",
+                        padding: "2rem",
+                      }}
+                    >
+                      <Col span={6}>
+                        <Card
+                          title={room.name}
+                          extra={<a href="#">More</a>}
+                          style={{
+                            width: 200,
+                            height: 160,
+                            borderColor: "#ABAFB7",
+                          }}
+                        >
+                          <Space className="flex items-center justify-center">
+                            <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                            <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                            <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          </Space>
+                          <Title
+                            level={5}
+                            className="flex items-center justify-center mt-4"
+                          >
+                            {room.checkIn} - {room.checkOut}
+                          </Title>
+                        </Card>
+                      </Col>
+                      <Col span={18}>
+                        <div>
+                          <Title level={5}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Dicta at ipsum quae iste totam quam illum
+                            officia blanditiis. Ullam voluptas et magnam totam
+                            quia facere vitae illo culpa minus eum?
+                          </Title>
+                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                            <Image preview={false} src={feature} />
+                          </div>
+                          <NavLink to="/">
+                            <Button size="large">READ MORE</Button>
+                          </NavLink>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Badge>
+                ) : (
+                  <Row
+                    style={{
+                      border: " 0.1rem solid rgba(170, 170, 170, 0.4)",
+                      padding: "2rem",
+                    }}
+                  >
+                    <Col span={6}>
+                      <Card
+                        title={room.name}
+                        extra={<a href="#">More</a>}
+                        style={{
+                          width: 200,
+                          height: 160,
+                          borderColor: "#ABAFB7",
+                        }}
+                      >
+                        <Space className="flex items-center justify-center">
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                        </Space>
+                        <Title
+                          level={5}
+                          className="flex items-center justify-center mt-4"
+                        >
+                          {room.checkIn} - {room.checkOut}
+                        </Title>
+                      </Card>
+                    </Col>
+                    <Col span={18}>
+                      <div>
+                        <Title level={5}>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Dicta at ipsum quae iste totam quam illum
+                          officia blanditiis. Ullam voluptas et magnam totam
+                          quia facere vitae illo culpa minus eum?
+                        </Title>
+                        <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                          <Image preview={false} src={feature} />
+                        </div>
+                        <NavLink to="/">
+                          <Button size="large">READ MORE</Button>
+                        </NavLink>
                       </div>
-                      <NavLink to="/">
-                        <Button size="large">READ MORE</Button>
-                      </NavLink>
-                    </div>
-                  </Col>
-                </Row>
+                    </Col>
+                  </Row>
+                )}
               </Col>
             );
           })}
