@@ -5,7 +5,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="trang-chu" />} />
-        <Route path="*" element={<MainLayout />} />
+        <Route path="*" element={<MainLayout />} /> 
       </Routes>
     </BrowserRouter>
   );
