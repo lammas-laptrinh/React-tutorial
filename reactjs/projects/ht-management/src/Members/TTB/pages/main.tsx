@@ -124,17 +124,17 @@ export default function Main() {
         setView("row")
     }
     return (
-        <Layout style={{ minHeight: '100vh' }}>
+        <Layout className='layout' >
             <SideBar name='DTD' item={items} />
             <Layout className="site-layout">
                 <Header version='Version 1.0.0' username='Nguyễn Văn B' />
-                <Content style={{ margin: '0 16px' }}>
-                    <Row style={{ marginLeft: 20 }}>
-                        <Col span={12} style={{ textAlign: 'left', display: 'flex', flexDirection: 'row', fontSize: 20 }}>
+                <Content className='content'>
+                    <Row>
+                        <Col className='heading' span={12}>
                             <h2>Rooms</h2>
-                            <Search placeholder="tìm kiếm" onChange={(e) => handleSearch(e.target.value)} style={{ marginLeft: 20, width: 200, alignItems: 'center', display: 'flex' }} />
+                            <Search className='search-session' placeholder="tìm kiếm" onChange={(e) => handleSearch(e.target.value)} />
                         </Col>
-                        <Col span={12} style={{ textAlign: 'left', display: 'flex', flexDirection: 'row-reverse', fontSize: 20 }}>
+                        <Col span={12} className='view'>
                             <Space>
                                 <Button onClick={handleLineClick} icon={<UnorderedListOutlined />}>
                                     Line
@@ -145,7 +145,7 @@ export default function Main() {
                                     Grid
                                 </Button>
                             </Space>
-                            <h2 style={{ marginRight: 10 }}>View: </h2>
+                            <h2 className='view-header' >View: </h2>
                         </Col>
                         <h2>Standard</h2>
                         <Col span={24} style={styles}>
