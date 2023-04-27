@@ -3,11 +3,12 @@ import Signin from "../Pages/Signin";
 import Dashboard from "../Pages/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../Pages/Error/NotFound";
-
+import Room from "../Members/NHH/pages/Room"
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/" element={<Room />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Signin />} />
         <Route path="/dash-board" element={<PrivateRoute />}>
