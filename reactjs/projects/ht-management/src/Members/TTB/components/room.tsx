@@ -13,7 +13,7 @@ function Room(props: { roomName: string, date: any, room: Rooms }) {
             <Space className='roomCard'>
                 {props.room.serviceCount > 0 &&
                     <Tooltip placement="rightTop" title={props.room.service?.map((item) => {
-                        return <div>{item}</div>;
+                        return <div key={item}>{item}</div>;
                     })}>
                         <Button danger type='primary' className='service'>{props.room.serviceCount}</Button>
                     </Tooltip>

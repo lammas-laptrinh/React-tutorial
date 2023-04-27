@@ -5,18 +5,18 @@ import {
     PieChartOutlined,
     TeamOutlined,
     UserOutlined,
-    UnorderedListOutlined,
-    AppstoreOutlined,
 } from '@ant-design/icons';
-import { Button, Col, MenuProps, Row, Space } from 'antd';
+import { MenuProps } from 'antd';
 import { Layout } from 'antd';
-import Search from 'antd/es/input/Search';
 // import { collection, getDocs, query } from "firebase/firestore";
 // import { db } from '../../../firebase';
 import SideBar from '../components/sidebar';
 import Header from '../components/header';
-import Room from '../components/room';
 import { Rooms } from '../types';
+import RoomList from '../components/RoomList';
+import { Route, Routes } from 'react-router-dom';
+import Detail from './roomDetail';
+import Service from '../components/service';
 const { Content } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -100,7 +100,6 @@ const rooms: Rooms[] = [
 
 export default function Main() {
     const [roomList, setRoomList] = useState<Rooms[]>(rooms);
-    const [view, setView] = useState<FlexDirection>('row');
 
     const handleSearch = (roomId: string) => {
         const foundRooms = rooms.filter((room: { id: string; }) => room.id === roomId);
@@ -109,72 +108,17 @@ export default function Main() {
             setRoomList(rooms)
         }
     };
-    type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
-
-    const styles: React.CSSProperties = {
-        textAlign: "left",
-        display: "flex",
-        fontSize: 20,
-        flexDirection: view,
-    };
-    function handleLineClick() {
-        setView("column")
-    }
-    function handleGridClick() {
-        setView("row")
-    }
     return (
         <Layout className='layout' >
             <SideBar name='DTD' item={items} />
             <Layout className="site-layout">
                 <Header version='Version 1.0.0' username='Nguyễn Văn B' />
                 <Content className='content'>
-                    <Row>
-                        <Col className='heading' span={12}>
-                            <h2>Rooms</h2>
-                            <Search className='search-session' placeholder="tìm kiếm" onChange={(e) => handleSearch(e.target.value)} />
-                        </Col>
-                        <Col span={12} className='view'>
-                            <Space>
-                                <Button onClick={handleLineClick} icon={<UnorderedListOutlined />}>
-                                    Line
-                                </Button>
-                            </Space>
-                            <Space>
-                                <Button onClick={handleGridClick} icon={<AppstoreOutlined />}>
-                                    Grid
-                                </Button>
-                            </Space>
-                            <h2 className='view-header' >View: </h2>
-                        </Col>
-                        <h2>Standard</h2>
-                        <Col span={24} style={styles}>
-                            {roomList
-                                .filter((room: Rooms) => room.roomType === 'Standard')
-                                .map((room: Rooms) => (
-                                    <Room key={room.id} room={room} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
-                                ))
-                            }
-                        </Col>
-                        <h2>Double</h2>
-                        <Col span={24} style={styles}>
-                            {roomList
-                                .filter((room: Rooms) => room.roomType === 'Double')
-                                .map((room: Rooms) => (
-                                    <Room room={room} key={room.id} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
-                                ))
-                            }
-                        </Col>
-                        <h2>King</h2>
-                        <Col span={24} style={styles}>
-                            {roomList
-                                .filter((room: Rooms) => room.roomType === 'King')
-                                .map((room: Rooms) => (
-                                    <Room room={room} key={room.id} roomName={room.roomName} date={room.checkinDate + " - " + room.checkoutDate} />
-                                ))
-                            }
-                        </Col>
-                    </Row>
+                    <Routes>
+                        <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
+                        <Route path=":id" element={<Detail />} />
+                        <Route path="/service" element={<Service />} />
+                    </Routes>
                 </Content>
             </Layout>
         </Layout>
