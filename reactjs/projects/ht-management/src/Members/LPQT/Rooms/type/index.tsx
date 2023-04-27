@@ -7,18 +7,18 @@ export type Room = {
     roomType?: string;
     img?: string;
     description?: string;
-    serviceCount?:number;
-    service?:Service[]
+    serviceCount?: number;
+    service?: Service[]
 };
 export type Service = {
     id: string;
-    serviceType?:ServiceType;
+    serviceType?: ServiceType;
     detail?: string;
     roomId?: string;
 };
 export type ServiceType = {
     id: string;
-    serviceTypeName?:string;
+    serviceTypeName?: string;
 };
 
 export type RoomProps = {
@@ -26,6 +26,11 @@ export type RoomProps = {
 };
 export type RoomListProps = {
     rows: Room[];
-    searchText: string;
-    isGridView: boolean;
+    searchText?: string;
+    isGridView?: boolean;
+};
+export type MenuItemType = {
+    key: string;
+    icon: JSX.Element;
+    label?: any;
 };

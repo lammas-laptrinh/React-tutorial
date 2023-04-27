@@ -1,0 +1,263 @@
+.SiderTittle {
+  max-width: 70px;
+  min-height: 30px;
+  margin: 16px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: orange;
+  font-weight: bold;
+}
+
+.MainContainer {
+  display: grid;
+  grid-template-areas:
+    "sider navbar"
+    "sider main";
+  height: 100vh;
+}
+
+.PSNavbar {
+  grid-area: navbar;
+  max-height: 50px;
+  min-width: 80vw
+}
+
+.PSSider {
+  grid-area: sider;
+  min-height: 100vh;
+  min-width: 10vw
+}
+
+.PSMain {
+  grid-area: main;
+}
+
+.ServiceBox {
+  height: 38.1px;
+  width: 40px;
+  background-color: #FC7D72;
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  line-height: 0.2px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.GridContainer {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  min-height: 150px;
+  margin-left: 10px;
+  border-radius: 6px;
+}
+
+.ViewChangeContainer {
+  margin-left: 900px;
+  display: flex;
+  align-items: center
+}
+
+.MainViewContainner {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.MainViewFlex {
+  display: flex;
+  align-items: center
+}
+
+.MainViewTextTittle {
+  font-weight: bold;
+  margin-right: 10px
+}
+
+.marginRight10 {
+  margin-right: 10
+}
+
+.DetailImage {
+  max-width: 35vw;
+  height: 100vh
+}
+
+.DetailReview {
+  flex: 1;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 400px
+}
+
+.DetailDes {
+  max-width: 780px;
+  font-size: 20px
+}
+
+.NavVer {
+  min-width: 100px;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.NavIcon {
+  margin-right: 50px;
+  margin-top: 16px
+}
+
+.NavUserName {
+  margin-bottom: 90px;
+  margin-top: 8px
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.NavMoveRight {
+  display: flex;
+  margin-left: 1100px;
+}
+
+.FullDes {
+  text-decoration: underline;
+  color: blue
+}
+
+.SiderLayout {
+  min-height: 100vh;
+  background-color: #001529
+}
+
+.SiderMenu {
+  min-height: 100vh;
+}
+
+.GridName {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.GridDate {
+  font-size: 17px;
+  margin-top: 10px;
+  margin-left: 19px;
+}
+
+.RoomImageFlex {
+  flex: 0.3;
+  margin-right: 40px
+}
+
+.RoomInfoFlex {
+  flex: 2;
+}
+
+.RoomInfoContainer {
+  max-width: 500px;
+  min-height: 200px;
+  background-color: #e1eaf7;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px
+}
+
+.RoomInfoItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 10px
+}
+
+.Flex1 {
+  flex: 1
+}
+
+.RoomInfoTittle {
+  margin-top: 95px;
+  font-size: 30px;
+  font-weight: 'bold'
+}
+
+.DecorateNone {
+  text-decoration: none;
+}
+
+.PosRelative {
+  position: relative;
+}
+
+.Bold {
+  font-weight: bold;
+}
+
+.RangePicker {
+  min-height: 40px;
+  max-width: 220px;
+}
+
+.RoomBeneFit {
+  min-height: 120px;
+  max-width: 600px;
+  background-size: cover;
+  background-Repeat: no-repeat;
+  background-position: center;
+  margin-left: 130px;
+}
+
+.ChooseRoomButon {
+  width: 490px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #F1E2D3;
+  font-weight: bold;
+  font-size: 20px
+}
+
+.ButtonPos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top: 60px;
+}
+
+.RoomInfoTypeName {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Card {
+  min-width: 200px;
+  min-height: 150px;
+  margin-left: 10px;
+  border-radius: 6px;
+}
+
+.top40 {
+  margin-top: 40px;
+}
+
+.AvatarMain {
+  background-color: #D9D9D9;
+  margin-left: 10px;
+}

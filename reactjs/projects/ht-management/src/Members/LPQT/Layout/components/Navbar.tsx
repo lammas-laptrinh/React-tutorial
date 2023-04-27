@@ -26,12 +26,12 @@ const menuProps = {
 const Navbar: React.FC = () => {
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ minWidth: '100px', marginTop: 16, marginLeft: 16 }}>Version 1.0.0</div>
-      <div style={{ display: 'flex', marginLeft: 1100, }}>
-        <div style={{ marginRight: 50, marginTop: 16 }}><ExclamationCircleOutlined /></div>
-        <div style={{ marginRight: 50, marginTop: 16 }}><BellOutlined /></div>
-        <div style={{ marginBottom: 90, marginTop: 8}}>
+    <div className='displayFlex'>
+      <div className='NavVer'>Version 1.0.0</div>
+      <div className='NavMoveRight'>
+        <div className='NavIcon'><ExclamationCircleOutlined /></div>
+        <div className='NavIcon'><BellOutlined /></div>
+        <div className='NavUserName'>
           <Dropdown.Button menu={menuProps} placement='bottomRight' icon={<UserOutlined />}>
             Username
           </Dropdown.Button>
