@@ -6,7 +6,7 @@ import RoomsTop from './RoomsTop';
 import { Layout, Space } from 'antd';
 import Siders from './Siders';
 function Hello() {
-  const { Header, Footer, Sider, Content } = Layout;
+  const { Header, Sider, Content } = Layout;
   const headerStyle: React.CSSProperties = {
    backgroundColor:"white",
   
@@ -22,10 +22,7 @@ function Hello() {
  
   };
   
-  const footerStyle: React.CSSProperties = {
-   
 
-  };
   return (
     <div
       className='App'>

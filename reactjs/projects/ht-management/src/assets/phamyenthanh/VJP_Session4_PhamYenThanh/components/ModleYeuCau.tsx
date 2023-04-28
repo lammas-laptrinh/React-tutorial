@@ -1,5 +1,5 @@
-import { Button, Modal } from 'antd';
-import React, { useState } from 'react'
+import { Modal } from 'antd';
+
 const ModleYeuCau = (props :any) =>{
     const {modal2Open, setModal2Open} = props;
     return(

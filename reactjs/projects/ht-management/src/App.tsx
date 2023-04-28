@@ -1,9 +1,10 @@
 
-import Router from "./Router";
+import Hello from "@assets/phamyenthanh/VJP_Session4_PhamYenThanh/components/Hello";
+
 
 
 function App() {
-  return <Router />;
+  return <Hello />;
 }
 
 export default App;

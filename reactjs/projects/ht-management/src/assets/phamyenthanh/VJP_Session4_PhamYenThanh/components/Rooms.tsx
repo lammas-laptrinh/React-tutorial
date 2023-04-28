@@ -1,11 +1,11 @@
 
 import { useContext } from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppContext } from '../Context/AppContext';
 import ModleYeuCau from './ModleYeuCau';
 import {QuestionCircleOutlined} from '@ant-design/icons'
 const Rooms = () => {
-    const { userData ,themeStyle ,iday,setiday}: any = useContext(AppContext)
+    const { userData ,themeStyle}: any = useContext(AppContext)
     
     console.log("Check data", userData)
 
