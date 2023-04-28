@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast, ToastContainer } from 'react-toastify';
@@ -6,7 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import { Select, Space } from "antd";
 import TextEditor from '../components/textEditor';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Editor } from '@tinymce/tinymce-react';
 const { Option } = Select;
 
 export default function Service() {
@@ -21,8 +21,8 @@ export default function Service() {
             'Type is required'
         )
             .required('Please select a service type'),
-        roomNumber: Yup.string()
-            .required("RoomNumber is required"),
+        // roomNumber: Yup.string()
+        //     .required("RoomNumber is required"),
         require: Yup.string()
     });
     // Update the state variable in response to changes to the text editor content
@@ -38,8 +38,13 @@ export default function Service() {
         });
         reset();
     };
-
     //return this to UI
+
+    const [content, setContent] = useState('');
+
+    const handleEditorChange = (content: string, editor: any) => {
+        setContent(content);
+    }
     return (
         <>
             <ToastContainer />
@@ -118,23 +123,29 @@ export default function Service() {
                             {errors.roomNumber?.message && <p style={{ color: 'red' }}>{errors.roomNumber.message as ReactNode}</p>}
                         </div>
                     </div>
-                    <div className='form-item' style={{ marginBottom: '20px', textAlign: 'left', display: 'flex', flexDirection: 'row' }}>
-                        <div style={{ flexDirection: 'column', }}>
-                            <div className='item-tittle'>
-                                <label >Nội dung</label>
-                            </div>
-                            <div className='item-input'>
-                                <Controller
-                                    name="require"
-                                    control={control}
-                                    defaultValue=""
-                                    rules={{ required: true }}
-                                    render={({ field }) => (
-                                        <TextEditor placeholder={'your detail require is typed here'} {...field} />
-                                    )}
-                                />
-                            </div>
-                        </div>
+                   
+                    <div>
+                        <Editor
+                            apiKey="933cfs2ip895ocsuxg76febb5rd939lrkex2ehrs23sl25yy"
+                            initialValue={content}
+                            init={{
+                                height: 500,
+                                width: 530,
+                                plugins: 'autolink link image lists',
+                                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright',
+                                branding: false,
+                                setup: (editor) => {
+                                    // Add a custom button to the toolbar
+                                    editor.ui.registry.addButton('mybutton', {
+                                        text: 'My Button',
+                                        onAction: () => {
+                                            alert('Button clicked!');
+                                        },
+                                    });
+                                },
+                            }}
+                            onEditorChange={handleEditorChange}
+                        />
                     </div>
                     <div className='form-item' style={{ marginBottom: '20px', marginTop: '40px' }}>
                         <button style={{ backgroundColor: '#164aff', color: 'white', width: '120px', height: '40px' }}>
