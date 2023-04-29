@@ -54,8 +54,8 @@ const RoomDetail: React.FC = () => {
                 cursor: "pointer",
               }}
             >
-              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-              <Avatar className="MrT">T</Avatar>
+              <Avatar src="https://iconape.com/wp-content/png_logo_vector/avatar.png" />
+              <Avatar src="https://tse2.mm.bing.net/th?id=OIP.bzEmvp7jSfekbiqCu-wg3gHaHa&pid=Api&P=0" />
               <Tooltip title="Ant User" placement="top">
                 <Avatar className="cd" icon={<UserOutlined />} />
               </Tooltip>
