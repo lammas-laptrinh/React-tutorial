@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Patua+One&display=swap');
+
+
+/* header */
+.version {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+    color: #429AE4;
+}
+.InfoUser{
+    
+    display: "flex" ;
+    align-items :"center";
+    &__icon{
+        font-size: 15px;
+        margin-right: 18px;
+        svg{
+            font-size: 20px;
+        }
+    }
+    &__Name{
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        margin-right: 10px;
+        color: #000000;
+    }
+}
+// End Header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Type-Room{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 49px;
+    
+    color: #000000;
+}
+
+
+
+
+
+
+
+/* rooom */
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:hover {
+    color: black
+}
+
+.roomCard {
+    border: 1px solid #000000;
+    border-radius: 12px;
+    margin: 20px;
+    min-width: 200px;
+    min-height: 150px;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    
+}
+
+
+.service {
+    position: absolute;
+    top : 0;
+    right: 0;
+}
+
+.bed {
+    border-radius: 50%;
+    background-color: gray;
+    min-width: 25px;
+    min-height: 25px
+}
+
+.sideLogo {
+    background: #FFFFFF;
+    border: 2px solid #F4F6F9;
+    border-radius: 32px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+    display: inline-block;
+    color: #F1AC4D;
+    margin-left: 20px ;
+    width: 80px;
+    margin-bottom: 10px;
+}
+svg{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+// /////////////////////////////////////////////////////////// content
+.content {
+    margin: 0 36px;
+    min-height: 800px;
+}
+
+.heading {
+    align-items: center;
+    display: flex;
+    &__NameRoom{
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 36px;    
+        line-height: 49px;
+    
+        color: #000000;
+    }
+
+    &__search{
+        margin-left: 20px;
+        width: 200px;
+    }
+
+}
+
+
+
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+     &__header{
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+        margin-right: 10px;
+        color: #BFC3CD;
+            }
+}
+
+// .service-form-container {
+//     background-color: white;
+//     margin-top: 20px;
+//     padding: 50px;
+//     font-size: 20px;
+
+// }
+// .item-title{
+//     margin-bottom: 10px;
+// }

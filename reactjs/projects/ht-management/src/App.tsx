@@ -1,7 +1,12 @@
-import Router from "./Router";
-
+import { BrowserRouter } from 'react-router-dom';
+import './App.css'
+import Main from './Members/NHH/pages/Home';
 function App() {
-  return <Router />;
+  return (
+    <BrowserRouter>
+      <Main />
+    </BrowserRouter>
+  )
 }
 
 export default App;
