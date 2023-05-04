@@ -1,6 +1,5 @@
 
 
-import React from 'react'
 import { AppProvider } from './AppContext'
 import Rooms from './Rooms'
 import RoomsCreat from './RoomsCreat'

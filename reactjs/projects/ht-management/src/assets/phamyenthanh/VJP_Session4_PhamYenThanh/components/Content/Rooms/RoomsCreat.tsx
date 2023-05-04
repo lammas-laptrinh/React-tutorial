@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import '../../../css/RoomsCreat.css'
 import { AppContext } from './AppContext';
 
-import { Button, message, Popconfirm } from 'antd';
+import { Button, Popconfirm } from 'antd';
 
 const RoomsCreat = () => {
     const { userData ,themeStyle }: any = useContext(AppContext)

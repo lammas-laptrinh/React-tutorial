@@ -17,7 +17,7 @@ export const SibarMain = () => {
             { label: "Home", key: '/', icon: <PieChartOutlined /> },
             { label: "Dashboaed", key: '/DashboardMain', icon: <PieChartOutlined /> },
             { label: "Room", key: '/RoomsMain', icon: <UsergroupAddOutlined /> },
-            { label: "Room", key: '', icon: <FileTextOutlined /> },
+            { label: "RequestMain", key: '/RequestMain', icon: <FileTextOutlined /> },
           ]}
         >
         </Menu>

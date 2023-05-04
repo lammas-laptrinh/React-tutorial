@@ -1,12 +1,12 @@
 
 
 import {
-    addDoc,
+    
     collection,
-    deleteDoc,
-    doc,
+   
+  
     getFirestore,
-    setDoc,
+   
 } from "firebase/firestore";
 
 import { app } from './firebase'

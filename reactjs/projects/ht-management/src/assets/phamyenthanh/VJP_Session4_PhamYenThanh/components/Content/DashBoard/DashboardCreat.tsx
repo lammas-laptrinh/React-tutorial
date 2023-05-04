@@ -1,6 +1,6 @@
 import '../../../css/DashboardCreat.css'
 import { Table } from 'antd';
-import { Booking } from './type';
+
 import { useState, useEffect } from 'react';
 import { DocumentData, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { listbookingController } from '@assets/phamyenthanh/VJP_Session4_PhamYenThanh/firebase/controllerfire';
@@ -53,12 +53,6 @@ const columns = [
     
    
 ];
-const data =[
-    {
-        key: '1',
-        data:'....'
-      },
-]
 
 const DashboardCreat = () => {
 
