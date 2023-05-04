@@ -1,0 +1,104 @@
+
+
+
+
+
+.payment-items-introduce{
+    width: 100%;
+    height: 700px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f0f8ff;
+}
+
+.payment-items-introduce .payment-introduce{
+    width: 100%;
+    height: 100%;
+}
+
+.payment-items-introduce .payment-introduce .banner{
+    width: 100%;
+    height: 40%;
+    margin-left: auto;
+    z-index: 1;
+    margin-right: auto;
+    position: relative;
+}
+.payment-items-introduce .payment-introduce .banner .bannerTitle{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: rgb(103,101,150);
+    background: linear-gradient(90deg,rgba(103,101,150,1) 0%,rgba(0,0,0,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-items-introduce .payment-introduce .banner .bannerTitle span{
+    color: #fff;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.payment-items-introduce .payment-introduce .introduce-text .bannerTitle{
+    width: 100%;
+    box-sizing: border-box;
+    height: 60%;
+    border-bottom-right-radius: 10px;
+    background-color: #e1d5dd;
+}
+
+.payment-items-introduce .payment-introduce .banner .bannerProfess{
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.payment-items-introduce .payment-introduce .banner .logo-wrapper {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-items-introduce .payment-introduce .banner .logo-wrapper .logo-banner{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #faebd7;
+}
+.payment-items-introduce .payment-introduce .banner .profess-wrapper {
+    display: block;
+}
+
+.payment-items-introduce .payment-introduce .banner .profess-wrapper label{
+    color: #000;
+}
+
+.payment-items-introduce .payment-introduce .banner .profess-wrapper span{
+    color: #000;
+}
+
+.payment-items-introduce .payment-introduce .introduce-text .ul-wrapper{
+    display: flex;
+}
+
+.payment-items-introduce .payment-introduce .introduce-text .ul-wrapper ul{
+    margin-top: 0;
+    padding: 40px;
+}
+.payment-items-introduce .payment-introduce .introduce-text .ul-wrapper li{
+    font-size: 18px;
+    margin-top: 40px;
+}
+

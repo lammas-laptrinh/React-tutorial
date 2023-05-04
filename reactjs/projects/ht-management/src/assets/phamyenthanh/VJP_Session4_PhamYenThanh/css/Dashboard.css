@@ -1,0 +1,58 @@
+.Dashboard {
+    display: flex;
+    align-items: center;
+}
+
+.Dashboard .Dashboard-search {
+    margin-left: 21px;
+}
+
+.Dashboard .Dashboard-title p {
+    font-family: Nunito;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 49px;
+    letter-spacing: 0em;
+}
+
+.Dashboard-backgrop {
+    display: flex;
+}
+
+.Dashboard-backgrop-left {
+    position: relative;
+    width: 450px;
+    height: 461px;
+    background: #ED712E;
+    box-shadow: 2px 21px 24px 14px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 10px 10px;
+}
+
+.Dashboard-backgrop-left p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.Dashboard-backgrop-right p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.Dashboard-backgrop-right {
+    position: relative;
+    width: 695px;
+    height: 462px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    margin-left: 31px;
+    padding: 10px 10px;
+}

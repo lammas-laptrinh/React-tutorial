@@ -1,0 +1,62 @@
+.RoomsCreat-backgorup ul {
+
+    list-style-type: none;
+    display: flex;
+}
+
+.RoomsCreat-backgorup ul li{
+
+   padding-left: 2px;
+}
+
+
+.RoomsCreat-boder {
+    background: #FFFFFF;
+    border: 1px solid #ABAFB7;
+    border-radius: 6px;
+    padding: 10px 10px;
+    height: 150px;
+    width: 200px;
+    margin-left: 31px;
+
+}
+
+.RoomsCreat-bodertitle p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+
+}
+
+.RoomsCreat-titme p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #000000;
+
+}
+
+.ant-popconfirm-buttons{
+    display: none !important;
+}
+
+.ant-popconfirm-inner-content{
+    background:#FC7D72;
+    padding: 10px ;
+}
+
+.Standard p{
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 300;
+font-size: 36px;
+line-height: 49px;
+
+color: #000000;
+}

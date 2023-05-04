@@ -1,0 +1,11 @@
+
+
+
+.payment-container-item {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 24px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+}

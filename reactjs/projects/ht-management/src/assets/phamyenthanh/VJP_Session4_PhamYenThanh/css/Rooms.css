@@ -1,0 +1,61 @@
+.Rooms {
+    display: flex;
+    align-items: center;
+}
+
+.Rooms-flex {
+    display: flex;
+    align-items: center;
+}
+
+.Rooms-flex .Rooms-title p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 49px;
+    color: #000000;
+}
+
+
+.Rooms-search {
+    margin-left: 20px;
+}
+
+.Rooms-ul p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.Rooms-right .Rooms-right-flex {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Rooms-right {
+    display: flex;
+    margin-left: 1000px;
+}
+
+.Rooms-right p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BFC3CD;
+}
+
+.Rooms-right .Rooms-right-flex p {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+   margin: 5px;
+    color: #000000;
+}

@@ -1,0 +1,17 @@
+.HeaderMain{
+    display: flex;
+    justify-content: space-around;
+}
+.HeaderMain .HeaderMain-HeaderLeft p{
+    color: #429AE4;
+}
+
+
+.HeaderMain-HeaderRight ul{
+        display: flex;
+        list-style: none;
+}
+.HeaderMain-HeaderRight li{
+    margin-left: 20px;
+    font-size: 18px;
+}
