@@ -1,7 +1,7 @@
-import Router from "./Router";
+import Payment from "./Members/TTB/Payment/paymentForm";
 
 function App() {
-  return <Router />;
+  return <Payment />;
 }
 
 export default App;

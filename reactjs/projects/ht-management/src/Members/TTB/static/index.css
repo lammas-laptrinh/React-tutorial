@@ -1,0 +1,195 @@
+/* header */
+.version {
+    text-align: left;
+    color: blue
+}
+
+.userSession {
+    text-align: right
+}
+
+.header {
+    padding: 0
+}
+
+.headerIcon {
+    font-size: 22px;
+    margin: 20px
+}
+
+.avt {
+    margin: 20px
+}
+
+/* rooom */
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:hover {
+    color: black
+}
+
+.roomCard {
+    border: 1px solid grey;
+    border-radius: 12px;
+    margin: 20px;
+    min-width: 200px;
+    min-height: 150px;
+    flex-direction: column;
+    padding: 10px;
+    position: relative
+}
+
+.service {
+    position: absolute;
+    margin-left: 40%
+}
+
+.bed {
+    border-radius: 50%;
+    background-color: gray;
+    min-width: 25px;
+    min-height: 25px
+}
+
+.sideLogo {
+    height: 36px;
+    margin: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    color: #eb7d34;
+    font-weight: bold;
+    border: solid;
+    border-radius: 10px;
+    text-align: center
+}
+
+/* .layout{
+} */
+.content {
+    margin: 0 36px;
+    min-height: 800px;
+}
+
+.heading {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px
+}
+
+.search-session {
+    margin-left: 20px;
+    width: 200px;
+    align-items: center;
+    display: flex
+}
+
+.view {
+    text-align: left;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 20px
+}
+
+.view-header {
+    margin-right: 10px
+}
+
+.service-form-container {
+
+    background-color: white;
+    margin-top: 20px;
+    padding: 50px;
+    font-size: 20px;
+
+}
+
+.item-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+.payment {
+    margin: 5% 10%;
+    background: white;
+}
+
+.input {
+    text-align: left !important;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.paymentInput {
+    display: block;
+    margin: 10%;
+}
+
+.input-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    display: block;
+    color: #7C7E8A;
+}
+
+.title {
+    text-align: left !important;
+    font-size: larger;
+}
+
+.left-title {
+    text-align: left;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.right-title {
+    text-align: right;
+    color: #000;
+}
+
+.spacing {
+    margin-bottom: 40px;
+}
+
+.border {
+    border: 0.5px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    background-color: #eb7d34;
+    height: 50px;
+}
+
+.img {
+    width: 100%;
+}
+
+.paymentRoom {
+    display: block;
+    margin: 10% 0;
+    background-color: #F9FBFC;
+}
+
+.roomDetail {
+    display: block;
+    margin: 5%;
+}
+
+.roomInfo {
+    text-align: left !important;
+}
+.bold{
+    font-weight: bold;
+}
+.tick{
+    font-size: 20px;
+    display: flex;
+    align-items: center
+}
