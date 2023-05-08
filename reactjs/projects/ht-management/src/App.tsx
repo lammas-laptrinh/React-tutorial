@@ -1,8 +1,7 @@
-import BookingList from "./Members/TTB/pages/main";
-import Router from "./Router";
-
+import Service from "./Members/TTB/components/service";
+import './App.css'
 function App() {
-  return <BookingList />;
+  return <Service />;
 }
 
 export default App;
