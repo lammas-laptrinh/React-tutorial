@@ -1,7 +1,6 @@
-import Service from "./Members/TTB/components/service";
-import './App.css'
+import Main from "./Members/TTB/pages/main";
 function App() {
-  return <Service />;
+  return <Main />;
 }
 
 export default App;

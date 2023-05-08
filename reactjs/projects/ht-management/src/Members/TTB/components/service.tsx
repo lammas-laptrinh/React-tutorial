@@ -43,7 +43,7 @@ export default function Service() {
     }
     //return this to UI
     return (
-        <>
+        <Space>
             <ToastContainer />
             <Space className='service-form-container' >
                 <form className='form-container' onSubmit={handleSubmit(onSubmitHandler)} style={{
@@ -152,6 +152,6 @@ export default function Service() {
             </Space>
 
 
-        </>
+        </Space>
     );
 }
