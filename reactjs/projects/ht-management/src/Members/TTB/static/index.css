@@ -185,11 +185,43 @@ a:hover {
 .roomInfo {
     text-align: left !important;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
-.tick{
+
+.tick {
     font-size: 20px;
     display: flex;
     align-items: center
+}
+
+.paypal-popup {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    top: 50%;
+    border-radius: 10px;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    outline: none;
+    background-color: #fff;
+    box-shadow: none;
+    color: #000;
+    border-radius: 10px;
+}
+
+.overlay {
+    margin-bottom: 15px;
 }

@@ -1,8 +1,20 @@
 import { Button, Col, Row, Space } from "antd";
 import InputField from "../input";
 import SubInfo from "./subInfo";
+import { useState } from "react";
+import PaypalCheckout from "./PaypalCheckout";
+
 
 export default function PaymentInputForm() {
+    const [showPaypal, setShowPaypal] = useState(false);
+    const handleClick = () => {
+        setShowPaypal(!showPaypal);
+    };
+    /* if (showPaypal) {
+        document.body.classList.add("active-modal");
+    } else {
+        document.body.classList.remove("active-modal");
+    } */
     return (
         <form>
             <Space className="paymentInput" >
@@ -20,13 +32,21 @@ export default function PaymentInputForm() {
                     </Col>
                 </Row>
                 <div className="spacing"> </div>
-                <SubInfo leftLabel="Subtotal" rightLabel="100$" boldRight/>
-                <SubInfo leftLabel="Discount" rightLabel="0$" boldRight/>
+                <SubInfo leftLabel="Subtotal" rightLabel="100$" boldRight />
+                <SubInfo leftLabel="Discount" rightLabel="0$" boldRight />
                 <div className="border"></div>
-                <SubInfo leftLabel="Total Amount" rightLabel="100$" boldRight/>
-                <Button className="submit-btn" type="primary" block>
+                <SubInfo leftLabel="Total Amount" rightLabel="100$" boldRight />
+                {showPaypal && (
+                    <PaypalCheckout
+                        total={10}
+                        setShowPaypal={setShowPaypal}
+                        showPaypal={showPaypal}
+                    />
+                )}
+                <Button onClick={handleClick} htmlType="button" className="submit-btn" type="primary" block>
                     Submit
                 </Button>
+                
             </Space>
         </form>
     )

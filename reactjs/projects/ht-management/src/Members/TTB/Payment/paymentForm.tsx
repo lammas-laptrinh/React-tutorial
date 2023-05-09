@@ -2,6 +2,8 @@ import { Col, Row } from "antd";
 import PaymentInputForm from "./paymentInputForm";
 import PaymentRoomDetail from "./paymentRoomDetail";
 import '../static/index.css'
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Payment() {
     return (
@@ -10,8 +12,9 @@ export default function Payment() {
                 <PaymentInputForm />
             </Col>
             <Col span={11}>
-                <PaymentRoomDetail/>
+                <PaymentRoomDetail />
             </Col>
+            <ToastContainer />
         </Row>
     )
 }
