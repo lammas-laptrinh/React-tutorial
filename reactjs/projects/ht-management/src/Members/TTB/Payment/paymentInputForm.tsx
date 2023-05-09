@@ -9,7 +9,12 @@ export default function PaymentInputForm() {
     const [showPaypal, setShowPaypal] = useState(false);
     const handleClick = () => {
         setShowPaypal(!showPaypal);
-    };  
+    };
+    /* if (showPaypal) {
+        document.body.classList.add("active-modal");
+    } else {
+        document.body.classList.remove("active-modal");
+    } */
     return (
         <form>
             <Space className="paymentInput" >
