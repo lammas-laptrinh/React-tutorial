@@ -52,72 +52,74 @@ export default function PaymentDetail(props: RoomProps) {
     });
     const onSubmitHandler = (/* data: any */) => {
         //the createOrder Data
-            const bookRoomData = {
-                intent: 'CAPTURE',
-                purchase_units: [
-                    {
-                        amount: {
-                            currency_code: 'USD',
-                            value: totalPrice.toString(),
-                            breakdown: {
-                                item_total: {
-                                    currency_code: 'USD',
-                                    value: totalPrice.toString(),
-                                },
+        const bookRoomData = {
+            intent: 'CAPTURE',
+            purchase_units: [
+                {
+                    amount: {
+                        currency_code: 'USD',
+                        value: totalPrice.toString(),
+                        breakdown: {
+                            item_total: {
+                                currency_code: 'USD',
+                                value: totalPrice.toString(),
                             },
                         },
-                        items: [
-                            {
-                                name: row.name,
-                                description: row.description?.slice(0, 60),
-                                quantity: '1',
-                                unit_amount: {
-                                    currency_code: 'USD',
-                                    value: totalPrice.toString(),
-                                },
-                            },
-                        ],
                     },
-                ],
-                application_context: {
-                    return_url: 'https://example.com/success',
-                    cancel_url: 'https://example.com/cancel',
+                    items: [
+                        {
+                            name: row.name,
+                            description: row.description?.slice(0, 60),
+                            quantity: '1',
+                            unit_amount: {
+                                currency_code: 'USD',
+                                value: totalPrice.toString(),
+                            },
+                        },
+                    ],
                 },
-            };
-            //CrateOder through Paypal APi
-            paypalApi.createOrder(bookRoomData!)
-                .then((response) => {
-                    // Retrieve the order ID from the response
-                    const orderId = response.data.id;
-                    paypalApi.checkoutOderById(orderId)
-                        .then((orderDetailsResponse) => {
-                            // Extract order details from the response
-                            const orderDetails = orderDetailsResponse.data;
-                            //then it will have the notify when getdata success
-                            // find the aprove link 
-                            const approveLink = orderDetails.links.find((link: { rel: string; }) => link.rel === 'approve');
-                            console.log(approveLink)
-                            //this guy is notify message
-                            toast.success('Create Oder Success. Moving to the Payment', {
-                                autoClose: 4000,
-                            });
-                            //redirect to another page with approve link after 5000
-                            approveLink ? setTimeout(() => {
-                                window.open(approveLink.href, '_blank');
-                            }, 4005)
-                                :
-                                console.log('No approve link found');
-
-                            console.log(orderDetailsResponse)
-                        })
-                        .catch((error) => {
-                            console.error('Error getting order details:', error);
+            ],
+            application_context: {
+                return_url: 'https://example.com/success',
+                cancel_url: 'https://example.com/cancel',
+            },
+        };
+        //CrateOder through Paypal APi
+        paypalApi.createOrder(bookRoomData!)
+            .then((response) => {
+                // Retrieve the order ID from the response
+                const orderId = response.data.id;
+                paypalApi.checkoutOderById(orderId)
+                    .then((orderDetailsResponse) => {
+                        // Extract order details from the response
+                        const orderDetails = orderDetailsResponse.data;
+                        // find the aprove link 
+                        const approveLink = orderDetails.links.find((link: { rel: string; }) => link.rel === 'approve');
+                        console.log(approveLink)
+                        //this guy is notify message
+                        toast.success('Create Oder Success. Moving to the Payment', {
+                            autoClose: 4000,
                         });
+                        //redirect to another page with approve link after 5000
+                        approveLink ? setTimeout(() => {
+                            window.open(approveLink.href, '_blank');
+                        }, 4005)
+                            :
+                            console.log('No approve link found');
 
-                })
-                .catch((error) => {
-                    console.error('Error creating order:', error);
-                });
+                        console.log(orderDetailsResponse)
+                        //will Capture after 1 minute
+                        setTimeout(() => {
+                            paypalApi.captureById(orderId)
+                        }, 60000)
+                    })
+                    .catch((error) => {
+                        console.error('Error getting order details:', error);
+                    });
+            })
+            .catch((error) => {
+                console.error('Error creating order:', error);
+            });
         reset();
     };
 

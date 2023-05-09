@@ -25,6 +25,17 @@ const paypalApi = {
         }
         return axiosClient.get(`v2/checkout/orders/${id}`, { headers: headers });
     },
+    captureById(id: string): Promise<any> {
+        //get the stored Token
+        const paypalToken = localStorage.getItem('paypalToken');
+        //custome header for API
+        const headers = {
+            'Content-Type': 'application/json',
+            'Prefer': 'return=representation',
+            'Authorization': `Bearer ${paypalToken}`
+        }
+        return axiosClient.post(`v2/checkout/orders/${id}/capture`,{}, { headers: headers });
+    },
 };
 
 export default paypalApi;
