@@ -8,6 +8,6 @@ export default function Router() {
         <Route path="/" element={<Navigate to={'/payment'} />} />
         <Route path="/payment/*" element={<MainLayout children={<PaymentPage />} />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> 
   );
 }
