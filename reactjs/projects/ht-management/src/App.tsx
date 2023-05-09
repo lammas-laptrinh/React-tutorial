@@ -1,4 +1,4 @@
-import Router from "./Router";
+import Router from "./Members/LPQT/Router";
 
 function App() {
   return <Router />;
