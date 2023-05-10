@@ -1,8 +1,11 @@
 import { Button, Col, Row, Space } from "antd";
 import Search from "antd/es/input/Search";
-import Room from "./Rooms";
+import Room from "./room";
 import { Rooms } from "../types";
-import { UnorderedListOutlined, AppstoreOutlined } from '@ant-design/icons';
+import {
+    UnorderedListOutlined,
+    AppstoreOutlined,
+} from '@ant-design/icons';
 import { useState } from "react";
 export default function RoomList(props: { roomList: Rooms[], onSearch: (roomId: string) => void }) {
     const { onSearch } = props;
