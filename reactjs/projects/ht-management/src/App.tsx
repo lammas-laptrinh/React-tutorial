@@ -1,7 +1,6 @@
-import Router from "./Router";
-
+import Main from "./Members/HHP/page/main";
 function App() {
-  return <Router />;
+  return <Main />;
 }
 
 export default App;

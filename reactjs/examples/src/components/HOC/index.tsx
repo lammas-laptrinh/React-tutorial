@@ -9,5 +9,5 @@ export default function HOC({ children }: any) {
   const onShowAlert = () => {
     alert("HOC Alert");
   };
-  return ({onShowAlert})=>children;
+  return ()=>children;
 }
