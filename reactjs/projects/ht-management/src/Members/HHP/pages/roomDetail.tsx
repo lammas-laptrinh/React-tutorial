@@ -1,14 +1,14 @@
 import { Col, Layout, MenuProps, Row } from "antd";
 import { useParams } from "react-router-dom";
-import SideBar from "../Components/Sidebars";
-import Header from "../Components/Headerr";
+import SideBar from "../components/sidebar";
+import Header from "../components/header";
 import { Content } from "antd/es/layout/layout";
 import {
-    DesktopOutlined,
+  //  DesktopOutlined,
     FileOutlined,
     PieChartOutlined,
     TeamOutlined,
-    UserOutlined,
+ //   UserOutlined,
 } from '@ant-design/icons';
 import { Rooms } from "../types";
 
@@ -31,12 +31,6 @@ export default function Detail() {
     }
     const items: MenuItem[] = [
         getItem('Option 1', '1', <PieChartOutlined /* style={{fontSize:30}} */ />),
-        getItem('Option 2', '2', <DesktopOutlined /* style={{fontSize:30}} */ />),
-        getItem('User', 'sub1', <UserOutlined /* style={{fontSize:30}} */ />, [
-            getItem('Tom', '3'),
-            getItem('Bill', '4'),
-            getItem('Alex', '5'),
-        ]),
         getItem('Team', 'sub2', <TeamOutlined /* style={{fontSize:30}} */ />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
         getItem('Files', '9', <FileOutlined /* style={{fontSize:30}} */ />),
     ];
