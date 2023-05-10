@@ -1,7 +1,7 @@
 import { Col, Layout, MenuProps, Row } from "antd";
 import { useParams } from "react-router-dom";
-import SideBar from "../components/sidebar";
-import Header from "../components/header";
+import SideBar from "../Components/Sidebars";
+import Header from "../Components/Headerr";
 import { Content } from "antd/es/layout/layout";
 import {
     DesktopOutlined,

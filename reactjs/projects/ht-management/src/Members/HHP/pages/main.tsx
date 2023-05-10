@@ -10,13 +10,13 @@ import { MenuProps } from 'antd';
 import { Layout } from 'antd';
 // import { collection, getDocs, query } from "firebase/firestore";
 // import { db } from '../../../firebase';
-import SideBar from '../components/sidebar';
-import Header from '../components/header';
+import SideBar from '../Components/Sidebars';
+import Header from '../Components/Headerr';
 import { Rooms } from '../types';
-import RoomList from '../components/RoomList';
+import RoomList from '../Components/RoomLists';
 import { Route, Routes } from 'react-router-dom';
 import Detail from './roomDetail';
-import Service from '../components/service';
+import Service from '../Components/Services';
 const { Content } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
