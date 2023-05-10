@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { toast, ToastContainer } from 'react-toastify';
 import { useForm, Controller } from "react-hook-form";
 import { Select, Space } from "antd";
-import TextEditor from './textEditor';
+import TextEditor from './TextEditors';
 import 'react-toastify/dist/ReactToastify.css';
 import { Editor } from '@tinymce/tinymce-react';
 const { Option } = Select;
