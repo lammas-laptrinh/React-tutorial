@@ -1,7 +1,8 @@
-import Router from "./Router";
+import CheckOut from "./Members/NHH/CheckOut/CheckOut";
+
 
 function App() {
-  return <Router />;
+  return <CheckOut />;
 }
 
 export default App;
