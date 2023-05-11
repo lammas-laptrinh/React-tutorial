@@ -11,7 +11,7 @@ const axiosClient = axios.create({
     },
 });
 
-//to reset the access token
+//to refresh the access token
 axiosClient.post('/v1/oauth2/token', {
     grant_type: 'client_credentials'
 })
@@ -19,8 +19,10 @@ axiosClient.post('/v1/oauth2/token', {
         const accessToken = response.data.access_token
         //store the access Token
         localStorage.setItem('paypalToken', accessToken);
+        console.log(accessToken)
     })
     .catch(error => {
         console.error('Error while obtaining access token:', error)
     })
+
 export default axiosClient;
