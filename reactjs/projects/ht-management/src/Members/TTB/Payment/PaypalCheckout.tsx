@@ -28,6 +28,7 @@ export default function PaypalCheckout(props: any) {
       return;
     }
     toast.success(`Thanh toán thành công`);
+    props.setShowPaypal(false)
   }
   
   return (
