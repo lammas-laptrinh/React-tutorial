@@ -1,85 +1,28 @@
 import React, { useState } from 'react';
-import { Card, Typography, Row, Col, Space, Modal, Button} from 'antd';
+import { Card, Typography, Row, Col, Space, Modal, Button } from 'antd';
 import View from './View';
 import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
 import SmileIcons from './SmileIcons';
+import { rooms } from './common';
 const { Title } = Typography;
-
-export type Room = {
-    id: number;
-    title: string;
-    time: string;
-    modal: string;
-    modalContent?: string[];
-    details: string;
-    type: string;
-}
 interface Props {
     isGridView: boolean;
     onToggleView: () => void;
     searchValue: string;
     onSearch: (value: string) => void;
 }
-export const rooms: Room[] = [
-    {
-        id: 1,
-        title: 'Room 1',
-        time: '12/06- 18/06',
-        modal: '3',
-        modalContent: ['Ống nước hỏng', 'Lấy thêm đồ ăn', 'Không bật được đèn nhà tắm'],
-        details: 'This is more detailed information about Room 1.',
-        type: 'Type 1', 
-    },
-    {
-        id: 2,
-        title: 'Room 2',
-        time: '12/06- 18/06',
-        modal: '',
-        modalContent: [],
-        details: 'This is more detailed information about Room 2.',
-        type: 'Type 2', 
-    },
-    {
-        id: 3,
-        title: 'Room 3',
-        time: '12/06- 18/06',
-        modal: '1',
-        modalContent: ['Ống nước hỏng'],
-        details: 'This is more detailed information about Room 3.',
-        type: 'Type 3', 
-    },
-    
-    {
-        id: 4,
-        title: 'Room 2',
-        time: '12/06- 18/06',
-        modal: '',
-        modalContent: [],
-        details: 'This is more detailed information about Room 2.',
-        type: 'Type 2',
-    },
-    
-    {
-        id: 5,
-        title: 'Room 2',
-        time: '12/06- 18/06',
-        modal: '',
-        modalContent: [],
-        details: 'This is more detailed information about Room 2.',
-        type: 'Type 2', 
-    },
-];
-const Standard: React.FC<Props> = ({ isGridView, onToggleView, searchValue, onSearch }) => {
+
+const FormRoom: React.FC<Props> = ({ isGridView, onToggleView, searchValue, onSearch }) => {
     const { Meta } = Card;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
     const filteredRooms = rooms.filter((room) =>
-    room.title.toLowerCase().includes(searchValue.toLowerCase())
-);
-const type1Rooms = filteredRooms.filter((room) => room.type === 'Type 1');
-const type2Rooms = filteredRooms.filter((room) => room.type === 'Type 2');
-const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
+        room.title.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    const type1Rooms = filteredRooms.filter((room) => room.type === 'Standard');
+    const type2Rooms = filteredRooms.filter((room) => room.type === 'Double');
+    const type3Rooms = filteredRooms.filter((room) => room.type === 'King');
     const showModal = (index: number) => {
         setIsModalOpen(true);
         setCurrentRoomIndex(index);
@@ -92,6 +35,7 @@ const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
     };
     return (
         <>
+
             <span>Rooms</span>
             <SearchInput onSearch={onSearch} />
             <span>Views :</span>
@@ -114,14 +58,14 @@ const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
-                                    backgroundColor: "#FC7D72",  
-                                    borderColor: "#FC7D72", 
+                                    backgroundColor: "#FC7D72",
+                                    borderColor: "#FC7D72",
                                 }}>
                                     {room.modal}
                                 </Button>
                             ) : null}
                         >
-                            <Link to={`/rooms/${room.id}`}>
+                            <Link to={`/room/${room.id}`}>
                                 <SmileIcons />
                             </Link>
                             <Meta
@@ -165,14 +109,14 @@ const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
-                                    backgroundColor: "#FC7D72",  
+                                    backgroundColor: "#FC7D72",
                                     borderColor: "#FC7D72",
                                 }}>
                                     {room.modal}
                                 </Button>
                             ) : null}
                         >
-                            <Link to={`/rooms/${room.id}`}>
+                            <Link to={`/room/${room.id}`}>
                                 <SmileIcons />
                             </Link>
                             <Meta
@@ -216,14 +160,14 @@ const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
-                                    backgroundColor: "#FC7D72",  
+                                    backgroundColor: "#FC7D72",
                                     borderColor: "#FC7D72",
                                 }}>
                                     {room.modal}
                                 </Button>
                             ) : null}
                         >
-                            <Link to={`/rooms/${room.id}`}>
+                            <Link to={`/room/${room.id}`}>
                                 <SmileIcons />
                             </Link>
                             <Meta
@@ -248,9 +192,9 @@ const type3Rooms = filteredRooms.filter((room) => room.type === 'Type 3');
                         </Modal>
                     </Col>
                 ))}
-            </Row>         
+            </Row>
         </>
     );
 };
 
-export default Standard;
+export default FormRoom;

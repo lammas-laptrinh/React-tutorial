@@ -12,13 +12,13 @@ const SearchInput: React.FC<Props> = ({ onSearch }) => {
   };
   return (
     <Input
-    placeholder="Search"
-    prefix={<SearchOutlined />}
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    onPressEnter={handleSearch}
-    style={{ width: 200 }}
-  />
+      placeholder="Search"
+      prefix={<SearchOutlined />}
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      onPressEnter={handleSearch}
+      style={{ width: 200 }}
+    />
   );
 };
 

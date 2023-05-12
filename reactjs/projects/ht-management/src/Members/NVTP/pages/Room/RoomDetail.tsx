@@ -1,8 +1,8 @@
-import { Link,useParams } from 'react-router-dom';
-import { rooms } from './Standard';
+import { Link, useParams } from 'react-router-dom';
+import { rooms } from './common';
 const RoomDetail = () => {
     const { id } = useParams<{ id: string }>();
-    const room = rooms.find((r) => r.id === parseInt(id ?? ""));
+    const room = rooms.find((r) => r.id === parseInt(id || ""));
     if (!room) {
         return <div>Room not found</div>;
     }
@@ -12,7 +12,7 @@ const RoomDetail = () => {
             <p>{room.details}</p>
             <Link to="/">Back to home</Link>
         </div>
-        
+
     );
 };
 

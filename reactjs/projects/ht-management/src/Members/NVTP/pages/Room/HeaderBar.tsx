@@ -1,33 +1,41 @@
 import React from 'react';
-import './index.css';
-import {  UserOutlined,  InfoCircleOutlined, BellOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Menu, theme,  Row } from 'antd';
+import { Layout, Row, Col, Typography, Space } from 'antd';
+import { BellOutlined, InfoCircleOutlined, UserOutlined } from '@ant-design/icons';
 
-const items1: MenuProps['items'] = ['version 1.0.0'].map((key) => ({
-    key,
-    label: `${key}`,
-}));
-const items: MenuProps['items'] = [BellOutlined, InfoCircleOutlined, UserOutlined].map(
-    (icon, index) => {
-        const key = String(index + 1);
-        return {
-            key: `sub${key}`,
-            icon: React.createElement(icon),
-        };
-    },
-);
+const { Header } = Layout;
+const { Title } = Typography;
 
-const HeaderBar: React.FC = () => {
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
+const HeaderBar = () => {
+    const renderIcons = () => {
+        const icons = [BellOutlined, InfoCircleOutlined, UserOutlined];
+
+        return icons.map((Icon, index) => {
+            if (index === 2) {
+                return (
+                    <React.Fragment key={index}>
+                        <span>Nguyễn Văn B</span>
+                        <Icon style={{ fontSize: '20px', marginRight: '10px' }} />
+                    </React.Fragment>
+                );
+            } else {
+                return (
+                    <Icon key={index} style={{ fontSize: '20px', marginRight: '10px' }} />
+                );
+            }
+        });
+    };
+
     return (
-        <Row>
-            <Menu mode="horizontal" defaultSelectedKeys={['1']} items={items1} style={{ background: colorBgContainer }} />
-            <Menu mode="horizontal" defaultSelectedKeys={['1']} items={items} style={{ marginLeft: '770px', background: colorBgContainer }} />
-        </Row>
-
+        <Header style={{ background: '#FFFFFF' }}>
+            <Row justify="space-between">
+                <Col>
+                    <Title level={4}>Version 1.0.0</Title>
+                </Col>
+                <Col>
+                    <Space>{renderIcons()}</Space>
+                </Col>
+            </Row>
+        </Header>
     );
 };
 

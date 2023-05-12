@@ -6,7 +6,7 @@ type ViewModeProps = {
   onToggleView: () => void;
 };
 
-const View = ({  onToggleView }: ViewModeProps) => {
+const View = ({ onToggleView }: ViewModeProps) => {
   return (
     <>
       <Button
