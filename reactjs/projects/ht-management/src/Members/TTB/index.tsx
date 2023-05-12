@@ -1,20 +1,46 @@
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L, { LeafletMouseEvent } from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
-export default function Leaflet() {
-    const position = [51.505, -0.09]
-    return (
-        <div style={{ height: 600, width: 600,  }}>
-            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={[51.505, -0.09]}>
-                    <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </Marker>
-            </MapContainer> 
-        </div>
-    )
+// Define a custom icon for the marker
+const icon = L.icon({
+  iconUrl: 'marker-icon.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'marker-shadow.png',
+  shadowSize: [41, 41],
+  shadowAnchor: [12, 41],
+});
+
+export default function Map() {
+  const mapRef = React.useRef<L.Map>(null);
+  const [position, setPosition] = React.useState<[number, number]>([10.853049657597294, 106.80719688624798]);
+
+  function handleClick(e: LeafletMouseEvent) {
+    setPosition([e.latlng.lat, e.latlng.lng]);
+  }
+
+  function handleMapReady() {
+    if (mapRef.current) {
+      // You now have access to the initialized Leaflet.Map instance via mapRef.current
+    }
+  }
+
+  return (
+    <MapContainer center={position} zoom={13} style={{ height: '100vh' }} whenReady={handleMapReady}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"
+      />
+      <Marker position={position} icon={icon}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
+    </MapContainer>
+  );
 }
+

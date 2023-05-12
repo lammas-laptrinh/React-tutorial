@@ -1,8 +1,9 @@
-import Leaflet from "./Members/TTB";
-import Router from "./Router";
+import Map from "./Members/TTB";
 
-function App() {
-  return <Leaflet />;
+export default function App() {
+  return (
+    <div style={{ height: '100%' }}>
+      <Map />
+    </div>
+  );
 }
-
-export default App;
