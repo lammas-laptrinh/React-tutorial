@@ -64,7 +64,9 @@ export default function PaymentDetail() {
                         )}
                     </Form>
                 </Col>
-                <Desc />
+                <Col span={12}>
+                    <Desc />
+                </Col>
             </Row>
         </PayPalScriptProvider >
     );
