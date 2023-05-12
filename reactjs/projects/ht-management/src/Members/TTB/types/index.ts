@@ -1,4 +1,5 @@
 export type Rooms = {
+    description?: any;
     id: any;
     roomName: string;
     bedAmount: number;
@@ -7,4 +8,8 @@ export type Rooms = {
     roomType: string;
     serviceCount: number;
     service?: string[];
+    status?:string;
+};
+export type RoomProps = {
+    row: Rooms;
 };
