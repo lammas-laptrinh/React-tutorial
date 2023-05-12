@@ -1,10 +1,47 @@
-import { Col, Row } from "antd";
-import { useParams } from "react-router-dom";
-import { Rooms } from "../types";
+import React from 'react';
+import {useState} from 'react';
+import {
+    TeamOutlined, 
+    PieChartOutlined,
+    FileTextOutlined,
+} from '@ant-design/icons';
+import { MenuProps } from 'antd';
+import { Layout } from 'antd';
+// import { collection, getDocs, query } from "firebase/firestore";
+// import { db } from '../../../firebase';
+import SideBar from '../components/sidebar';
+import Header from '../components/header';
+import { Rooms } from '../Types';
+import RoomList from '../components/RoomList';
+import { Route, Routes } from 'react-router-dom';
+import Detail from './RoomDetail/roomDetail';
+// import ServicePage from '../Service/ServicePage';
+const { Content } = Layout;
 
-export default function Detail() {
-    const { id } = useParams();
-    const rooms: Rooms[] = [
+type MenuItem = Required<MenuProps>['items'][number];
+
+function getItem(
+    label: React.ReactNode,
+    key: React.Key,
+    icon?: React.ReactNode,
+    children?: MenuItem[],
+): MenuItem {
+    return {
+        key,
+        icon,
+        children,
+        label,
+    } as MenuItem;
+}
+
+const items: MenuItem[] = [
+    getItem('Static', '1', <PieChartOutlined />),
+    getItem('User', '2', <TeamOutlined />),
+    getItem('Info', 'sub1', <FileTextOutlined /> )
+];
+
+
+const rooms: Rooms[] = [
     {
         id: "1",
         roomName: 'Room 1',
@@ -22,7 +59,8 @@ export default function Detail() {
         checkinDate: '12/12',
         checkoutDate: '16/12',
         roomType: 'Standard',
-        serviceCount: 0,
+        serviceCount: 2,
+        service: ['Thiếu nước uống', 'Máy lạnh bị chảy nước']
     },
     {
         id: "3",
@@ -31,7 +69,8 @@ export default function Detail() {
         checkinDate: '12/12',
         checkoutDate: '16/12',
         roomType: 'Standard',
-        serviceCount: 0,
+        serviceCount: 3,
+        service: ['Hư chân giường', 'Thiếu nước uống', 'Máy lạnh bị chảy nước']
     },
     {
         id: "4",
@@ -40,7 +79,8 @@ export default function Detail() {
         checkinDate: '12/12',
         checkoutDate: '16/12',
         roomType: 'Standard',
-        serviceCount: 0,
+        serviceCount: 1,
+        service: ['Hư chân giường', ]
     },
     {
         id: "5",
@@ -49,7 +89,7 @@ export default function Detail() {
         checkinDate: '12/12',
         checkoutDate: '16/12',
         roomType: 'Standard',
-        serviceCount: 0,
+        serviceCount: 0
     },
 
 
@@ -151,21 +191,30 @@ export default function Detail() {
     },
    
 ]
-    const getRoom = rooms.find(room => room.id === id);
+
+export default function Main() {
+    const [roomList, setRoomList] = useState<Rooms[]>(rooms);
+
+    const handleSearch = (roomId: string) => {
+        const foundRooms = rooms.filter((room: { id: string; }) => room.id === roomId);
+        setRoomList(foundRooms);
+        if (roomId === "") {
+            setRoomList(rooms)
+        }
+    };
     return (
-        <Row>
-            <Col className="heading">
-                <h2>Rooms Detail</h2>
-            </Col>
-            <Col><img src="" alt="" /></Col>
-            <Col span={24} style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', fontSize: 20 }}>
-                <p>ID: {getRoom?.id}</p>
-                <p>Room Name: {getRoom?.roomName} </p>
-                <p>Bed Amount: {getRoom?.bedAmount}</p>
-                <p>Checkin Day: {getRoom?.checkinDate}</p>
-                <p>Checkout Day: {getRoom?.checkoutDate}</p>
-                <p>Room Type: {getRoom?.roomType}</p>
-            </Col>
-        </Row>
-    )
-}
+        <Layout className='layout' >
+            <SideBar name='DTD' item={items} />
+            <Layout className="site-layout">
+                <Header version='Version 1.0.0' username='Nguyễn Huy Hoàng' />
+                <Content className='content'>
+                    <Routes>
+                        <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
+                        <Route path=":id" element={<Detail />} />                       
+                    </Routes>
+                    {/* <ServicePage />               */}
+                </Content>            
+            </Layout>
+        </Layout>
+    );
+};

@@ -80,7 +80,7 @@ a:hover {
 .roomCard {
     border: 1px solid #000000;
     border-radius: 12px;
-    margin: 20px;
+    margin: 10px 30px;
     min-width: 200px;
     min-height: 150px;
     flex-direction: column;
@@ -95,12 +95,16 @@ a:hover {
     top : 0;
     right: 0;
 }
-
+.ant-space-item{
+    font-family: 'Nunito', sans-serif;
+}
 .bed {
     border-radius: 50%;
     background-color: gray;
-    min-width: 25px;
-    min-height: 25px
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: 10px;
+    margin-bottom: 12px;
 }
 
 .sideLogo {
@@ -177,13 +181,3 @@ svg{
             }
 }
 
-// .service-form-container {
-//     background-color: white;
-//     margin-top: 20px;
-//     padding: 50px;
-//     font-size: 20px;
-
-// }
-// .item-title{
-//     margin-bottom: 10px;
-// }

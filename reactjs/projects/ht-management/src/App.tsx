@@ -1,10 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-import CheckOut from '../src/Members/NHH/pages/CheckOut/CheckOut';
+import Main from './Members/NHH/pages/main';
+// import CheckOut from './Members/NHH/pages/CheckOut/CheckOut';
 function App() {
   return (
     <BrowserRouter>
-      <CheckOut />
+      <Main />
+      {/* <CheckOut /> */}
     </BrowserRouter>
   )
 }

@@ -1,6 +1,6 @@
 import { Menu } from "antd";
 import Sider from "antd/es/layout/Sider";
-import '../static/index.scss'
+import '../CSS/index.scss'
 
 export default function SideBar(props: { item: any[]; name: string }) {
     return (
