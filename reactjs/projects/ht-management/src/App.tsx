@@ -1,12 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-import Main from './Members/NHH/pages/main';
-// import CheckOut from './Members/NHH/pages/CheckOut/CheckOut';
+import Routers from './Members/NHH';
+
 function App() {
+  
   return (
     <BrowserRouter>
-      <Main />
-      {/* <CheckOut /> */}
+      <Routers />
     </BrowserRouter>
   )
 }

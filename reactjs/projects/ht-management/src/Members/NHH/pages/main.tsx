@@ -212,7 +212,6 @@ export default function Main() {
                         <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
                         <Route path=":id" element={<Detail />} />                       
                     </Routes>
-                    {/* <ServicePage />               */}
                 </Content>            
             </Layout>
         </Layout>
