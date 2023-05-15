@@ -27,6 +27,7 @@ body {
   grid-template-areas:
     "sider navbar navbar"
     "sider main main";
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 11fr);
   height: 100vh;
 }
 
@@ -39,7 +40,7 @@ body {
 .PSSider {
   grid-area: sider;
   min-height: 100vh;
-  min-width: 120px
+  min-width: 100px
 }
 
 .PSMain {
@@ -75,9 +76,10 @@ body {
 }
 
 .ViewChangeContainer {
-  margin-left: 1100px;
+  margin-left: auto;
   display: flex;
-  align-items: center
+  align-items: center;
+  margin-right: 30px;
 }
 
 .MainViewContainner {
@@ -123,10 +125,27 @@ body {
 }
 
 
+.Bold20 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 .DetailDes {
   max-width: 780px;
   font-size: 20px
 }
+
+.DetailDePayment {
+  margin-top: 8px;
+  max-width: 780px;
+  font-size: 15px;
+}
+
+.BorderBottom {
+  margin-top: 10px;
+  border-bottom: #C1C1C1 1px solid;
+}
+
 
 .NavVer {
   min-width: 100px;
@@ -159,7 +178,8 @@ body {
 
 .NavMoveRight {
   display: flex;
-  margin-left: 1300px;
+  margin-left: auto;
+  margin-right: 15px;
 }
 
 .FullDes {
@@ -316,6 +336,170 @@ body {
   margin-left: 10px;
 }
 
+.SubmmitButtonContain {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.ServiceSubmitBut {
+  background-color: #164aff;
+  color: white;
+  width: 120px;
+  height: 40px;
+}
+
+.RequireContain {
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.Width515 {
+  width: 515px;
+}
+
+.RoomNumberContain {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.red {
+  color: red;
+}
+
+.LeftAuto {
+  margin-left: auto;
+}
+
+.PackageInfoLeft {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.PackageInfoLeftInner {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.UnderBox {
+  height: 300px;
+  width: 350px;
+  background-color: #f3f5f9;
+  display: block;
+}
+
+.TopBox {
+  height: 280px;
+  width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+.UnderBoxText {
+  height: 250px;
+  width: 300px;
+  background-color: #f3f5f9;
+  position: absolute;
+  top: 320px;
+  left: 25px
+}
+
+.PackageInfoTittle {
+  font-weight: bold;
+  margin-right: 120px;
+  font-size: 20px;
+}
+
+.MarginBottom20 {
+  margin-bottom: 20px;
+}
+
+.MB20TextL {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.MT10 {
+  margin-top: 10px;
+}
+
+.InputStyle140 {
+  height: 30px;
+  width: 140px;
+}
+
+.InputStyle300 {
+  height: 30px;
+  width: 300px;
+}
+
+.DEvsCVVContain {
+  margin-top: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.FlexDirecColumn {
+  flex-direction: column;
+}
+
+.FlexDirecColumnMl15 {
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.PageDButton {
+  margin-top: 70px;
+}
+
+.PageDButtonStyle {
+  background-color: #ED712E;
+  color: white;
+  height: 54px;
+  width: 300px;
+}
+
+.PriceValue {
+  margin-left: 200px;
+  font-weight: bold;
+}
+
+.PriceValue_ {
+  margin-left: 170px;
+  font-weight: bold;
+}
+
+.PriceValue__ {
+  margin-left: 220px;
+  font-weight: bold;
+}
+
+.PriceContain {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.PriceValueContain {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.PriceValue_Contain {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: #C1C1C1 1px solid;
+  line-height: 40px;
+}
+
 .service-box-container {
   background-color: #FC7D72;
   width: 200px;
@@ -415,4 +599,3 @@ body {
   align-content: center;
   flex-direction: column;
 }
-
