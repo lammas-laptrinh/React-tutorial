@@ -1,6 +1,6 @@
-/* header */
-body {}
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
+/* body */
 .version {
   text-align: left;
   color: blue
@@ -44,18 +44,27 @@ a:hover {
   position: relative
 }
 
-.service {
+.service-tip {
   position: absolute;
-  margin-left: 40%
+  margin-left: 40%;
+  background-color: #FC7D72;
+  color: #FFFFFF !important;
 }
-.service:hover{
 
+.service-tip:hover {
+  width: 270px;
+  min-height: 100px;
+  z-index: 2;
+  transform: translateY(-77%);
+  text-align: left;
+  font-size: 14px;
 }
+
 .bed {
   border-radius: 50%;
   background-color: gray;
-  min-width: 25px;
-  min-height: 25px
+  min-width: 30px;
+  min-height: 30px
 }
 
 .parentContainer {
@@ -75,11 +84,12 @@ a:hover {
   width: 98px;
   height: 64px;
   border: 2px solid #F4F6F9;
-  
+
 }
 
 /* .layout{
 } */
+
 .content {
   margin: 0 36px;
   min-height: 800px;
@@ -416,9 +426,25 @@ a:hover {
   left: 0px;
   top: 0px;
   border-radius: 0px;
-
   background: #FFFFFF;
 }
-.tooltipContent{
+
+.tooltipContent {
   background-color: #FC7D72;
+}
+
+.menu-item {
+  margin: 40px 0px !important;
+  width: 100% !important;
+  min-height: 50px;
+}
+
+.menu-item-icon {
+  font-size: 43px !important;
+  margin-left: -30% !important;
+}
+
+.date {
+  font-weight: 350;
+  font-size: 24px;
 }
