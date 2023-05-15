@@ -1,5 +1,5 @@
 import { Room } from "../Room/type";
-import DashboardIcon from '../assets/images/DashboardIcon.svg'
+/* import DashboardIcon from '../assets/images/DashboardIcon.svg' */
 
 //Service Select Option
 export const options = [
@@ -82,11 +82,11 @@ export const roomData: Room[] = [
     },
 ];
 //Siser item
-export const MenuItem = [
+/* export const MenuItem = [
     {
         id: 1,
         name: 'Payment',
         icon: DashboardIcon,
         url: '/payment'
     },
-];
+]; */
