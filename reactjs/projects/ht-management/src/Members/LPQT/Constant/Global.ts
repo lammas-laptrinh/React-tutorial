@@ -1,5 +1,5 @@
 import { Room } from "../Room/type";
-import { BellOutlined } from '@ant-design/icons';
+import DashboardIcon from '../assets/images/DashboardIcon.svg'
 
 //Service Select Option
 export const options = [
@@ -86,7 +86,7 @@ export const MenuItem = [
     {
         id: 1,
         name: 'Payment',
-        icon: BellOutlined,
+        icon: DashboardIcon,
         url: '/payment'
     },
 ];

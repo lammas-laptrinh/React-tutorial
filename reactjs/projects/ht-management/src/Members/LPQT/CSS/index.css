@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 .SiderTittle {
-  max-width: 70px;
-  min-height: 30px;
-  margin: 16px;
-  margin-right: 20px;
-  margin-left: 20px;
+  width: 98px;
+  height: 64px;
+  margin-left: 7px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   background: white;
   text-align: center;
   border-radius: 25px;
@@ -12,26 +18,29 @@
   justify-content: center;
   color: orange;
   font-weight: bold;
+  border: 1px solid #E5E5E9;
+  font-size: 28px;
 }
 
 .MainContainer {
   display: grid;
   grid-template-areas:
-    "sider navbar"
-    "sider main";
+    "sider navbar navbar"
+    "sider main main";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 11fr);
   height: 100vh;
 }
 
 .PSNavbar {
   grid-area: navbar;
   max-height: 50px;
-  min-width: 80vw
+  min-width: 100%
 }
 
 .PSSider {
   grid-area: sider;
   min-height: 100vh;
-  min-width: 10vw
+  min-width: 100px
 }
 
 .PSMain {
@@ -67,7 +76,7 @@
 }
 
 .ViewChangeContainer {
-  margin-left: 900px;
+  margin-left: 1100px;
   display: flex;
   align-items: center
 }
@@ -87,7 +96,14 @@
 
 .MainViewTextTittle {
   font-weight: bold;
-  margin-right: 10px
+  margin-right: 10px;
+  color: #8c8c91;
+}
+
+.MainViewTextTittle1 {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 27px;
 }
 
 .marginRight10 {
@@ -95,16 +111,18 @@
 }
 
 .DetailImage {
-  max-width: 35vw;
-  height: 100vh
+  width: 100%;
+  height: 100%
 }
 
 .DetailReview {
   flex: 1;
   font-weight: bold;
   font-size: 25px;
-  margin-left: 400px
+  margin-left: 350px;
+
 }
+
 
 .Bold20 {
   font-weight: bold;
@@ -132,6 +150,8 @@
   min-width: 100px;
   margin-top: 16px;
   margin-left: 16px;
+  color: #429AE4;
+  font-weight: bold;
 }
 
 .NavIcon {
@@ -141,16 +161,23 @@
 
 .NavUserName {
   margin-bottom: 90px;
-  margin-top: 8px
+  margin-top: 11px;
+  font-weight: bold;
 }
 
 .displayFlex {
   display: flex;
 }
 
+.displayFlexColor {
+  display: flex;
+  background-color: #E5E5E5;
+  max-height: 50px;
+}
+
 .NavMoveRight {
   display: flex;
-  margin-left: 1100px;
+  margin-left: auto;
 }
 
 .FullDes {
@@ -160,7 +187,7 @@
 
 .SiderLayout {
   min-height: 100vh;
-  background-color: #001529
+  background-color: white
 }
 
 .SiderMenu {
@@ -179,22 +206,24 @@
 }
 
 .RoomImageFlex {
-  flex: 0.3;
+  flex: 1;
   margin-right: 40px
 }
 
 .RoomInfoFlex {
-  flex: 2;
+  flex: 1;
 }
 
 .RoomInfoContainer {
-  max-width: 500px;
-  min-height: 200px;
+  width: 497px;
+  height: 180px;
   background-color: #e1eaf7;
-  border-radius: 15px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 30px
+  margin-top: 30px;
+  padding: 20px;
+  margin-top: 50px;
 }
 
 .RoomInfoItem {
@@ -207,6 +236,24 @@
 
 .Flex1 {
   flex: 1
+}
+
+.Flex123 {
+  width: 145px;
+  height: 49px;
+  border: 2px solid #E5E5E9;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+
+.Flex12 {
+  width: 216px;
+  height: 49px;
+  border: 2px solid #E5E5E9;
+  border-radius: 20px;
+  margin-top: 15px;
 }
 
 .RoomInfoTittle {
@@ -233,12 +280,13 @@
 }
 
 .RoomBeneFit {
-  min-height: 120px;
-  max-width: 600px;
+  height: 119px;
+  width: 520px;
+  margin-top: 50px;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-Repeat: no-repeat;
   background-position: center;
-  margin-left: 130px;
+  margin-left: 90px;
 }
 
 .ChooseRoomButon {
@@ -247,7 +295,9 @@
   border-radius: 20px;
   background-color: #F1E2D3;
   font-weight: bold;
-  font-size: 20px
+  font-size: 20px;
+  border: 2px solid #C18346;
+  margin-top: 50px;
 }
 
 .ButtonPos {
@@ -259,8 +309,9 @@
 }
 
 .RoomInfoTypeName {
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: bolder;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .Card {
@@ -268,6 +319,10 @@
   min-height: 150px;
   margin-left: 10px;
   border-radius: 6px;
+}
+
+.card {
+  margin-top: 20px;
 }
 
 .top40 {
@@ -435,10 +490,110 @@
   flex-direction: row;
 }
 
-.PriceValue_Contain{
+.PriceValue_Contain {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
   border-bottom: #C1C1C1 1px solid;
   line-height: 40px;
+}
+
+.service-box-container {
+  background-color: #FC7D72;
+  width: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.service-box-content {
+  color: white;
+  overflow: auto;
+}
+
+.LineView {
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.GridView {
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.RoomPageContain {
+  background-color: #E5E5E5;
+  min-height: 100vh;
+  overflow: hidden
+}
+
+.ServiceBoxCount {
+  background-color: #FC7D72;
+  height: 38.1px;
+  width: 40px;
+  color: white;
+  border-radius: 3px;
+  margin-left: 95px;
+  text-align: center;
+  line-height: 38.1px;
+}
+
+.ServiceBoxMainContain {
+  position: absolute;
+  bottom: 160px;
+  left: 90px;
+}
+
+.SearchBar {
+  width: 15%;
+  min-width: 80px
+}
+
+.SiderItem {
+  margin-left: 9px;
+  width: 43px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.RoomInfoContain {
+  min-height: 100vh;
+  padding: 80px
+}
+
+.RoomInfoBack {
+  margin-left: auto;
+  height: 40px;
+  width: 120px;
+  color: white;
+  background-color: #f22f46;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.RoomInfoBack:hover {
+  background-color: #fa622f;
+}
+
+.NotPay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
