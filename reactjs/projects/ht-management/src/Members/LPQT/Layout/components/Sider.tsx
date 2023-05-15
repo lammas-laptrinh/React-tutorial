@@ -5,22 +5,20 @@ import { MenuItem } from '../../Constant/Global';
 import { MenuItemType } from '../../Rooms/type';
 
 
+
 const items: MenuItemType[] = MenuItem.map((item) => ({
   key: item.id.toString(),
-  icon: <item.icon />, // Render the icon component as JSX
-  label: (
+  label:
     <Link to={item.url}>
-      {item.name}
+      <img src={item.icon} alt="Dashboard" className='SiderItem' />
     </Link>
-  ),
 }));
 
 export default function CustomSider() {
-
-    return (
-        <Layout className='SiderLayout'>
-            <div className='SiderTittle'>Taiki</div>
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} className='SiderMenu' />
-        </Layout>
-    );
+  return (
+    <Layout className='SiderLayout'>
+      <div className='SiderTittle'>DTD</div>
+      <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={items} className='SiderMenu' />
+    </Layout>
+  );
 };

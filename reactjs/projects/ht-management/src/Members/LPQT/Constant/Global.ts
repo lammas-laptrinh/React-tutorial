@@ -1,5 +1,5 @@
 import { Room } from "../Rooms/type";
-import { UserOutlined } from '@ant-design/icons';
+import DashboardIcon from '../assets/images/DashboardIcon.svg'
 
 export const roomData: Room[] = [
     {
@@ -73,7 +73,7 @@ export const MenuItem = [
     {
         id: 1,
         name: 'Room',
-        icon: UserOutlined,
+        icon: DashboardIcon,
         url: '/room'
     },
 ];

@@ -35,7 +35,6 @@ export default function renderRoomsAsGrid({ rows }: RoomListProps) {
                                     </Typography >
                                 )
                         }
-
                     </Card>
                 </Link>
                 {row?.serviceCount! > 0 && <ServiceBox row={row} />}

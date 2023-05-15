@@ -23,6 +23,7 @@ export type ServiceType = {
 
 export type RoomProps = {
     row: Room;
+    isClick?: boolean
 };
 export type RoomListProps = {
     rows: Room[];
@@ -31,6 +32,6 @@ export type RoomListProps = {
 };
 export type MenuItemType = {
     key: string;
-    icon: JSX.Element;
+    icon?: JSX.Element;
     label?: any;
 };

@@ -10,7 +10,7 @@ export default function renderRoomsAsList({ rows }: RoomListProps) {
     return rows.map((row, index) => (
         <div className="PosRelative">
             <Link className="DecorateNone" key={index} to={`${window.location.pathname}/${row.id}`}>
-                <Card className="card" hoverable>
+                <Card className="card" style={{ marginTop: 20 }}>
                     <div className="Bold">{row.name}</div>
                     {
                         (row.status == "paid") ?
@@ -23,7 +23,6 @@ export default function renderRoomsAsList({ rows }: RoomListProps) {
                                         {row.checkIn?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric' })} - {row.checkOut?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric' })}
                                     </Typography >
                                 </div>
-
                             ) :
                             (
                                 <Typography className="GridDate">
@@ -33,10 +32,12 @@ export default function renderRoomsAsList({ rows }: RoomListProps) {
                     }
                 </Card>
             </Link>
-            {/*  Service notify only appear only if serviceCount > 0 */}
             {row?.serviceCount! > 0 &&
-                <ServiceBox row={row} />
+                (
+                    <ServiceBox row={row} />
+                )
             }
+
         </div>
     ));
 };
