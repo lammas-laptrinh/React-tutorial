@@ -1,6 +1,6 @@
 import React from "react";
-import GridIcon from "../icon/GridIcon";
-import ListIcon from "../icon/ListIcon";
+import GridIcon from "@src/components/icon/GridIcon";
+import ListIcon from "@src/components/icon/ListIcon";
 import { Space, Typography } from "antd";
 import { useGrid } from "@src/context/view_context";
 
