@@ -116,6 +116,8 @@ a:hover {
 .payment {
     margin: 5% 10%;
     background: white;
+    width: 1440px;
+    height: 1024px;
 }
 
 .input {
@@ -130,7 +132,7 @@ a:hover {
 }
 
 .input-title {
-    font-size: 20px;
+    font-size: 28px;
     margin-bottom: 8px;
     display: block;
     color: #7C7E8A;
@@ -138,7 +140,8 @@ a:hover {
 
 .title {
     text-align: left !important;
-    font-size: larger;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .left-title {

@@ -1,5 +1,5 @@
 import { Button, Col, Row, Space } from "antd";
-import InputField from "../input";
+import InputField from "./input";
 import SubInfo from "./subInfo";
 import { useState } from "react";
 import PaypalCheckout from "./PaypalCheckout";

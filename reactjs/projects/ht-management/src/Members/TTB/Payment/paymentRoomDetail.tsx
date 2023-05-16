@@ -9,7 +9,7 @@ export default function PaymentRoomDetail() {
             <img src={room} className="img" alt="Logo" />
             <Space className="roomDetail">
                 <div className="title">
-                    <h2>Payment Detail</h2>
+                    <h2>King Room</h2>
                 </div>
                 <div className="roomInfo">
                     <p>orem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
