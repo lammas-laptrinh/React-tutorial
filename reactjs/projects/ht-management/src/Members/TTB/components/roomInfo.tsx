@@ -1,6 +1,6 @@
 
 import { RoomProps } from '../types';
-import { Button, Rate } from 'antd';
+import { Button, Col, Rate, Row } from 'antd';
 import { Avatar, Divider, Tooltip, DatePicker } from 'antd';
 import { AntDesignOutlined, UserOutlined, CaretUpOutlined, KeyOutlined, IdcardOutlined, CheckCircleOutlined, CloseSquareOutlined } from '@ant-design/icons';
 import { useState } from "react";
@@ -28,7 +28,7 @@ export default function RoomInfo({ row }: RoomProps) {
     const checkInFormatted = dayjs(row?.checkinDate).format(dateFormat);
     const checkOutFormatted = dayjs(row?.checkoutDate).format(dateFormat);
     console.log(checkInFormatted);
-    
+
     return (
         <div className='roomInfoSite' style={{ minHeight: '100vh' }}>
             <div className='roomDetailTitle'>
@@ -36,34 +36,42 @@ export default function RoomInfo({ row }: RoomProps) {
                 <Rate allowHalf defaultValue={4.5} />
             </div>
             <Divider />
-            <div style={{ display: 'flex' }}>
-                <div className="Flex1">
-                    <Avatar.Group maxCount={5} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" />
-                        </Tooltip>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
-                        </Tooltip>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
-                        </Tooltip>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar style={{ backgroundColor: '#59g068' }} icon={<CaretUpOutlined />} />
-                        </Tooltip>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar style={{ backgroundColor: '#f24611' }} icon={<UserOutlined />} />
-                        </Tooltip>
-                        <Tooltip title="Ant User" placement="top">
-                            <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
-                        </Tooltip>
-                        <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
-                    </Avatar.Group>
-                </div>
+            <div>
+                <Row>
+                    <Col span={12}>
+                        <div className="user-review">
+                            <Avatar.Group maxCount={5} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2" />
+                                </Tooltip>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
+                                </Tooltip>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+                                </Tooltip>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar style={{ backgroundColor: '#59g068' }} icon={<CaretUpOutlined />} />
+                                </Tooltip>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar style={{ backgroundColor: '#f24611' }} icon={<UserOutlined />} />
+                                </Tooltip>
+                                <Tooltip title="Ant User" placement="top">
+                                    <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+                                </Tooltip>
+                                <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
+                            </Avatar.Group>
+                        </div>
+                    </Col>
+                    <Col span={12}>
+                        <div className="DetailReview">
+                            32 Reviews
+                        </div>
+                    </Col>
+                </Row>
+
                 {/* this is the review.count. It had set default at 32 */}
-                <div className="DetailReview">
-                    32 Reviews
-                </div>
+
             </div>
             <br />
             {/* this is Description part */}
@@ -82,59 +90,41 @@ export default function RoomInfo({ row }: RoomProps) {
                 User's Room Detail
             </div> */}
             <div className="RoomInfoContainer">
-                <div className="RoomInfoItem">
-                    <div className="Flex1">
-                        CheckIn - CheckOut Date:
-                    </div>
-                    <div className="Flex1">
-                        <RangePicker
-                            className="RangePicker"
-                            defaultValue={(row?.status == 'paid') ? [dayjs('',checkInFormatted), dayjs('',checkOutFormatted)] : null}
-                            format={dateFormat}
-                        />
-                    </div>
-                </div>
-                <div className="RoomInfoItem">
-                    <div className="Flex1">
-                        Room ID
-                    </div>
-                    <div className="Flex1">
-                        <Button icon={<IdcardOutlined />}>
-                            {row.id}
-                        </Button>
-                    </div>
-                </div>
-                <div className="RoomInfoItem">
-                    <div className="Flex1">
-                        Room Name:
-                    </div>
-                    <div className="Flex1">
-                        <Button icon={<KeyOutlined />}>
-                            {row.roomName}
-                        </Button>
-                    </div>
-                </div>
-                <div className="RoomInfoItem">
-                    <div className="Flex1">
-                        Status:
-                    </div>
-                    <div className="Flex1">
-                        {
-                            (row.status == 'paid') ?
-                                (
-                                    <Button style={{ backgroundColor: 'yellow' }} icon={<CheckCircleOutlined />}>
-                                        {row.status}
-                                    </Button>
-                                )
-                                :
-                                (
-                                    <Button icon={<CloseSquareOutlined />}>
-                                        {row.status}
-                                    </Button>
-                                )
-                        }
-                    </div>
-                </div>
+                <Row>
+                    <Col span={12}>
+                        <div className="RoomInfoItem">
+                            <RangePicker
+                                className="RangePicker"
+                                defaultValue={(row?.status == 'paid') ? [dayjs('', checkInFormatted), dayjs('', checkOutFormatted)] : null}
+                                format={dateFormat}
+                            />
+                        </div>
+                    </Col>
+                    <Col span={12}>
+                        <div className="RoomInfoItem">
+                            <Button className='room-id' icon={<IdcardOutlined />}>
+                                Room -{row.id}
+                            </Button>
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col span={12}>
+                        <div className="RoomInfoItem">
+                            <Button className='room-id room-member' icon={<IdcardOutlined />}>
+                                Adult-{row.bedAmount}
+                            </Button>
+                        </div>
+                    </Col>
+                    <Col span={12}>
+                        <div className="RoomInfoItem">
+                            <Button className='room-id' icon={<IdcardOutlined />}>
+                                Room - {row.id}
+                            </Button>
+                        </div>
+                    </Col>
+                </Row>
             </div>
             {
                 row?.status !== "pay" &&
