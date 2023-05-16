@@ -36,6 +36,6 @@ export type RoomType = {
 
 export type MenuItemType = {
     key: string;
-    icon: JSX.Element;
+    icon?: JSX.Element;
     label?: any;
 };

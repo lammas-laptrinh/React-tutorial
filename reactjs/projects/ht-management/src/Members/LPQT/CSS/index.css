@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 .SiderTittle {
-  max-width: 70px;
-  min-height: 30px;
-  margin: 16px;
-  margin-right: 20px;
-  margin-left: 20px;
+  width: 98px;
+  height: 64px;
+  margin-left: 7px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   background: white;
   text-align: center;
   border-radius: 25px;
@@ -12,26 +18,29 @@
   justify-content: center;
   color: orange;
   font-weight: bold;
+  border: 1px solid #E5E5E9;
+  font-size: 28px;
 }
 
 .MainContainer {
   display: grid;
   grid-template-areas:
-    "sider navbar"
-    "sider main";
+    "sider navbar navbar"
+    "sider main main";
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 11fr);
   height: 100vh;
 }
 
 .PSNavbar {
   grid-area: navbar;
   max-height: 50px;
-  min-width: 80vw
+  min-width: 100%
 }
 
 .PSSider {
   grid-area: sider;
   min-height: 100vh;
-  min-width: 10vw
+  min-width: 100px
 }
 
 .PSMain {
@@ -67,7 +76,7 @@
 }
 
 .ViewChangeContainer {
-  margin-left: 900px;
+  margin-left: 1100px;
   display: flex;
   align-items: center
 }
@@ -87,7 +96,14 @@
 
 .MainViewTextTittle {
   font-weight: bold;
-  margin-right: 10px
+  margin-right: 10px;
+  color: #8c8c91;
+}
+
+.MainViewTextTittle1 {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 27px;
 }
 
 .marginRight10 {
@@ -95,15 +111,24 @@
 }
 
 .DetailImage {
-  max-width: 35vw;
-  height: 100vh
+  width: 100%;
+  height: 100%
 }
 
 .DetailReview {
   flex: 1;
   font-weight: bold;
   font-size: 25px;
-  margin-left: 400px
+  margin-left: 350px;
+
+}
+
+
+.Weight600 {
+  font-weight: 600;
+  margin-top: 30px;
+  font-size: 26px;
+  line-height: 24px;
 }
 
 .DetailDes {
@@ -111,10 +136,26 @@
   font-size: 20px
 }
 
+.DetailDePayment {
+  margin-top: 17px;
+  max-width: 780px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
+}
+
+.BorderBottom {
+  margin-top: 21px;
+  border-bottom: #C1C1C1 1px solid;
+}
+
+
 .NavVer {
   min-width: 100px;
   margin-top: 16px;
   margin-left: 16px;
+  color: #429AE4;
+  font-weight: bold;
 }
 
 .NavIcon {
@@ -124,16 +165,23 @@
 
 .NavUserName {
   margin-bottom: 90px;
-  margin-top: 8px
+  margin-top: 11px;
+  font-weight: bold;
 }
 
 .displayFlex {
   display: flex;
 }
 
+.displayFlexColor {
+  display: flex;
+  background-color: #E5E5E5;
+  max-height: 50px;
+}
+
 .NavMoveRight {
   display: flex;
-  margin-left: 1100px;
+  margin-left: auto;
 }
 
 .FullDes {
@@ -143,7 +191,7 @@
 
 .SiderLayout {
   min-height: 100vh;
-  background-color: #001529
+  background-color: white
 }
 
 .SiderMenu {
@@ -162,22 +210,24 @@
 }
 
 .RoomImageFlex {
-  flex: 0.3;
+  flex: 1;
   margin-right: 40px
 }
 
 .RoomInfoFlex {
-  flex: 2;
+  flex: 1;
 }
 
 .RoomInfoContainer {
-  max-width: 500px;
-  min-height: 200px;
+  width: 497px;
+  height: 180px;
   background-color: #e1eaf7;
-  border-radius: 15px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 30px
+  margin-top: 30px;
+  padding: 20px;
+  margin-top: 50px;
 }
 
 .RoomInfoItem {
@@ -190,6 +240,24 @@
 
 .Flex1 {
   flex: 1
+}
+
+.Flex123 {
+  width: 145px;
+  height: 49px;
+  border: 2px solid #E5E5E9;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+
+.Flex12 {
+  width: 216px;
+  height: 49px;
+  border: 2px solid #E5E5E9;
+  border-radius: 20px;
+  margin-top: 15px;
 }
 
 .RoomInfoTittle {
@@ -216,12 +284,13 @@
 }
 
 .RoomBeneFit {
-  min-height: 120px;
-  max-width: 600px;
+  height: 119px;
+  width: 520px;
+  margin-top: 50px;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-Repeat: no-repeat;
   background-position: center;
-  margin-left: 130px;
+  margin-left: 90px;
 }
 
 .ChooseRoomButon {
@@ -230,7 +299,9 @@
   border-radius: 20px;
   background-color: #F1E2D3;
   font-weight: bold;
-  font-size: 20px
+  font-size: 20px;
+  border: 2px solid #C18346;
+  margin-top: 50px;
 }
 
 .ButtonPos {
@@ -242,8 +313,9 @@
 }
 
 .RoomInfoTypeName {
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: bolder;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .Card {
@@ -251,6 +323,10 @@
   min-height: 150px;
   margin-left: 10px;
   border-radius: 6px;
+}
+
+.card {
+  margin-top: 20px;
 }
 
 .top40 {
@@ -263,15 +339,24 @@
 }
 
 .SubmmitButtonContain {
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-.ServiceSubmitBut {
-  background-color: #164aff;
+  margin-top: 31px;
+  padding: 12px 20px;
+  gap: 10px;
+  width: 218px;
+  height: 74px;
+  background: #ED712E;
+  border-radius: 8px;
   color: white;
-  width: 120px;
-  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 500px;
+  border: 0;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
 }
 
 .RequireContain {
@@ -282,7 +367,8 @@
 }
 
 .Width515 {
-  width: 515px;
+  width: 737px;
+  color: yellow;
 }
 
 .RoomNumberContain {
@@ -290,6 +376,378 @@
   text-align: left;
 }
 
-.red{
+.red {
   color: red;
+}
+
+.LeftAuto {
+  margin-left: auto;
+  font-size: 23px;
+  line-height: 24px;
+  margin-top: 22px;
+}
+
+.PackageInfoLeft {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.PackageInfoLeftInner {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.TopBox {
+  height: 460px;
+  width: 694px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+.UnderBoxText {
+  height: 430px;
+  width: 624px;
+  background-color: #f3f5f9;
+  position: absolute;
+  display: block;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-right: 20px;
+}
+
+.PackageInfoTittle {
+  font-weight: 700;
+  margin-right: 120px;
+  font-size: 35px;
+  line-height: 24px;
+}
+
+.MarginBottom20 {
+  margin-bottom: 20px;
+}
+
+.MB20TextL {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.MT101 {
+  margin-top: 10px;
+
+}
+
+.MT10 {
+  margin-top: 10px;
+  margin-right: 41px;
+}
+
+.InputStyle140 {
+  height: 81px;
+  width: 257px;
+  border-radius: 8px;
+  border: 2px solid #DEDEE0;
+  font-size: 18px;
+  line-height: 17px;
+  margin-top: 15px;
+}
+
+.InputStyle300 {
+  height: 81px;
+  width: 573px;
+  border-radius: 8px;
+  border: 2px solid #DEDEE0;
+  font-size: 18px;
+  line-height: 17px;
+  margin-top: 15px;
+}
+
+.DEvsCVVContain {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.FlexDirecColumn {
+  flex-direction: column;
+}
+
+.FlexDirecColumnMl15 {
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.PageDButton {
+  margin-top: 60px;
+}
+
+.PageDButtonStyle {
+  background-color: #ED712E;
+  color: white;
+  height: 74px;
+  width: 560px;
+  padding: 12px, 20px, 12px, 20px;
+  border: 0;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
+  gap: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+
+.PriceValue__ {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
+  margin-top: 15px;
+}
+
+.PriceContain {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 62px;
+}
+
+.PriceValueContain {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.PriceValue_Contain {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: #C1C1C1 1px solid;
+  line-height: 40px;
+}
+
+.service-box-container {
+  background-color: #FC7D72;
+  width: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.service-box-content {
+  color: white;
+  overflow: auto;
+}
+
+.LineView {
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.GridView {
+  height: 15px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.RoomPageContain {
+  background-color: #E5E5E5;
+  min-height: 100vh;
+  overflow: hidden
+}
+
+.ServiceBoxCount {
+  background-color: #FC7D72;
+  height: 38.1px;
+  width: 40px;
+  color: white;
+  border-radius: 3px;
+  margin-left: 95px;
+  text-align: center;
+  line-height: 38.1px;
+}
+
+.ServiceBoxMainContain {
+  position: absolute;
+  bottom: 160px;
+  left: 90px;
+}
+
+.SearchBar {
+  width: 15%;
+  min-width: 80px
+}
+
+.SiderItem {
+  margin-left: 9px;
+  width: 43px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.RoomInfoContain {
+  min-height: 100vh;
+  padding: 80px
+}
+
+.RoomInfoBack {
+  margin-left: auto;
+  height: 40px;
+  width: 120px;
+  color: white;
+  background-color: #f22f46;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.RoomInfoBack:hover {
+  background-color: #fa622f;
+}
+
+.NotPay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.PkgInfoItemTittle {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-top: 22px;
+  margin-bottom: 21;
+}
+
+.PackageInfoItem {
+  font-size: 26px;
+  color: #7C7E8A;
+  line-height: 24px;
+  margin-top: 45px;
+}
+
+.PaymentDetailTittle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 43.65px;
+  margin-bottom: 14px;
+}
+
+.PaymentED_CVV {
+  font-size: 23px;
+  color: #7C7E8A;
+  line-height: 24px;
+  margin-top: 27px;
+}
+
+.PaymentDetaiContain {
+  max-width: 573px;
+}
+
+.PriceTittle {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 34px;
+  color: #626872;
+  margin-top: 15px;
+}
+
+.SafetyCertificateOutlined {
+  height: 14px;
+  width: 10px;
+  margin-right: 25px
+}
+
+.PaymentMainContain {
+  display: flex;
+  padding-top: 61px;
+}
+
+.IndexPkgInfo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.IndexPaymentDetail {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 115px;
+}
+
+.ServiceMainContain {
+  width: 904px;
+  height: 990px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.Width515 .ant-select-selector {
+  height: 81px !important;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 28px !important;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-radius: 8px !important;
+  border: 2px solid #DEDEE0;
+}
+
+.BookServiceTittle {
+  font-weight: 700;
+  font-size: 32px;
+  margin-right: 580px;
+}
+
+.Width515 .tox-tinymce {
+  height: 200px !important;
+}
+
+.BookServiceItemTitle {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 17px;
+  color: #7C7E8A;
+  margin-top: 54px;
+  margin-bottom: 15px;
+}
+
+.BookServiceItemTitleBold {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.form-container{
+  background-color: #E5E5E5;
+  min-height: 100vh;
 }

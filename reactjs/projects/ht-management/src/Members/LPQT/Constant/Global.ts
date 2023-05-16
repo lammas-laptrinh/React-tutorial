@@ -1,5 +1,5 @@
-import { Room } from "../Room/type";
-import { BellOutlined } from '@ant-design/icons';
+import { Room } from "../Rooms/type";
+import DashboardIcon from '../assets/images/DashboardIcon.svg'
 
 export const options = [
     { value: "ship", label: "Giao đồ" },
@@ -79,7 +79,7 @@ export const MenuItem = [
     {
         id: 1,
         name: 'Service',
-        icon: BellOutlined,
+        icon: DashboardIcon,
         url: '/service'
     },
 ];
