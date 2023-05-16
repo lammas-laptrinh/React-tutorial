@@ -70,7 +70,6 @@ a:hover {
 } */
 .content {
     min-height: 800px;
-    margin: 0 30%;
 }
 
 .heading {
@@ -99,13 +98,47 @@ a:hover {
 }
 
 .service-form-container {
-
     background-color: white;
     margin-top: 20px;
-    padding: 50px;
     font-size: 20px;
-
+    width: 905px;
+    height: 785px;
+    margin: 5% 45%;
+}
+.form-container{
+    margin: 0 83px;
 }
 .item-title{
     margin-bottom: 10px;
+}
+.item-input{
+    width: 737px;
+}
+.service-title
+{
+    font-size: 32px;
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+/* .ant-select-selector{
+    height: 81px !important;
+}
+.ant-select-selection-placeholder
+{
+    font-size: 28px;
+    line-height: 70px !important;
+} */
+.btn-sub{
+    width: 218px;
+    height: 75px;
+    background-color: #ED712E;
+    color: #FAFAFA !important;
+    font-size: 23px;
+}
+.submit-btn{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
 }

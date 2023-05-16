@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast, ToastContainer } from 'react-toastify';
 import { useForm, Controller } from "react-hook-form";
-import { Select, Space } from "antd";
+import { Button, Col, Row, Select, Space } from "antd";
 import 'react-toastify/dist/ReactToastify.css';
 import { Editor } from '@tinymce/tinymce-react';
 import { rooms } from '../commons';
@@ -43,7 +43,7 @@ export default function Service() {
     }
     //return this to UI
     return (
-        <Space>
+        <Space className='service-container'>
             <ToastContainer />
             <Space className='service-form-container' >
                 <form className='form-container' onSubmit={handleSubmit(onSubmitHandler)} style={{
@@ -51,7 +51,7 @@ export default function Service() {
                     flexDirection: 'column',
                     alignItems: 'center',
                 }}>
-                    <h2>Đặt dịch vụ</h2>
+                    <div className='service-title'>Đặt dịch vụ</div>
                     <div className='form-item' style={{ marginBottom: '20px', textAlign: 'left', }}>
                         <div className='item-title'>
                             <label >Loại</label>
@@ -65,7 +65,7 @@ export default function Service() {
                                 render={({ field }) => (
                                     <Select
                                         {...field}
-                                        style={{ width: '525px' }}
+                                        style={{ width: '737px' }}
                                         id='type'
                                         showSearch
                                         size='large'
@@ -99,7 +99,7 @@ export default function Service() {
                                 render={({ field }) => (
                                     <Select
                                         {...field}
-                                        style={{ width: '525px' }}
+                                        style={{ width: '737px' }}
                                         id='type'
                                         showSearch
                                         size='large'
@@ -120,12 +120,13 @@ export default function Service() {
                             {errors.roomNumber?.message && <p style={{ color: 'red' }}>{errors.roomNumber.message as ReactNode}</p>}
                         </div>
                     </div>
-                    <div>
+                    <div className='text-editor'>
+                        <strong>Nội dung</strong>
                         <Editor
                             apiKey="933cfs2ip895ocsuxg76febb5rd939lrkex2ehrs23sl25yy"
                             init={{
-                                height: 500,
-                                width: 530,
+                                height: 250,
+                                width: 737,
                                 menubar: true,
                                 plugins: 'autolink link image lists',
                                 toolbar: 'undo redo | bold italic | alignleft aligncenter alignright',
@@ -143,10 +144,10 @@ export default function Service() {
                             onEditorChange={handleEditorChange}
                         />
                     </div>
-                    <div className='form-item' style={{ marginBottom: '20px', marginTop: '40px' }}>
-                        <button style={{ backgroundColor: '#164aff', color: 'white', width: '120px', height: '40px' }}>
+                    <div className='form-item submit-btn' style={{ marginBottom: '20px', marginTop: '40px' }}>
+                        <Button className='btn-sub'  danger>
                             Gửi
-                        </button>
+                        </Button>
                     </div>
                 </form>
             </Space>
