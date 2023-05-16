@@ -10,12 +10,12 @@ const { Title } = Typography;
 const Dashboard = () => {
   return (
     <div>
-      <Layout>
-        <HeaderPage />
-      </Layout>
-      <Row style={{ margin: "2rem 1rem" }}>
+      <Row style={{ margin: "1rem" }}>
         <Col span={20} push={4}>
-          <Space className="flex items-center justify-between mb-5">
+          <Layout>
+            <HeaderPage />
+          </Layout>
+          <Space className="flex items-center justify-between my-5 ml-[1rem]">
             <Space className="flex items-center">
               <Title
                 level={3}
@@ -26,7 +26,7 @@ const Dashboard = () => {
             </Space>
             <View />
           </Space>
-          <div className="ml-[2rem]">
+          <div className="ml-[3rem]">
             <Rooms />
           </div>
         </Col>

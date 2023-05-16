@@ -4,7 +4,7 @@ import {
   UsergroupAddOutlined,
   FileTextOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
+import { Avatar, MenuProps } from "antd";
 import { Menu } from "antd";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -27,15 +27,40 @@ function getItem(
 
 const items: MenuProps["items"] = [
   getItem(
-    "Dashboard",
-    "grp",
-    null,
-    [
-      getItem(<PieChartOutlined />, "Home"),
-      getItem(<UsergroupAddOutlined />, "Group"),
-      getItem(<FileTextOutlined />, "File"),
-    ],
-    "group"
+    <Avatar
+      size="large"
+      style={{
+        backgroundColor: "#F4F6F9",
+        color: "#F1AC4D",
+        fontSize: 25,
+        fontWeight: "800",
+        width: 98,
+        height: 64,
+        lineHeight: "64px",
+        borderRadius: "32px",
+      }}
+    >
+      DTD
+    </Avatar>,
+    "Avatar"
+  ),
+  getItem(
+    <PieChartOutlined
+      style={{ fontSize: 30, transform: "translateX(30px)" }}
+    />,
+    "Home"
+  ),
+  getItem(
+    <UsergroupAddOutlined
+      style={{ fontSize: 30, transform: "translateX(30px)" }}
+    />,
+    "Group"
+  ),
+  getItem(
+    <FileTextOutlined
+      style={{ fontSize: 30, transform: "translateX(30px)" }}
+    />,
+    "File"
   ),
 ];
 
@@ -47,9 +72,10 @@ const Sidebar = () => {
     <Menu
       onClick={onClick}
       style={{
-        width: 256,
-        boxShadow: "10px 10px 20px rgba(218, 213, 213, 50%)",
-        borderRadius: "12px",
+        width: 240,
+        height: "100%",
+        backgroundColor: "#fff",
+        // padding: "1.5rem 0",
       }}
       className="border-gray-300"
       defaultSelectedKeys={["1"]}

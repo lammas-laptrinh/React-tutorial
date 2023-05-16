@@ -8,9 +8,9 @@ const HeaderPage = () => {
   return (
     <Header
       className="header flex items-center justify-between"
-      style={{ backgroundColor: "#eaeaea" }}
+      style={{ backgroundColor: "#fff", width: "1285px" }}
     >
-      <div className="Version">Verison 1.19.</div>
+      <div className="Version text-[#429AE4] font-bold">Verison 1.0.0</div>
       <div className="header-list list-none flex items-center justify-between">
         <li className="header-item flex items-center">
           <BellOutlined />

@@ -4,6 +4,11 @@
 
 body {
   overflow-x: hidden;
+  background-color: #fff !important;
+}
+
+.ant-layout {
+  background-color: #fff !important;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -66,4 +71,17 @@ body {
 
 .content p {
   padding: 0.5rem 0;
+}
+
+/* sidebar */
+
+.ant-menu-item {
+  display: flex;
+  align-items: center;
+  height: 64px !important;
+  margin: 1.5rem 0;
+}
+
+.ant-menu-item:nth-child(1) {
+  margin-bottom: 1.5rem;
 }
