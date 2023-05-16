@@ -12,11 +12,6 @@ export default function PackageInfo(props: RoomProps) {
             <div
                 className='TopBox' style={{ backgroundImage: `url(${row.img})` }}
             />
-            {/* Hộp dưới */}
-            <div
-                className='UnderBox'
-            >
-            </div>
             {/*  Đoạn text của hộp dưới */}
             <div
                 className='UnderBoxText'
@@ -30,17 +25,17 @@ export default function PackageInfo(props: RoomProps) {
                 <div className='BorderBottom'></div>
                 <div className='PackageInfoLeft'>
                     <div className='PackageInfoLeftInner'>
-                        <div className='item-tittle'>
+                        <div className='PkgInfoItemTittle'>
                             Dịch vụ
                         </div>
                         <div className='LeftAuto'>
-                            Wifi, Điện nước
+                            Wifi,  Gym, Food
                         </div>
                     </div>
                 </div>
                 <div className='PackageInfoLeft' >
                     <div className='PackageInfoLeftInner' >
-                        <div className='item-tittle'>
+                        <div className='PkgInfoItemTittle'>
                             Thời gian
                         </div>
                         <div className='LeftAuto'>
@@ -49,8 +44,8 @@ export default function PackageInfo(props: RoomProps) {
                     </div>
                 </div>
                 <div className='BorderBottom'></div>
-                <div className='Bold20'>
-                    <SafetyCertificateOutlined />Secure Payment
+                <div className='Weight600'>
+                    <SafetyCertificateOutlined className='SafetyCertificateOutlined' />Secure Payment
                 </div>
             </div>
         </div >

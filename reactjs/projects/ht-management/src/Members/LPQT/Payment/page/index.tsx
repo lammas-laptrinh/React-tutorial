@@ -9,11 +9,11 @@ export default function PaymentPage() {
     const roomId = 'K_1';
     const matchedRoom = roomData.find((room) => room.id === roomId);
     return (
-        <div style={{ display: 'flex' }}>
-            <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', marginRight:'50px' }}>
+        <div className="PaymentMainContain">
+            <div className="IndexPaymentDetail">
                 <PaymentDetail row={matchedRoom!} />
             </div>
-            <div style={{ flex: 1 }}>
+            <div className="IndexPkgInfo">
                 <PackageInfo row={matchedRoom!} />
             </div>
             <ToastContainer />

@@ -125,26 +125,25 @@ export default function PaymentDetail(props: RoomProps) {
 
     //return this to UI
     return (
-        <form className='form-container' onSubmit={handleSubmit(onSubmitHandler)}>
-            <h2 className='MarginBottom20'>Payment Details</h2>
+        <form className='PaymentDetaiContain' onSubmit={handleSubmit(onSubmitHandler)}>
+            <div className='PaymentDetailTittle'>Payment Details</div>
             <div className='MB20TextL' >
-                <div className='item-tittle'>
-                    <label >Email Address</label>
+                <div className='PackageInfoItem'>
+                    <label >Email</label>
                 </div>
-                <div className='MT10' >
+                <div className='MT101' >
                     <input
                         {...register("email")} // register the name to validate
                         name='email'
                         id='email'
                         type='text'
-                        placeholder='Email Address'
                         className='InputStyle300'
                     />
                     {errors.email?.message && <p className='red'>{errors.email.message as ReactNode}</p>} {/* // show validate message */}
                 </div>
             </div>
             <div className='MB20TextLeft'>
-                <div className='item-tittle'>
+                <div className='PackageInfoItem'>
                     <label >Card Number</label>
                 </div>
                 <div className='MT10'>
@@ -152,7 +151,7 @@ export default function PaymentDetail(props: RoomProps) {
                         {...register("cardNumber")}
                         name='cardNumber'
                         id='cardNumber'
-                        placeholder='XXXX   XXXX   XXXX'
+                        placeholder='       XXXX   XXXX   XXXX   XXXX'
                         className='InputStyle300'
                     />
                     {errors.cardNumber?.message && <p className='red'>{errors.cardNumber.message as ReactNode}</p>}
@@ -160,7 +159,7 @@ export default function PaymentDetail(props: RoomProps) {
             </div>
             <div className='DEvsCVVContain' >
                 <div className='FlexDirecColumn' >
-                    <div className='item-tittle'>
+                    <div className='PaymentED_CVV'>
                         <label >Expiration Date</label>
                     </div>
                     <div className='MT10'>
@@ -169,14 +168,14 @@ export default function PaymentDetail(props: RoomProps) {
                             name='expirationDate'
                             id='expirationDate'
                             type='text'
-                            placeholder='mm/yy'
+                            placeholder='      mm / yy'
                             className='InputStyle140'
                         />
                         {errors.expirationDate?.message && <p className='red'>{errors.expirationDate.message as ReactNode}</p>}
                     </div>
                 </div>
                 <div className='FlexDirecColumnMl15'>
-                    <div className='item-tittle'>
+                    <div className='PaymentED_CVV'>
                         <label htmlFor='cvv'>CVV</label>
                     </div>
                     <div className='MT10'>
@@ -185,36 +184,34 @@ export default function PaymentDetail(props: RoomProps) {
                             {...register("cvv")}
                             name='cvv'
                             id='cvv'
-                            placeholder='XXX'
+                            placeholder='      XXX'
                             type="number"
-
                         />
                         {errors.cvv?.message && <p className='red'>{errors.cvv.message as ReactNode}</p>}
                     </div>
                 </div>
             </div>
-
             <div className='PriceContain'>
                 <div className='PriceValueContain'>
-                    <div className='item-tittle'>
+                    <div className='PriceTittle'>
                         <label >Subtotal</label>
                     </div>
-                    <div className='PriceValue' >
+                    <div className='PriceValue__' >
                         <label>${row.price?.subtotal}</label>
                     </div>
                 </div>
                 <div className='PriceValue_Contain'>
-                    <div className='item-tittle'>
+                    <div className='PriceTittle'>
                         <label >Flatform Fee</label>
                     </div>
-                    <div className='PriceValue_'>
+                    <div className='PriceValue__'>
                         <label>${row.price?.flatform}</label>
                     </div>
                 </div>
             </div>
             <div className='form-item'>
                 <div className='PriceValueContain'>
-                    <div className='item-tittle'>
+                    <div className='PriceTittle'>
                         <label >Total</label>
                     </div>
                     <div className='PriceValue__'>

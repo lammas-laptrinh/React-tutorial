@@ -27,7 +27,7 @@ body {
   grid-template-areas:
     "sider navbar navbar"
     "sider main main";
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 11fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 11fr);
   height: 100vh;
 }
 
@@ -124,9 +124,11 @@ body {
 }
 
 
-.Bold20 {
-  font-weight: bold;
-  margin-top: 20px;
+.Weight600 {
+  font-weight: 600;
+  margin-top: 30px;
+  font-size: 26px;
+  line-height: 24px;
 }
 
 .DetailDes {
@@ -135,13 +137,15 @@ body {
 }
 
 .DetailDePayment {
-  margin-top: 8px;
+  margin-top: 17px;
   max-width: 780px;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
 }
 
 .BorderBottom {
-  margin-top: 10px;
+  margin-top: 21px;
   border-bottom: #C1C1C1 1px solid;
 }
 
@@ -368,6 +372,9 @@ body {
 
 .LeftAuto {
   margin-left: auto;
+  font-size: 23px;
+  line-height: 24px;
+  margin-top: 22px;
 }
 
 .PackageInfoLeft {
@@ -382,16 +389,11 @@ body {
   flex-direction: row;
 }
 
-.UnderBox {
-  height: 300px;
-  width: 350px;
-  background-color: #f3f5f9;
-  display: block;
-}
+
 
 .TopBox {
-  height: 280px;
-  width: 350px;
+  height: 460px;
+  width: 694px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -399,18 +401,21 @@ body {
 }
 
 .UnderBoxText {
-  height: 250px;
-  width: 300px;
+  height: 430px;
+  width: 624px;
   background-color: #f3f5f9;
   position: absolute;
-  top: 320px;
-  left: 25px
+  display: block;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-right: 20px;
 }
 
 .PackageInfoTittle {
-  font-weight: bold;
+  font-weight: 700;
   margin-right: 120px;
-  font-size: 20px;
+  font-size: 35px;
+  line-height: 24px;
 }
 
 .MarginBottom20 {
@@ -422,22 +427,37 @@ body {
   text-align: left;
 }
 
+.MT101 {
+  margin-top: 10px;
+
+}
+
 .MT10 {
   margin-top: 10px;
+  margin-right: 41px;
 }
 
 .InputStyle140 {
-  height: 30px;
-  width: 140px;
+  height: 81px;
+  width: 257px;
+  border-radius: 8px;
+  border: 2px solid #DEDEE0;
+  font-size: 18px;
+  line-height: 17px;
+  margin-top: 15px;
 }
 
 .InputStyle300 {
-  height: 30px;
-  width: 300px;
+  height: 81px;
+  width: 573px;
+  border-radius: 8px;
+  border: 2px solid #DEDEE0;
+  font-size: 18px;
+  line-height: 17px;
+  margin-top: 15px;
 }
 
 .DEvsCVVContain {
-  margin-top: 20px;
   text-align: left;
   display: flex;
   flex-direction: row;
@@ -453,45 +473,48 @@ body {
 }
 
 .PageDButton {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .PageDButtonStyle {
   background-color: #ED712E;
   color: white;
-  height: 54px;
-  width: 300px;
-}
+  height: 74px;
+  width: 560px;
+  padding: 12px, 20px, 12px, 20px;
+  border: 0;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
+  gap: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 
-.PriceValue {
-  margin-left: 200px;
-  font-weight: bold;
-}
-
-.PriceValue_ {
-  margin-left: 170px;
-  font-weight: bold;
 }
 
 .PriceValue__ {
-  margin-left: 220px;
-  font-weight: bold;
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
+  margin-top: 15px;
 }
 
 .PriceContain {
   text-align: left;
   display: flex;
   flex-direction: column;
+  margin-top: 62px;
 }
 
 .PriceValueContain {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
 }
 
 .PriceValue_Contain {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   border-bottom: #C1C1C1 1px solid;
@@ -596,4 +619,69 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+
+.PkgInfoItemTittle {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-top: 22px;
+  margin-bottom: 21;
+}
+
+.PackageInfoItem {
+  font-size: 26px;
+  color: #7C7E8A;
+  line-height: 24px;
+  margin-top: 45px;
+}
+
+.PaymentDetailTittle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 43.65px;
+  margin-bottom: 14px;
+}
+
+.PaymentED_CVV {
+  font-size: 23px;
+  color: #7C7E8A;
+  line-height: 24px;
+  margin-top: 27px;
+}
+
+.PaymentDetaiContain {
+  max-width: 573px;
+}
+
+.PriceTittle {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 34px;
+  color: #626872;
+  margin-top: 15px;
+}
+
+.SafetyCertificateOutlined {
+  height: 14px;
+  width: 10px;
+  margin-right: 25px
+}
+
+.PaymentMainContain {
+  display: flex;
+  padding-top: 61px;
+}
+
+.IndexPkgInfo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.IndexPaymentDetail {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 115px;
 }
