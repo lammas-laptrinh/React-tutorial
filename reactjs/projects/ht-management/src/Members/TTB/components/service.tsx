@@ -27,7 +27,7 @@ export default function Service() {
     });
     // Update the state variable in response to changes to the text editor content
 
-    const { register, handleSubmit, formState: { errors }, reset, control } = useForm({
+    const { handleSubmit, formState: { errors }, reset, control } = useForm({
         resolver: yupResolver(paymentDetailsSchema),
     });
     const onSubmitHandler = (data: any) => {

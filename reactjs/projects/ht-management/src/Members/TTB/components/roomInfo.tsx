@@ -2,7 +2,7 @@
 import { RoomProps } from '../types';
 import { Button, Col, Rate, Row } from 'antd';
 import { Avatar, Divider, Tooltip, DatePicker } from 'antd';
-import { AntDesignOutlined, UserOutlined, CaretUpOutlined, KeyOutlined, IdcardOutlined, CheckCircleOutlined, CloseSquareOutlined } from '@ant-design/icons';
+import { AntDesignOutlined, UserOutlined, CaretUpOutlined, IdcardOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -16,10 +16,6 @@ export default function RoomInfo({ row }: RoomProps) {
     const showFullDescriptionHandler = () => {
         setFullDescription(!showFullDescription);
     };
-    const description = showFullDescription
-        ? row.description
-        : row.description?.slice(0, 90);
-
     //handle Day
     dayjs.extend(customParseFormat);
     const { RangePicker } = DatePicker;

@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+
 import { useParams } from "react-router-dom";
 
 import { Rooms } from "../types";
