@@ -15,7 +15,7 @@ function TitleRoom(props: { title: string; time: any; room: Room }) {
           <Tooltip
             placement="rightTop"
             title={props.room.modalContent?.map((item) => {
-              return <div>{item}</div>;
+              return <div key={item}>{item}</div>;
             })}
           >
             <Button danger type="primary" className="modal">

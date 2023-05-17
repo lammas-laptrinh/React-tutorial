@@ -1,14 +1,12 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Room from "../Room";
+import { Routes, Route } from "react-router-dom";
+import RoomPage from "../Room";
 import RoomDetail from "../Room/RoomDetail";
 
 export default function RouteRoom() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/room-management" element={<Room />} />
-        <Route path="/room-detail" element={<RoomDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/room-management" element={<RoomPage />} />
+      <Route path=":id" element={<RoomDetail />} />
+    </Routes>
   );
 }

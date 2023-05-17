@@ -1,12 +1,12 @@
-export interface Room {
-  id: string;
+export type Room = {
+  id: any;
   roomType: string;
   title: string;
   time: string;
   member: string;
   modal: number;
   modalContent?: string[];
-}
+};
 
 export const rooms: Room[] = [
   {
@@ -59,3 +59,7 @@ export const rooms: Room[] = [
     ],
   },
 ];
+
+export type RoomProps = {
+  row: Room;
+};

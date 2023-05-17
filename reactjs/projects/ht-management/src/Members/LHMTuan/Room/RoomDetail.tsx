@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Col,
   Row,
@@ -6,16 +5,18 @@ import {
   Typography,
   Avatar,
   Tooltip,
+  Rate,
   DatePicker,
   Button,
 } from "antd";
-import { StarOutlined } from "@ant-design/icons";
 import type { RangePickerProps } from "antd/es/date-picker";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
 import room from "../assests/room.png";
 import screen from "../assests/screen.png";
+import { Room } from "../Room/common/types";
+import { useParams } from "react-router-dom";
 
 const { Title } = Typography;
 dayjs.extend(customParseFormat);
@@ -24,7 +25,60 @@ const disabledDate: RangePickerProps["disabledDate"] = (current) => {
   return current && current < dayjs().endOf("day");
 };
 
-const RoomDetail: React.FC = () => {
+export default function RoomDetail() {
+  const { id } = useParams();
+  const rooms: Room[] = [
+    {
+      id: "1",
+      roomType: "Standard",
+      title: "Room 1",
+      time: "12/06 - 18/06",
+      member: "3",
+      modal: 2,
+      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    },
+    {
+      id: "2",
+      roomType: "Double",
+      title: "Room 2",
+      time: "12/06 - 18/06",
+      member: "3",
+      modal: 1,
+      modalContent: ["Không bật được đèn nhà tắm"],
+    },
+    {
+      id: "3",
+      roomType: "King",
+      title: "Room 3",
+      time: "12/06 - 18/06",
+      member: "3",
+      modal: 2,
+      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    },
+    {
+      id: "4",
+      roomType: "Standard",
+      title: "Room 4",
+      time: "12/06 - 18/06",
+      member: "3",
+      modal: 2,
+      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    },
+    {
+      id: "5",
+      roomType: "King",
+      title: "Room 5",
+      time: "12/06 - 18/06",
+      member: "3",
+      modal: 3,
+      modalContent: [
+        "Ống nước hỏng",
+        "Lấy thêm đồ ăn, đổi giường lớn hơn",
+        "Không bật được đèn nhà tắm",
+      ],
+    },
+  ];
+  const getRoom = rooms.find((room) => room.id === id);
   return (
     <Row>
       <Col span={12}>
@@ -33,15 +87,9 @@ const RoomDetail: React.FC = () => {
       <Col span={12}>
         <div>
           <Title level={2} className="!font-bold">
-            Room Detail
+            {getRoom?.roomType} Room
           </Title>
-          <div className="flex item-center mt-[1.5rem]">
-            <StarOutlined />
-            <StarOutlined />
-            <StarOutlined />
-            <StarOutlined />
-            <StarOutlined />
-          </div>
+          <Rate className="rate" allowHalf defaultValue={5} />
           <div className="flex item-center justify-between">
             <Avatar.Group
               className="mt-[1.5rem] mb-[1.5rem]"
@@ -61,21 +109,21 @@ const RoomDetail: React.FC = () => {
               </Tooltip>
               <Avatar icon={<AntDesignOutlined />} />
             </Avatar.Group>
-            <Title level={5} className="!leading-[96px]">
+            <Title level={5} className="review">
               39 reviews
             </Title>
           </div>
-          <Title level={5}>
+          <Title level={5} className="des">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta at
             ipsum quae iste totam quam illum officia blanditiis. Ullam voluptas
             et magnam totam quia facere vitae illo culpa minus eum?
           </Title>
 
-          <div className="flex item-center justify-center mt-[2.5rem] mb-[2.5rem]">
+          <div className="image">
             <Image preview={false} src={screen} />
           </div>
 
-          <div className="calendar bg-[#F7F6FB] p-8 rounded-3xl flex items-center justify-center mt-[4.5rem] mb-[4.5rem]">
+          <div className="calendar">
             <RangePicker disabledDate={disabledDate} />
           </div>
           <div className="flex items-center justify-center">
@@ -85,6 +133,4 @@ const RoomDetail: React.FC = () => {
       </Col>
     </Row>
   );
-};
-
-export default RoomDetail;
+}

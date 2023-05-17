@@ -128,9 +128,46 @@ a:hover {
   height: 60px;
   color: #000;
   font-weight: 700;
-  top: 200px;
+  top: 400px;
 }
 
 .cd {
   background-color: #9875;
+}
+
+.modalContent {
+  background: #fc7d72;
+}
+
+.review {
+  position: absolute;
+  left: 600px;
+  top: 145px;
+  font-size: 20px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.des {
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.image {
+  position: absolute;
+  top: 300px;
+  border-radius: 20px;
+}
+
+.calendar {
+  position: absolute;
+  top: 400px;
+  background: #f7f6fb;
+  border-radius: 20px;
+}
+
+.rate {
+  margin: 10px 0px;
 }
