@@ -8,7 +8,7 @@ import LeafletRoutingMachine from "../src/Members/NHH/MapReactLeaflet/LeafletRou
 function App() {
 
   return (
-    <div className="App">
+    <>
        <MapContainer center={[10.856934888483217, 106.59353378002595]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -16,7 +16,8 @@ function App() {
         />
         <LeafletRoutingMachine />
       </MapContainer> 
-    </div>
+    </>
+   
   );
 }
 
