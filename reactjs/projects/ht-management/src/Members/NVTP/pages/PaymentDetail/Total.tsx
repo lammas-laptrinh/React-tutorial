@@ -1,5 +1,6 @@
 import { Form } from 'antd';
 import { formItems } from './type';
+import './Total.css'
 
 export default function Total() {
     const formItems: formItems[] = [
@@ -11,11 +12,16 @@ export default function Total() {
     return (
         <>
             {formItems.map((item, index) => (
-                <Form.Item key={index} label={item.label} style={index === 2 ? { borderTop: '1px solid #ccc', textAlign: 'right' } : { textAlign: 'right' }}>
-                    {item.value}$
+                <Form.Item
+                    key={index}
+                    label={<span className="total-label">{item.label}</span>}
+                    style={index === 2 ? { borderTop: '2px solid #ccc', textAlign: 'right' } : { textAlign: 'right' }}
+                >
+                    <span className="total-value">
+                        {item.value} <span className='total-value'>$</span>
+                    </span>
                 </Form.Item>
             ))}
-
         </>
     );
 }
