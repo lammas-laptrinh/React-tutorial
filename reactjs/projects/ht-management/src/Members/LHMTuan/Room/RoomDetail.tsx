@@ -9,7 +9,6 @@ import {
   DatePicker,
   Button,
 } from "antd";
-//import type { RangePickerProps } from "antd/es/date-picker";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import {
@@ -21,10 +20,12 @@ import room from "../assests/room.png";
 import screen from "../assests/screen.png";
 import { rooms } from "../Room/common/types";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const { Title } = Typography;
 
 export default function RoomDetail() {
+  const { id } = useParams();
   const [showFullDescription, setFullDescription] = useState(false);
   const showFullDescriptionHandler = () => {
     setFullDescription(!showFullDescription);
@@ -34,6 +35,7 @@ export default function RoomDetail() {
   const dateFormat = "YYYY-MM-DD";
   const checkInFormatted = dayjs(rooms[0]?.checkinDate).format(dateFormat);
   const checkOutFormatted = dayjs(rooms[0]?.checkoutDate).format(dateFormat);
+  const selectedRoom = rooms.find((room) => room.id === id);
   return (
     <Row>
       <Col span={12}>
@@ -42,7 +44,7 @@ export default function RoomDetail() {
       <Col span={12}>
         <div>
           <Title level={2} className="!font-bold">
-            {rooms[0]?.roomType}
+            {selectedRoom?.roomType} Room
           </Title>
           <Rate className="rate" allowHalf defaultValue={5} />
           <div className="flex item-center justify-between">
@@ -90,7 +92,7 @@ export default function RoomDetail() {
                   <RangePicker
                     className="RangePicker"
                     defaultValue={
-                      rooms[0]?.status == "paid"
+                      selectedRoom?.status == "paid"
                         ? [
                             dayjs("", checkInFormatted),
                             dayjs("", checkOutFormatted),
@@ -104,7 +106,7 @@ export default function RoomDetail() {
               <Col span={12}>
                 <div className="RoomInfoItem">
                   <Button className="room-id" icon={<IdcardOutlined />}>
-                    Room -{rooms[0]?.id}
+                    Room -{selectedRoom?.id}
                   </Button>
                 </div>
               </Col>
@@ -117,14 +119,14 @@ export default function RoomDetail() {
                     className="room-id room-member"
                     icon={<IdcardOutlined />}
                   >
-                    Adult-{rooms[0]?.bedAmount}
+                    Adult-{selectedRoom?.bedAmount}
                   </Button>
                 </div>
               </Col>
               <Col span={12}>
                 <div className="RoomInfoItem">
                   <Button className="room-id" icon={<IdcardOutlined />}>
-                    Room - {rooms[0]?.id}
+                    Room - {selectedRoom?.id}
                   </Button>
                 </div>
               </Col>

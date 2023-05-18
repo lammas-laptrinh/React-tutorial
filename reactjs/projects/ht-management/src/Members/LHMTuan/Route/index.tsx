@@ -6,7 +6,7 @@ export default function RouteRoom() {
   return (
     <Routes>
       <Route path="/room-management" element={<RoomPage />} />
-      <Route path=":id" element={<RoomDetail />} />
+      <Route path="/room-management/:id" element={<RoomDetail />} />
     </Routes>
   );
 }
