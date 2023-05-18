@@ -9,76 +9,31 @@ import {
   DatePicker,
   Button,
 } from "antd";
-import type { RangePickerProps } from "antd/es/date-picker";
+//import type { RangePickerProps } from "antd/es/date-picker";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  AntDesignOutlined,
+  UserOutlined,
+  IdcardOutlined,
+} from "@ant-design/icons";
 import room from "../assests/room.png";
 import screen from "../assests/screen.png";
-import { Room } from "../Room/common/types";
-import { useParams } from "react-router-dom";
+import { rooms } from "../Room/common/types";
+import { useState } from "react";
 
 const { Title } = Typography;
-dayjs.extend(customParseFormat);
-const { RangePicker } = DatePicker;
-const disabledDate: RangePickerProps["disabledDate"] = (current) => {
-  return current && current < dayjs().endOf("day");
-};
 
 export default function RoomDetail() {
-  const { id } = useParams();
-  const rooms: Room[] = [
-    {
-      id: "1",
-      roomType: "Standard",
-      title: "Room 1",
-      time: "12/06 - 18/06",
-      member: "3",
-      modal: 2,
-      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
-    },
-    {
-      id: "2",
-      roomType: "Double",
-      title: "Room 2",
-      time: "12/06 - 18/06",
-      member: "3",
-      modal: 1,
-      modalContent: ["Không bật được đèn nhà tắm"],
-    },
-    {
-      id: "3",
-      roomType: "King",
-      title: "Room 3",
-      time: "12/06 - 18/06",
-      member: "3",
-      modal: 2,
-      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
-    },
-    {
-      id: "4",
-      roomType: "Standard",
-      title: "Room 4",
-      time: "12/06 - 18/06",
-      member: "3",
-      modal: 2,
-      modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
-    },
-    {
-      id: "5",
-      roomType: "King",
-      title: "Room 5",
-      time: "12/06 - 18/06",
-      member: "3",
-      modal: 3,
-      modalContent: [
-        "Ống nước hỏng",
-        "Lấy thêm đồ ăn, đổi giường lớn hơn",
-        "Không bật được đèn nhà tắm",
-      ],
-    },
-  ];
-  const getRoom = rooms.find((room) => room.id === id);
+  const [showFullDescription, setFullDescription] = useState(false);
+  const showFullDescriptionHandler = () => {
+    setFullDescription(!showFullDescription);
+  };
+  dayjs.extend(customParseFormat);
+  const { RangePicker } = DatePicker;
+  const dateFormat = "YYYY-MM-DD";
+  const checkInFormatted = dayjs(rooms[0]?.checkinDate).format(dateFormat);
+  const checkOutFormatted = dayjs(rooms[0]?.checkoutDate).format(dateFormat);
   return (
     <Row>
       <Col span={12}>
@@ -87,7 +42,7 @@ export default function RoomDetail() {
       <Col span={12}>
         <div>
           <Title level={2} className="!font-bold">
-            {getRoom?.roomType} Room
+            {rooms[0]?.roomType}
           </Title>
           <Rate className="rate" allowHalf defaultValue={5} />
           <div className="flex item-center justify-between">
@@ -113,19 +68,69 @@ export default function RoomDetail() {
               39 reviews
             </Title>
           </div>
-          <Title level={5} className="des">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta at
-            ipsum quae iste totam quam illum officia blanditiis. Ullam voluptas
-            et magnam totam quia facere vitae illo culpa minus eum?
-          </Title>
+          <div>
+            <Title level={5} className="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta at
+              ipsum quae iste totam quam illum officia blanditiis. Ullam
+              voluptas et magnam totam quia facere vitae illo culpa minus eum?
+            </Title>
+            <div onClick={showFullDescriptionHandler} className="FullDes">
+              {showFullDescription ? "Thu gọn" : "Xem thêm"}
+            </div>
+          </div>
 
           <div className="image">
             <Image preview={false} src={screen} />
           </div>
 
-          <div className="calendar">
-            <RangePicker disabledDate={disabledDate} />
+          <div className="RoomInfoContainer">
+            <Row>
+              <Col span={12}>
+                <div className="RoomInfoItem">
+                  <RangePicker
+                    className="RangePicker"
+                    defaultValue={
+                      rooms[0]?.status == "paid"
+                        ? [
+                            dayjs("", checkInFormatted),
+                            dayjs("", checkOutFormatted),
+                          ]
+                        : null
+                    }
+                    format={dateFormat}
+                  />
+                </div>
+              </Col>
+              <Col span={12}>
+                <div className="RoomInfoItem">
+                  <Button className="room-id" icon={<IdcardOutlined />}>
+                    Room -{rooms[0]?.id}
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col span={12}>
+                <div className="RoomInfoItem">
+                  <Button
+                    className="room-id room-member"
+                    icon={<IdcardOutlined />}
+                  >
+                    Adult-{rooms[0]?.bedAmount}
+                  </Button>
+                </div>
+              </Col>
+              <Col span={12}>
+                <div className="RoomInfoItem">
+                  <Button className="room-id" icon={<IdcardOutlined />}>
+                    Room - {rooms[0]?.id}
+                  </Button>
+                </div>
+              </Col>
+            </Row>
           </div>
+
           <div className="flex items-center justify-center">
             <Button className="ChooseRoom">Chọn phòng</Button>
           </div>

@@ -131,6 +131,13 @@ a:hover {
   top: 400px;
 }
 
+.bed {
+  border-radius: 50%;
+  background-color: gray;
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .cd {
   background-color: #9875;
 }
@@ -141,8 +148,8 @@ a:hover {
 
 .review {
   position: absolute;
-  left: 600px;
-  top: 145px;
+  left: 650px;
+  top: 135px;
   font-size: 20px;
   font-family: "Nunito";
   font-style: normal;
@@ -170,4 +177,17 @@ a:hover {
 
 .rate {
   margin: 10px 0px;
+}
+
+.FullDes {
+  text-decoration: underline;
+  color: blue;
+  text-align: left;
+}
+
+.RoomInfoContainer {
+  position: absolute;
+  top: 500px;
+  background: #f7f6fb;
+  border-radius: 20px;
 }

@@ -1,65 +1,67 @@
-export type Room = {
-  id: any;
-  roomType: string;
+export interface Room {
+  id?: any;
   title: string;
+  bedAmount: number;
+  checkinDate: string;
+  checkoutDate: string;
   time: string;
-  member: string;
+  roomType: string;
   modal: number;
   modalContent?: string[];
-};
+  status?: string;
+}
 
 export const rooms: Room[] = [
   {
     id: "1",
-    roomType: "Standard",
     title: "Room 1",
+    bedAmount: 3,
+    checkinDate: "11/12",
+    checkoutDate: "16/12",
     time: "12/06 - 18/06",
-    member: "3",
+    roomType: "Standard",
     modal: 2,
-    modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    modalContent: ["Sửa ống nước", "Sửa quạt"],
   },
   {
     id: "2",
-    roomType: "Double",
     title: "Room 2",
+    bedAmount: 3,
+    checkinDate: "18/12",
+    checkoutDate: "20/12",
     time: "12/06 - 18/06",
-    member: "3",
-    modal: 1,
-    modalContent: ["Không bật được đèn nhà tắm"],
+    roomType: "Double",
+    modal: 0,
   },
   {
     id: "3",
-    roomType: "King",
     title: "Room 3",
+    bedAmount: 3,
+    checkinDate: "18/12",
+    checkoutDate: "20/12",
     time: "12/06 - 18/06",
-    member: "3",
-    modal: 2,
-    modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    roomType: "King",
+    modal: 0,
   },
   {
     id: "4",
-    roomType: "Standard",
     title: "Room 4",
+    bedAmount: 3,
+    checkinDate: "12/12",
+    checkoutDate: "16/12",
     time: "12/06 - 18/06",
-    member: "3",
-    modal: 2,
-    modalContent: ["Ống nước hỏng", "Lấy thêm đồ ăn, đổi giường lớn hơn"],
+    roomType: "Standard",
+    modal: 0,
   },
   {
     id: "5",
-    roomType: "King",
     title: "Room 5",
+    bedAmount: 3,
+    checkinDate: "12/12",
+    checkoutDate: "16/12",
     time: "12/06 - 18/06",
-    member: "3",
+    roomType: "King",
     modal: 3,
-    modalContent: [
-      "Ống nước hỏng",
-      "Lấy thêm đồ ăn, đổi giường lớn hơn",
-      "Không bật được đèn nhà tắm",
-    ],
+    modalContent: ["Sửa ống nước", "Sửa quạt", "Sửa công tắc đèn"],
   },
 ];
-
-export type RoomProps = {
-  row: Room;
-};

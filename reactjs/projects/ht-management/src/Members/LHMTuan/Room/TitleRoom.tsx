@@ -1,7 +1,7 @@
 import { Button, Space, Tooltip } from "antd";
 import { Room } from "../Room/common/types";
 import { useNavigate } from "react-router-dom";
-import { SmileOutlined } from "@ant-design/icons";
+//import { SmileOutlined } from "@ant-design/icons";
 
 function TitleRoom(props: { title: string; time: any; room: Room }) {
   const navigate = useNavigate();
@@ -25,9 +25,11 @@ function TitleRoom(props: { title: string; time: any; room: Room }) {
         )}
         <Space className="title">{props.title}</Space>
         <Space>
-          <SmileOutlined style={{ margin: "5px" }} />
-          <SmileOutlined style={{ margin: "5px" }} />
-          <SmileOutlined style={{ margin: "5px" }} />
+          {[...Array(props.room.bedAmount)].map((_, i) => (
+            <Space key={i} className="bed">
+              {" "}
+            </Space>
+          ))}
         </Space>
         <Space>{props.time}</Space>
       </Space>
