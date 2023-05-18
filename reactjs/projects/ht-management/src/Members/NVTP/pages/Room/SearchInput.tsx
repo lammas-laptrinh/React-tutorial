@@ -17,7 +17,7 @@ const SearchInput: React.FC<Props> = ({ onSearch }) => {
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
       onPressEnter={handleSearch}
-      style={{ width: 200 }}
+      style={{ width: 200, marginLeft: 50, borderRadius: 30, fontFamily: 'Nunito, sans-serif' }} // Added fontFamily style
     />
   );
 };

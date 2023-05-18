@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './index.css';
-import { Layout, Col, Row } from 'antd';
-import SideBar from "./SideBar"
-import HeaderBar from "./HeaderBar"
+import { Layout } from 'antd';
+import SideBar from "../Room/SideBar"
+import HeaderBar from "../Room/HeaderBar"
 import FormRoom from "./FormRoom"
-
 
 const Room: React.FC = () => {
     const [isGridView, setIsGridView] = useState(true);
@@ -22,16 +21,12 @@ const Room: React.FC = () => {
             <Layout>
                 <Layout>
                     <SideBar />
-                    <Layout>
+                    <Layout style={{ background: '#FFFFFF' }}>
                         <HeaderBar />
-                        <Row>
-                            <Col>
-                                <FormRoom isGridView={isGridView} onToggleView={handleToggleView} searchValue={searchValue} onSearch={handleSearch} />
-                            </Col>
-                        </Row>
+                        <FormRoom isGridView={isGridView} onToggleView={handleToggleView} searchValue={searchValue} onSearch={handleSearch} />
                     </Layout>
                 </Layout>
-            </Layout>
+            </Layout >
         </>
     );
 };

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Card, Typography, Row, Col, Space, Modal, Button } from 'antd';
+import React from 'react';
+import { Card, Row, Col, Space, Tooltip, Button } from 'antd';
 import View from './View';
 import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
 import SmileIcons from './SmileIcons';
 import { rooms } from './common';
-const { Title } = Typography;
+import './FormRoom.css'
 interface Props {
     isGridView: boolean;
     onToggleView: () => void;
@@ -15,184 +15,133 @@ interface Props {
 
 const FormRoom: React.FC<Props> = ({ isGridView, onToggleView, searchValue, onSearch }) => {
     const { Meta } = Card;
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
     const filteredRooms = rooms.filter((room) =>
         room.title.toLowerCase().includes(searchValue.toLowerCase())
     );
     const type1Rooms = filteredRooms.filter((room) => room.type === 'Standard');
     const type2Rooms = filteredRooms.filter((room) => room.type === 'Double');
     const type3Rooms = filteredRooms.filter((room) => room.type === 'King');
-    const showModal = (index: number) => {
-        setIsModalOpen(true);
-        setCurrentRoomIndex(index);
-    };
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
     return (
         <>
-
-            <span>Rooms</span>
-            <SearchInput onSearch={onSearch} />
-            <span>Views :</span>
-            <View isGridView={isGridView} onToggleView={onToggleView} />
-            <Title level={3}>Standard</Title>
-            <Row gutter={16}>
-                {type1Rooms.map((room, index) => (
-                    <Col span={isGridView ? 12 : 4.5} key={room.title}>
-                        <Card style={{ zIndex: "1" }}
-                            title={room.title}
-                            extra={room.modal ? (
-                                <Button type="primary" onClick={() => showModal(index)} style={{
-                                    position: "absolute",
-                                    right: "-15px",
-                                    top: "5px",
-                                    zIndex: "1",
-                                    width: "10px",
-                                    height: "25px",
-                                    textAlign: "center",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    backgroundColor: "#FC7D72",
-                                    borderColor: "#FC7D72",
-                                }}>
-                                    {room.modal}
-                                </Button>
-                            ) : null}
-                        >
-                            <Link to={`/room/${room.id}`}>
-                                <SmileIcons />
-                            </Link>
-                            <Meta
-                                title={
-                                    <Space>
-                                        <Title level={5}>{room.time}</Title>
-                                    </Space>
-                                }
-                            />
-
-                        </Card>
-                        <Modal
-                            visible={isModalOpen && currentRoomIndex === index}
-                            onOk={handleOk}
-                            onCancel={handleCancel}
-                            mask={false}
-                            style={{ width: 300, height: 200 }}
-                        >
-                            {rooms[currentRoomIndex].modalContent?.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
-                        </Modal>
-                    </Col>
-                ))}
-            </Row>
-            <Title level={3}>Double</Title>
-            <Row gutter={16}>
-                {type2Rooms.map((room, index) => (
-                    <Col span={isGridView ? 12 : 4.5} key={room.title}>
-                        <Card style={{ zIndex: "1" }}
-                            title={room.title}
-                            extra={room.modal ? (
-                                <Button type="primary" onClick={() => showModal(index)} style={{
-                                    position: "absolute",
-                                    right: "-15px",
-                                    top: "5px",
-                                    zIndex: "1",
-                                    width: "10px",
-                                    height: "25px",
-                                    textAlign: "center",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    backgroundColor: "#FC7D72",
-                                    borderColor: "#FC7D72",
-                                }}>
-                                    {room.modal}
-                                </Button>
-                            ) : null}
-                        >
-                            <Link to={`/room/${room.id}`}>
-                                <SmileIcons />
-                            </Link>
-                            <Meta
-                                title={
-                                    <Space>
-                                        <Title level={5}>{room.time}</Title>
-                                    </Space>
-                                }
-                            />
-
-                        </Card>
-                        <Modal
-                            visible={isModalOpen && currentRoomIndex === index}
-                            onOk={handleOk}
-                            onCancel={handleCancel}
-                            mask={false}
-                            style={{ width: 300, height: 200 }}
-                        >
-                            {rooms[currentRoomIndex].modalContent?.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
-                        </Modal>
-                    </Col>
-                ))}
-            </Row>
-            <Title level={3}>King</Title>
-            <Row gutter={16}>
-                {type3Rooms.map((room, index) => (
-                    <Col span={isGridView ? 12 : 4.5} key={room.title}>
-                        <Card style={{ zIndex: "1" }}
-                            title={room.title}
-                            extra={room.modal ? (
-                                <Button type="primary" onClick={() => showModal(index)} style={{
-                                    position: "absolute",
-                                    right: "-15px",
-                                    top: "5px",
-                                    zIndex: "1",
-                                    width: "10px",
-                                    height: "25px",
-                                    textAlign: "center",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    backgroundColor: "#FC7D72",
-                                    borderColor: "#FC7D72",
-                                }}>
-                                    {room.modal}
-                                </Button>
-                            ) : null}
-                        >
-                            <Link to={`/room/${room.id}`}>
-                                <SmileIcons />
-                            </Link>
-                            <Meta
-                                title={
-                                    <Space>
-                                        <Title level={5}>{room.time}</Title>
-                                    </Space>
-                                }
-                            />
-
-                        </Card>
-                        <Modal
-                            visible={isModalOpen && currentRoomIndex === index}
-                            onOk={handleOk}
-                            onCancel={handleCancel}
-                            mask={false}
-                            style={{ width: 300, height: 200 }}
-                        >
-                            {rooms[currentRoomIndex].modalContent?.map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))}
-                        </Modal>
-                    </Col>
-                ))}
-            </Row>
+            <div className='form-room'>
+                <Row>
+                    <Col span={12} style={{ display: 'flex', alignItems: 'center' }}><h1 className='room-name'>Rooms</h1>
+                        <SearchInput onSearch={onSearch} /></Col>
+                    <Col span={12} style={{ textAlign: 'end', marginTop: 40 }}>
+                        <span className='view'>Views :</span> <View isGridView={isGridView} onToggleView={onToggleView} /></Col>
+                </Row>
+                <p className='title'>Standard</p>
+                <Row gutter={32} >
+                    {type1Rooms.map((room) => (
+                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
+                            <Card
+                                title={room.title}
+                                extra={room.modal ? (
+                                    <Tooltip color='#FC7D72'
+                                        title={
+                                            <>
+                                                {room.modalContent?.map((item, idx) => (
+                                                    <p key={idx}>{item}</p>
+                                                ))}
+                                            </>
+                                        }
+                                    >
+                                        <Button type="link" className="btn">
+                                            {room.modal}
+                                        </Button>
+                                    </Tooltip>
+                                ) : null}
+                                className='card'
+                            >
+                                <Link to={`/room/${room.id}`}>
+                                    <SmileIcons />
+                                </Link>
+                                <Meta
+                                    title={
+                                        <Space>
+                                            <p className='time'>{room.time}</p>
+                                        </Space>
+                                    }
+                                />
+                            </Card>
+                        </Col>
+                    ))}
+                </Row >
+                <p className='title'>Double</p>
+                <Row gutter={32}>
+                    {type2Rooms.map((room) => (
+                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
+                            <Card
+                                title={room.title}
+                                extra={room.modal ? (
+                                    <Tooltip color='#FC7D72'
+                                        title={
+                                            <>
+                                                {room.modalContent?.map((item, idx) => (
+                                                    <p key={idx}>{item}</p>
+                                                ))}
+                                            </>
+                                        }
+                                    >
+                                        <Button type="link" className="btn">
+                                            {room.modal}
+                                        </Button>
+                                    </Tooltip>
+                                ) : null}
+                                className='card'
+                            >
+                                <Link to={`/room/${room.id}`}>
+                                    <SmileIcons />
+                                </Link>
+                                <Meta
+                                    title={
+                                        <Space>
+                                            <p className='time'>{room.time}</p>
+                                        </Space>
+                                    }
+                                />
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+                <p className='title'>King</p>
+                <Row gutter={32}>
+                    {type3Rooms.map((room) => (
+                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
+                            <Card
+                                title={room.title}
+                                extra={room.modal ? (
+                                    <Tooltip color='#FC7D72'
+                                        title={
+                                            <>
+                                                {room.modalContent?.map((item, idx) => (
+                                                    <p key={idx} className='tooltip'>{item}</p>
+                                                ))}
+                                            </>
+                                        }
+                                    >
+                                        <Button type="link" className="btn">
+                                            {room.modal}
+                                        </Button>
+                                    </Tooltip>
+                                ) : null}
+                                className='card'
+                            >
+                                <Link to={`/room/${room.id}`}>
+                                    <SmileIcons />
+                                </Link>
+                                <Meta
+                                    title={
+                                        <Space>
+                                            <p className='time'>{room.time}</p>
+                                        </Space>
+                                    }
+                                />
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+            </div >
         </>
     );
 };

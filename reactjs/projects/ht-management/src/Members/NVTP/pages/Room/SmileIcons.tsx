@@ -1,12 +1,17 @@
 import { Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-
+import UserImage from '../Room/Img/Rectangle 2725.svg';
 const SmileIcons = () => {
+  const iconArray = [
+    { id: 1, image: UserImage },
+    { id: 2, image: UserImage },
+    { id: 3, image: UserImage },
+  ];
+
   return (
     <Space align="center">
-      <UserOutlined />
-      <UserOutlined />
-      <UserOutlined />
+      {iconArray.map((item) => (
+        <img key={item.id} src={item.image} alt={`User ${item.id}`} />
+      ))}
     </Space>
   );
 };

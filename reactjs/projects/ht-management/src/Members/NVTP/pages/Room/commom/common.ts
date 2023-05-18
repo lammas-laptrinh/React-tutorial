@@ -55,4 +55,22 @@ export const rooms: Room[] = [
         details: 'This is more detailed information about Room 2.',
         type: 'King', 
     },
+    {
+        id: 6,
+        title: 'Room 3',
+        time: '12/06- 18/06',
+        modal: '3',
+        modalContent: ['Ống nước hỏng', 'Lấy thêm đồ ăn', 'Không bật được đèn nhà tắm'],
+        details: 'This is more detailed information about Room 1.',
+        type: 'Standard', 
+    },
+    {
+        id: 7,
+        title: 'Room 4',
+        time: '12/06- 18/06',
+        modal: '3',
+        modalContent: ['Ống nước hỏng', 'Lấy thêm đồ ăn', 'Không bật được đèn nhà tắm'],
+        details: 'This is more detailed information about Room 1.',
+        type: 'Standard', 
+    }    
 ];
