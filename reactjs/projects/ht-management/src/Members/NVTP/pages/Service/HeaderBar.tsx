@@ -1,42 +1,35 @@
-import React from 'react';
-import { Layout, Row, Col, Typography, Space } from 'antd';
-import { BellOutlined, InfoCircleOutlined, UserOutlined } from '@ant-design/icons';
+import { Layout, Row, Col, Space, Image } from 'antd';
+import { BellOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import UserImage from '../Img/Rectangle 2725.svg';
+import './HeaderBar.css';
 
 const { Header } = Layout;
-const { Title } = Typography;
 
 const HeaderBar = () => {
-    const renderIcons = () => {
-        const icons = [BellOutlined, InfoCircleOutlined, UserOutlined];
+  const renderIcons = () => {
+    const icons = [BellOutlined, InfoCircleOutlined];
 
-        return icons.map((Icon, index) => {
-            if (index === 2) {
-                return (
-                    <React.Fragment key={index}>
-                        <span>Nguyễn Văn B</span>
-                        <Icon style={{ fontSize: '20px', marginRight: '10px' }} />
-                    </React.Fragment>
-                );
-            } else {
-                return (
-                    <Icon key={index} style={{ fontSize: '20px', marginRight: '10px' }} />
-                );
-            }
-        });
-    };
+    return icons.map((Icon, index) => (
+      <Icon key={index} className="header-icon" />
+    ));
+  };
 
-    return (
-        <Header style={{ background: '#FFFFFF' }}>
-            <Row justify="space-between">
-                <Col>
-                    <Title level={4}>Version 1.0.0</Title>
-                </Col>
-                <Col>
-                    <Space>{renderIcons()}</Space>
-                </Col>
-            </Row>
-        </Header>
-    );
+  return (
+    <Header className="header">
+      <Row className='header-row'>
+        <Col>
+          <h2 className="version">Version 1.0.0</h2>
+        </Col>
+        <Col>
+          <Space className='header-item'>
+            {renderIcons()}
+            <span className="user-text">Nguyễn Văn B</span>
+            <Image className="user-image" src={UserImage} alt="User Image" />
+          </Space>
+        </Col>
+      </Row>
+    </Header >
+  );
 };
 
 export default HeaderBar;

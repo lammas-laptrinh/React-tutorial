@@ -1,28 +1,34 @@
-import { Layout, Menu, Typography } from 'antd';
+import { Layout, Menu } from 'antd';
 import { PieChartOutlined, FileOutlined, UserOutlined } from '@ant-design/icons';
+import './SideBar.css';
 
-const { Title } = Typography;
 const { Sider } = Layout;
 
 const SideBar = () => {
-    const menuItems = [
-        { key: '1', icon: <PieChartOutlined /> },
-        { key: '2', icon: <FileOutlined /> },
-        { key: '3', icon: <UserOutlined /> }
-    ];
-    return (
-        <Sider style={{ background: '#FFFFFF' }}>
-            <Title style={{ color: '#F1AC4D', textAlign: 'center' }}>
-                DTO
-            </Title>
-            <Menu theme="light">
-                {menuItems.map(item => (
-                    <Menu.Item key={item.key} icon={item.icon} style={{ marginLeft: '60px', background: 'none' }}>
-                    </Menu.Item>
-                ))}
-            </Menu>
-        </Sider>
-    );
+  const menuItems = [
+    { key: '1', icon: <PieChartOutlined /> },
+    { key: '2', icon: <FileOutlined /> },
+    { key: '3', icon: <UserOutlined /> }
+  ];
+
+  return (
+    <>
+      <Sider width="168px" className="sidebar">
+        <div className="logo-container">
+          <h2 className="logo-text">DTO</h2>
+        </div>
+        <div className="menu-container">
+          <Menu className="menu">
+            {menuItems.map(item => (
+              <Menu.Item key={item.key}>
+                {item.icon}
+              </Menu.Item>
+            ))}
+          </Menu>
+        </div>
+      </Sider>
+    </>
+  );
 };
 
 export default SideBar;
