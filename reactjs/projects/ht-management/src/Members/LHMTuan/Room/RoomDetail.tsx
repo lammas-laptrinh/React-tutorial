@@ -35,6 +35,7 @@ export default function RoomDetail() {
   const dateFormat = "YYYY-MM-DD";
   const checkInFormatted = dayjs(rooms[0]?.checkinDate).format(dateFormat);
   const checkOutFormatted = dayjs(rooms[0]?.checkoutDate).format(dateFormat);
+  console.log(checkInFormatted);
   const selectedRoom = rooms.find((room) => room.id === id);
   return (
     <Row>
@@ -115,10 +116,7 @@ export default function RoomDetail() {
             <Row>
               <Col span={12}>
                 <div className="RoomInfoItem">
-                  <Button
-                    className="room-id room-member"
-                    icon={<IdcardOutlined />}
-                  >
+                  <Button className="room-member" icon={<IdcardOutlined />}>
                     Adult-{selectedRoom?.bedAmount}
                   </Button>
                 </div>

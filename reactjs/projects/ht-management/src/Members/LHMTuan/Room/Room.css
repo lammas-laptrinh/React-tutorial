@@ -187,7 +187,43 @@ a:hover {
 
 .RoomInfoContainer {
   position: absolute;
-  top: 500px;
+  width: 500px;
+  height: 125px;
+  top: 450px;
   background: #f7f6fb;
+  border-radius: 20px;
+}
+
+.RoomInfoItem {
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 10px;
+  left: 10px;
+  height: 50px;
+  width: 170px;
+  box-sizing: border-box;
+  background: #f7f6fb;
+}
+
+.RangePicker {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
+  border-radius: 20px;
+}
+.room-id {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
+  border-radius: 20px;
+}
+
+.room-member {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
   border-radius: 20px;
 }
