@@ -1,7 +1,7 @@
 import { Button, Space, Tooltip } from 'antd';
-import { Rooms } from '../types';
+import { Rooms } from '../Types';
 import { useNavigate } from 'react-router-dom';
-import '../static/index.scss'
+import '../CSS/index.scss'
 
 function Room(props: { roomName: string, date: any, room: Rooms }) {
     const navigate = useNavigate();

@@ -1,3 +1,11 @@
+<<<<<<<<< Temporary merge branch 1
+=========
+#root {
+  max-width: 1280px;
+  text-align: center;
+  min-width: 100%;
+}
+>>>>>>>>> Temporary merge branch 2
 
 .logo {
   height: 6em;
@@ -34,9 +42,8 @@
 .read-the-docs {
   color: #888;
 }
-html{
-  font-size:100px;
-}
-.ant-menu-item{
-  margin-bottom: 24px;
-}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> 158e7e9013b5797c0e7556c0696a3dc474fe046c

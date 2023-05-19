@@ -51,11 +51,10 @@ const ServicePage: React.FC = () => {
         rules={[{ required: true, message: "Chọn loại dịch vụ" }]}
       >
         <Select placeholder="Chọn loại dịch vụ">
-          <Option value="Dịch Vụ Đồ Ăn">Dịch Vụ Đồ Ăn</Option>
-          <Option value="Dịch Vụ Dọn Phòng">Dịch Vụ Dọn Phòng</Option>
-          <Option value="Dịch Vụ Sửa Chữa">Dịch Vụ Sửa Chữa</Option>
-          <Option value="Khiếu nại">Khiếu nại</Option>
-          <Option value="Yêu cầu khác">Yêu cầu khác</Option>
+          <Option value="1">Dịch Vụ Đồ Ăn</Option>
+          <Option value="2">Dịch Vụ Dọn Phòng</Option>
+          <Option value="3">Dịch Vụ Sửa Chữa</Option>
+          <Option value="4">Yêu cầu khác</Option>
         </Select>
       </Form.Item>
       <Title level={5}>Số phòng</Title>

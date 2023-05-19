@@ -25,12 +25,14 @@ function getItem(
     key: React.Key,
     icon?: React.ReactNode,
     items?: MenuItem[],
+    link?: string
 ): MenuItem {
     return {
         key,
         icon,
         items,
         label,
+        link
     } as MenuItem;
 }
 

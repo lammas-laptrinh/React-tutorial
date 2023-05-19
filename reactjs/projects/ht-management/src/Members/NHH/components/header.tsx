@@ -3,7 +3,7 @@ import {
     BellOutlined,
     InfoCircleOutlined
 } from '@ant-design/icons';
-import '../static/index.scss'
+import '../CSS/index.scss'
 
 export default function Header(props: { version: string; username: string }) {
     const { Header } = Layout;
