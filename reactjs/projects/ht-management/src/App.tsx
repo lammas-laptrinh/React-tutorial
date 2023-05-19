@@ -1,11 +1,10 @@
-
 import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-import Main from './Members/TTB/pages/main';
+import Routers from './Members/NHH';
 function App() {
   return (
     <BrowserRouter>
-      <Main />
+      <Routers />
     </BrowserRouter>
   )
 }
