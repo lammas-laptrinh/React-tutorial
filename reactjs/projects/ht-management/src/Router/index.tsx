@@ -6,12 +6,13 @@ import KingDetail from "@src/Members/MDK/RoomDetail/KingDetail";
 import StandardDetail from "@src/Members/MDK/RoomDetail/StandardDetail";
 import DoubleDetail from "@src/Members/MDK/RoomDetail/DoubleDetail";
 import Dashboard from "@src/Members/MDK/Dashboard";
-
+import Routers from "./Members/NHH/Router";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Routers />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/room-management" element={<Room />} />
         <Route path="/room-detail" element={<RoomDetail />} />
