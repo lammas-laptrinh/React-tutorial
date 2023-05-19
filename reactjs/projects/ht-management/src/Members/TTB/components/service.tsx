@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast, ToastContainer } from 'react-toastify';
 import { useForm, Controller } from "react-hook-form";
-import { Button, Col, Row, Select, Space } from "antd";
+import { Button, Select, Space } from "antd";
 import 'react-toastify/dist/ReactToastify.css';
 import { Editor } from '@tinymce/tinymce-react';
 import { rooms } from '../commons';
