@@ -16,7 +16,7 @@ const RoomList = ({ rows, searchText, isGridView }: RoomListProps) => {
                 const roomsWithType = filteredRows.filter((room) => room.roomType === roomType);
                 return (
                     <div className="room-type-wrapper" key={index}>
-                        <Typography.Title level={2}>{roomType}</Typography.Title>
+                        <Typography.Title level={2}>{roomType?.roomTypeName}</Typography.Title>
                         {isGridView ?
                             renderRoomsAsGrid({ rows: roomsWithType })
                             :
