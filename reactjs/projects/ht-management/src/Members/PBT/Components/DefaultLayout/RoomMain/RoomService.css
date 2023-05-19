@@ -1,0 +1,39 @@
+.gird-view{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: 20px;
+}
+.gird-view:hover{
+    background-color: rgb(213, 207, 199);
+}
+
+.grid-list-icon{
+    font-size: 20px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.list-view{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: 20px;
+}
+.list-view:hover{
+background-color: rgb(213, 207, 199);
+}
+
+.link-style{
+    color: #000;
+}
