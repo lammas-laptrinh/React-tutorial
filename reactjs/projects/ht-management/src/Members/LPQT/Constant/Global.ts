@@ -82,4 +82,10 @@ export const MenuItem = [
         icon: DashboardIcon,
         url: '/service'
     },
+    {
+        id: 2,
+        name: 'Room',
+        icon: DashboardIcon,
+        url: '/room'
+    },
 ];
