@@ -34,3 +34,9 @@
 .read-the-docs {
   color: #888;
 }
+html{
+  font-size:100px;
+}
+.ant-menu-item{
+  margin-bottom: 24px;
+}
