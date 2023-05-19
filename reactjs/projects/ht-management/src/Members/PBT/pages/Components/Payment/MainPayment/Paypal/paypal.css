@@ -1,0 +1,15 @@
+
+
+.close-btn{
+    position: absolute;
+    top: 0;
+    right:  0;
+    outline: none;
+    background-color: #fff;
+    box-shadow: none;
+    color: #000;
+    border-radius: 10px;
+}
+.overlay{
+    margin-bottom: 15px;
+}

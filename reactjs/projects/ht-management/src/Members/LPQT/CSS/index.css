@@ -339,15 +339,24 @@ body {
 }
 
 .SubmmitButtonContain {
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-.ServiceSubmitBut {
-  background-color: #164aff;
+  margin-top: 31px;
+  padding: 12px 20px;
+  gap: 10px;
+  width: 218px;
+  height: 74px;
+  background: #ED712E;
+  border-radius: 8px;
   color: white;
-  width: 120px;
-  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 500px;
+  border: 0;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 24px;
 }
 
 .RequireContain {
@@ -358,7 +367,8 @@ body {
 }
 
 .Width515 {
-  width: 515px;
+  width: 737px;
+  color: yellow;
 }
 
 .RoomNumberContain {
@@ -684,4 +694,60 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-right: 115px;
+}
+
+.ServiceMainContain {
+  width: 904px;
+  height: 990px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.Width515 .ant-select-selector {
+  height: 81px !important;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 28px !important;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-radius: 8px !important;
+  border: 2px solid #DEDEE0;
+}
+
+.BookServiceTittle {
+  font-weight: 700;
+  font-size: 32px;
+  margin-right: 580px;
+}
+
+.Width515 .tox-tinymce {
+  height: 200px !important;
+}
+
+.BookServiceItemTitle {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 17px;
+  color: #7C7E8A;
+  margin-top: 54px;
+  margin-bottom: 15px;
+}
+
+.BookServiceItemTitleBold {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.form-container{
+  background-color: #E5E5E5;
+  min-height: 100vh;
 }
