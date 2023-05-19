@@ -1,10 +1,8 @@
-import React, {  } from 'react';
+import React, { useState } from 'react';
 import {
-    DesktopOutlined,
-    FileOutlined,
     PieChartOutlined,
-    TeamOutlined,
-    UserOutlined,
+    UsergroupAddOutlined,
+    FileTextOutlined
 } from '@ant-design/icons';
 import { MenuProps } from 'antd';
 import { Layout } from 'antd';
@@ -12,7 +10,10 @@ import { Layout } from 'antd';
 // import { db } from '../../../firebase';
 import SideBar from '../components/sidebar';
 import Header from '../components/header';
-
+import { Rooms } from '../types';
+import RoomList from '../components/RoomList';
+import { Route, Routes } from 'react-router-dom';
+import Detail from './roomDetail';
 import Service from '../components/service';
 
 const { Content } = Layout;
@@ -23,44 +24,96 @@ function getItem(
     label: React.ReactNode,
     key: React.Key,
     icon?: React.ReactNode,
-    children?: MenuItem[],
+    items?: MenuItem[],
     link?: string
 ): MenuItem {
     return {
         key,
         icon,
-        children,
+        items,
         label,
         link
     } as MenuItem;
 }
 
 const items: MenuItem[] = [
-    getItem('Service', '1', <PieChartOutlined />),
-    getItem('Option 2', '2', <DesktopOutlined />),
-    getItem('User', 'sub1', <UserOutlined />, [
-        getItem('Tom', '3'),
-        getItem('Bill', '4'),
-        getItem('Alex', '5'),
-    ]),
-    getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-    getItem('Files', '9', <FileOutlined />),
+    getItem('Option 1', '1', <PieChartOutlined className='menu-item-icon' />),
+    getItem('Option 2', '2', <FileTextOutlined className='menu-item-icon' />),
+    getItem('User', 'sub1', <UsergroupAddOutlined className='menu-item-icon' />),
 ];
 
 
-
+const rooms: Rooms[] = [
+    {
+        id: "1",
+        roomName: 'Room 1',
+        bedAmount: 3,
+        checkinDate: '11/12',
+        checkoutDate: '16/12',
+        roomType: 'Standard',
+        serviceCount: 2,
+        service: ['service 1', 'service 2']
+    },
+    {
+        id: "2",
+        roomName: 'Room 2',
+        bedAmount: 3,
+        checkinDate: '18/12',
+        checkoutDate: '20/12',
+        roomType: 'Double',
+        serviceCount: 0,
+    },
+    {
+        id: "3",
+        roomName: 'Room 3',
+        bedAmount: 3,
+        checkinDate: '18/12',
+        checkoutDate: '20/12',
+        roomType: 'King',
+        serviceCount: 0,
+    },
+    {
+        id: "4",
+        roomName: 'Room 4',
+        bedAmount: 3,
+        checkinDate: '12/12',
+        checkoutDate: '16/12',
+        roomType: 'Standard',
+        serviceCount: 0,
+    },
+    {
+        id: "5",
+        roomName: 'Room 5',
+        bedAmount: 3,
+        checkinDate: '12/12',
+        checkoutDate: '16/12',
+        roomType: 'King',
+        serviceCount: 3,
+        service: ['service 1', 'service 2', 'service 3']
+    },
+]
 
 export default function Main() {
-    
+    const [roomList, setRoomList] = useState<Rooms[]>(rooms);
 
-    
+    const handleSearch = (roomId: string) => {
+        const foundRooms = rooms.filter((room: { id: string; }) => room.id === roomId);
+        setRoomList(foundRooms);
+        if (roomId === "") {
+            setRoomList(rooms)
+        }
+    };
     return (
         <Layout className='layout' >
             <SideBar name='DTD' item={items} />
             <Layout className="site-layout">
                 <Header version='Version 1.0.0' username='Nguyễn Văn B' />
                 <Content className='content'>
-                    <Service />
+                    <Routes>
+                        <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
+                        <Route path=":id" element={<Detail />} />
+                        <Route path="/service" element={<Service />} />
+                    </Routes>
                 </Content>
             </Layout>
         </Layout>
