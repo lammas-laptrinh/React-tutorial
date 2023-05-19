@@ -490,6 +490,9 @@ a:hover {
     font-weight: 600;
     margin-bottom: 20px;
 }
+.text-editor{
+  text-align: left;
+}
 /* .ant-select-selector{
     height: 81px !important;
 }
