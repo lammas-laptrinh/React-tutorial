@@ -13,7 +13,6 @@ export default function Router() {
         <Route path="/" element={<Signin />} />
         <Route path="/room-management" element={<Room />} />
         <Route path="/room-detail" element={<RoomDetail />} />
-
         <Route path="/dash-board" element={<PrivateRoute />}>
           <Route path="" element={<Dashboard />} />
         </Route> 
