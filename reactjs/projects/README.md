@@ -72,7 +72,7 @@ https://www.figma.com/file/ifPAFQOS9ABrRCUbsjub77/hotel-management?node-id=64%3A
 
 ## Tech Stack
 
-**Client:** React, Typescript, Vite, React-router-dom, @amcharts/amcharts4, [TinyMCE](https://www.tiny.cloud/docs/tinymce/6/react-pm-bundle/)
+**Client:** React, Typescript, Vite, React-router-dom, @amcharts/amcharts4
 
 
 

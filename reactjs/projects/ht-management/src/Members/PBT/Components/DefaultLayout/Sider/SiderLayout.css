@@ -1,0 +1,19 @@
+.name-title{
+width: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.name{
+    width: 65px;
+    border-radius: 40%;
+    border: 2px solid #FFEBEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name span{
+color: green;
+font-weight: 500;
+font-size: 18px;
+}
