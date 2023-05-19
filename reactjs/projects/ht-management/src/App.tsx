@@ -1,12 +1,6 @@
-import { BrowserRouter } from 'react-router-dom';
-import './App.css'
-import Routers from './Members/NHH';
+//import "./App.css";
+import Routers from "./Router";
 function App() {
-  return (
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
-  )
+  return <Routers />;
 }
-
 export default App;

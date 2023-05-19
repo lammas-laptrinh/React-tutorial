@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import RoomPage from "../Room";
-import RoomDetail from "../Room/RoomDetail";
+import RoomPageTuan from "../Room";
+import RoomDetailTuan from "../Room/RoomDetail";
 
 export default function RouteRoom() {
   return (
     <Routes>
-      <Route path="/room-management" element={<RoomPage />} />
-      <Route path="/room-management/:id" element={<RoomDetail />} />
+      <Route path="/room-Tuan" element={<RoomPageTuan />} />
+      <Route path="/room-Tuan/:id" element={<RoomDetailTuan />} />
     </Routes>
   );
 }
