@@ -5,6 +5,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotFound from "../Pages/Error/NotFound";
 import RoomPage from "../Members/LHMTuan/Room";
 import RoomDetail from "../Members/LHMTuan/Room/RoomDetail";
+import ServicePage from "../Members/LHMT/Service";
 
 export default function Router() {
   return (
@@ -14,6 +15,7 @@ export default function Router() {
         <Route path="/" element={<Signin />} />
         <Route path="/room-management" element={<RoomPage />} />
         <Route path="/room-management/:id" element={<RoomDetail />} />
+        <Route path="/service" element={<ServicePage />} />
         <Route path="/dash-board" element={<PrivateRoute />}>
           <Route path="" element={<Dashboard />} />
         </Route>
