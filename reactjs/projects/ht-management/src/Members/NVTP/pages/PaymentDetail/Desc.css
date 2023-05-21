@@ -13,6 +13,7 @@
     width: 654px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 11px 0 11px 36px;
 
 }
@@ -21,6 +22,7 @@
     width: 654px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: 36px;
 }
 
@@ -32,21 +34,11 @@
 }
  
 .description {
+    width: 654px;
     font-size: 20px;
     line-height: 27px;
     font-family: 'Nunito', sans-serif;
     margin: 11px 0;
-}
-
-.title-line p {
-    font-size: 26px;
-    line-height: 24px;
-    font-family: 'Nunito', sans-serif;
-}
-.title-time p {
-    font-size: 26px;
-    line-height: 24px;
-    font-family: 'Nunito', sans-serif;
 }
 
 .checkmark {
@@ -57,6 +49,15 @@
 
 .text-right {
     text-align: right;
+    font-size: 26px;
+    line-height: 24px;
+    font-family: 'Nunito', sans-serif;
+}
+.text-right-1 {
+    text-align: right;
+    font-size: 26px;
+    line-height: 24px;
+    font-family: 'Nunito', sans-serif;
 }
 .form {
      margin-left: 36px;

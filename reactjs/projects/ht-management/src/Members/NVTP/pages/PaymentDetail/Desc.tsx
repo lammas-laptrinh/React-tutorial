@@ -27,28 +27,16 @@ export default function Desc() {
                                 </Col>
                             </Row>
                             <Row className='form'>
-                                <Col span={12}>
-                                    <h5 className="title">{room.title}</h5>
-                                </Col>
-                                <Col>
-                                    <p className="description">{room.description}</p>
-                                </Col>
+                                <h5 className="title">{room.title}</h5>
+                                <p className="description">{room.description}</p>
                             </Row>
                             <Row className="title-line" >
-                                <Col span={12}>
-                                    <h5 className="title">Dịch vụ</h5>
-                                </Col>
-                                <Col span={12}>
-                                    <p className={`title ${"text-right"}`}>{room.services}</p>
-                                </Col>
+                                <h5 className="title">Dịch vụ</h5>
+                                <p className='text-right'>{room.services}</p>
                             </Row>
                             <Row className="title-time" >
-                                <Col span={12}>
-                                    <h5 className="title">Thời gian</h5>
-                                </Col>
-                                <Col span={12}>
-                                    <p className={`title ${"text-right"}`}>{room.time}</p>
-                                </Col>
+                                <h5 className="title">Thời gian</h5>
+                                <p className='text-right-1'>{room.time}</p>
                             </Row>
                             <Row className="title-line">
                                 <Col span={24}>
