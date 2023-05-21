@@ -80,6 +80,8 @@ https://www.figma.com/file/ifPAFQOS9ABrRCUbsjub77/hotel-management?node-id=64%3A
 ## Documentation
 
 [Documentation](https://linktodocumentation)
+Firestore structure
+![Overview](/src/assets/overview.png)
 
 
 ## License
