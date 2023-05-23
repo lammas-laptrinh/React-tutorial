@@ -58,7 +58,7 @@ export default function RoomInfo({ row }: RoomProps) {
         <div className="RoomInfoContain">
             {/*  this is room Detail Tittle */}
             <div style={{ display: 'flex' }}>
-                <div className="RoomInfoTypeName">{row.roomType}</div>
+                <div className="RoomInfoTypeName">{row?.roomType?.roomTypeName}</div>
                 <button
                     onClick={() => navigate(-1)}
                     className="RoomInfoBack"
