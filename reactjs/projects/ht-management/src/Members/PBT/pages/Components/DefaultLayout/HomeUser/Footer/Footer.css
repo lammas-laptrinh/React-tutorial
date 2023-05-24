@@ -1,0 +1,67 @@
+/* Footer.css */
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 100px;
+}
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .about,
+  .room-footer,
+  .links-footer,
+  .social-footer,
+  .contact-footer {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  
+  .title-footer {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .title-footer:hover {
+    color: rgb(180, 132, 224);
+  }
+  
+  .p {
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .ul-list-fotter {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .ul-list-fotter li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  .ul-list-fotter li:hover {
+    color: rgb(180, 132, 224);
+  }
+  
+  

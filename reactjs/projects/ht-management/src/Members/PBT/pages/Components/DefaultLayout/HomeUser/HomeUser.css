@@ -1,0 +1,88 @@
+
+/* body */
+
+.room-type-wrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+.title-h1{
+    margin-left: 40px;
+    margin-top: 80px;
+}
+.room-type-wrapper .title-roomtype{
+    font-size: 40px;
+    margin-top: 50px;
+}
+.room-type-wrapper .Roomtype-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.room-type-wrapper .Roomtype-list .span-list-room{
+    width: 180px;
+    font-size: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    position: relative;
+    padding: 1rem 0;
+
+}
+.span-list-room::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    background: #C18346;
+    ;
+    left: 0;
+    bottom: 0;
+    transform: scale(0,1);
+    transition: transform 0.3s ease;
+}
+
+.span-list-room:focus::after{
+    transform: scale(1,1);
+}
+
+.room-types {
+    width: 1300px;
+}
+
+
+.banner-introduce{
+    margin-top: 80px;
+    width: 100%;
+}
+
+.banner-introduce .banner-img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.banner-ntt{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-ntt .banner-img-ntt{
+    margin-top: 80px;
+    width: 80%;
+    object-fit: contain;
+}
+
+.room-type {
+    color: #000; /* Màu chữ */
+    text-decoration: none; /* Loại bỏ gạch chân */
+  }
+  
+  .room-type:hover {
+    color: #f00; /* Màu chữ khi di chuột qua */
+  }
