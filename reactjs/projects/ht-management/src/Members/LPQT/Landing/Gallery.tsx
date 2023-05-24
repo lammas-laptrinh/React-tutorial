@@ -12,9 +12,9 @@ const Gallery = () => {
                 <Title className="desc">orem Ipsum has been the industry's standard
                     dummy text ever since the 1500s,</Title>
             </div>
-            <div style={{ backgroundImage: `url(${Gallery_1})`, height: 450, width: 271, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', marginLeft: 147 }} />
-            <div style={{ backgroundImage: `url(${Gallery_2})`, height: 450, width: 271, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', marginLeft: 41 }} />
-            <div style={{ backgroundImage: `url(${Gallery_3})`, height: 450, width: 271, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', marginLeft: 41 }} />
+            <div className='GalleryImage147' style={{ backgroundImage: `url(${Gallery_1})` }} />
+            <div className='GalleryImage' style={{ backgroundImage: `url(${Gallery_2})` }} />
+            <div className='GalleryImage' style={{ backgroundImage: `url(${Gallery_3})` }} />
         </div>
     );
 };

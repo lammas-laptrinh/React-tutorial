@@ -3,7 +3,7 @@ import './index.css'
 const { Title } = Typography;
 const Service = () => {
     return (
-        <div style={{ width: '100vw', height: 484, backgroundColor: '#F5F3F4', marginTop: 120 }}>
+        <div className="ServiceContain">
             <Title className="service">Services</Title>
             <Row>
                 <Col span={6} className="service-col">

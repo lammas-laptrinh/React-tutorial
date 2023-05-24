@@ -175,9 +175,9 @@
     font-size: 48px;
     line-height: 65px;
     color: #2D2019;
-  }
-  
-  .service-col .desc {
+}
+
+.service-col .desc {
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
@@ -185,16 +185,16 @@
     color: #000000;
     width: 192px;
     margin-top: 10px;
-  }
-  
-  .service-col {
+}
+
+.service-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .service-col .title {
+}
+
+.service-col .title {
     font-size: 32px;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
@@ -202,23 +202,23 @@
     line-height: 44px;
     color: #000000;
     margin-top: 18px;
-  }
-  
-  .service {
+}
+
+.service {
     text-align: center;
     font-size: 48px;
     font-family: 'Nunito', sans-serif;
     line-height: 66px;
-  }
-  
-  .serviceCircle {
+}
+
+.serviceCircle {
     width: 64px;
     height: 63.71px;
     background-color: #C4C4C4;
     border-radius: 50px;
-  }
+}
 
-  .footer {
+.footer {
     width: 100vw;
 }
 
@@ -267,4 +267,54 @@
     font-family: 'Nunito', sans-serif;
     width: 253px;
     text-align: center;
+}
+
+.ServiceContain {
+    width: 100vw;
+    height: 484px;
+    background-color: #F5F3F4;
+    margin-top: 120px
+}
+
+.header-container {
+    width: 96vw;
+    height: 600px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.HeaderImage {
+    height: 100%;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.PhoneImage {
+    height: 40px;
+    width: 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 30px;
+    margin-right: 20px
+}
+
+.ML70 {
+    margin-left: 70px;
+}
+
+.GalleryImage147 {
+    height: 450px;
+    width: 271px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 147px;
+}
+
+.GalleryImage {
+    height: 450px;
+    width: 271px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 41px;
 }
