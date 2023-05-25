@@ -27,7 +27,7 @@ export default function RoomList(props: { roomList: Rooms[], onSearch: (roomId: 
         onSearch(roomId)
     };
     return (
-        <Row>
+        <Row className="room-list">
             <Col className='heading' span={12}>
                 <h2>Rooms</h2>
                 <Search className='search-session' placeholder="tìm kiếm" onChange={(e) => handleSearch(e.target.value)} />

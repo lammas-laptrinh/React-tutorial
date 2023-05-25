@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+
+
+.about-col .title {
+    font-size: 26px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 22px;
+}
+
+.about-col .desc {
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 22px;
+}
+
+.about-col-1 .title {
+    font-size: 26px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 22px;
+}
+
+.about-col-1 .desc {
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 22px;
+}
+
+.about-col {
+    width: 16%;
+    margin: 0 25px;
+}
+
+.about-col-1 {
+    width: 20%;
+}
+
+.copy {
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 20px;
+}
+
+.footer {
+    margin-top: 152px;
+    width: 100%;
+}
+
+.footer-img {
+    background-image: url('../../static/images/land-content.svg');
+    overflow: hidden;
+    background-size: cover;
+    min-height: 420px;
+    width: 100%;
+    object-fit: cover;
+
+}

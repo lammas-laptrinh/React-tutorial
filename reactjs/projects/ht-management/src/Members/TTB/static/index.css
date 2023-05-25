@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
 
 /* body */
 .version {
@@ -91,8 +95,12 @@ a:hover {
 } */
 
 .content {
-  margin: 0 36px;
+  /*   padding: 10px 40px; */
   min-height: 800px;
+}
+
+.room-list {
+  padding: 10px 50px;
 }
 
 .heading {
@@ -121,13 +129,18 @@ a:hover {
 }
 
 .service-form-container {
-
   background-color: white;
   margin-top: 20px;
   padding: 50px;
   font-size: 20px;
-
+  margin: 5% 40%;
+  background-color: white;
+  margin-top: 20px;
+  font-size: 20px;
+  width: 905px;
+  height: 785px;
 }
+
 
 .item-title {
   margin-bottom: 10px;
@@ -444,6 +457,7 @@ a:hover {
   top: 0px;
   border-radius: 0px;
   background: #FFFFFF;
+  height: revert;
 }
 
 .tooltipContent {
@@ -465,34 +479,32 @@ a:hover {
   font-weight: 350;
   font-size: 24px;
 }
-.service-form-container {
-    background-color: white;
-    margin-top: 20px;
-    font-size: 20px;
-    width: 905px;
-    height: 785px;
-    margin: 5% 0;
+
+
+.form-container {
+  margin: 0 30px;
 }
-.form-container{
-    margin: 0 30px;
+
+.item-title {
+  margin-bottom: 10px;
 }
-.item-title{
-    margin-bottom: 10px;
+
+.item-input {
+  width: 737px;
 }
-.item-input{
-    width: 737px;
+
+.service-title {
+  font-size: 32px;
+  text-align: left;
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
-.service-title
-{
-    font-size: 32px;
-    text-align: left;
-    width: 100%;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-.text-editor{
+
+.text-editor {
   text-align: left;
 }
+
 /* .ant-select-selector{
     height: 81px !important;
 }
@@ -501,15 +513,16 @@ a:hover {
     font-size: 28px;
     line-height: 70px !important;
 } */
-.btn-sub{
-    width: 218px;
-    height: 75px;
-    background-color: #ED712E;
-    color: #FAFAFA !important;
-    font-size: 23px;
+.btn-sub {
+  width: 218px;
+  height: 75px;
+  background-color: #ED712E;
+  color: #FAFAFA !important;
+  font-size: 23px;
 }
-.submit-btn{
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
+
+.submit-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }

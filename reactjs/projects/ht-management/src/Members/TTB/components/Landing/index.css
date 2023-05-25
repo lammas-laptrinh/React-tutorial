@@ -1,0 +1,23 @@
+.room-header {
+    width: 100%;
+}
+
+.room-type {
+    margin: 50px 100px;
+    width: 100%;
+}
+
+/* .galley {
+    margin: 100px 100px;
+} */
+
+/* .footer-col {
+    margin: 0 100px;
+} */
+.landing{
+    padding: 10px 40px;
+    background-color: white;
+}
+.landing-service{
+    background-color: #F5F3F4;
+}

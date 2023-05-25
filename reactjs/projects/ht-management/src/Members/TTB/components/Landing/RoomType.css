@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+
+.room {
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 65px;
+    font-weight: 800;
+}
+
+.row .col .header {
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 32px;
+}
+
+.room-col .title {
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 32px;
+}
+
+.room-col .desc {
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    line-height: 20px;
+
+}
+
+/* .room-col{
+    padding: 0 40px;
+}
+.first{
+    padding-left: 0;
+}
+.last{
+    padding-right: 0;
+} */
+/* .row {
+    display: flex;
+    justify-content: space-between;
+} */
+
+
+.col h2 {
+    border-bottom: 5px solid #D9D9D9;
+    padding-bottom: 5px;
+}
+
+.col h2:hover {
+    border-bottom: 5px solid #C18346;
+    padding-bottom: 5px;
+}
+
+.room-type-select {
+    margin-bottom: 40px;
+}
+
+.room-img {
+    position: relative;
+    /*     background-image: url("../../static/images/land-room-type-1.svg"); */
+    background-size: cover;
+
+    min-height: 100%;
+    background-repeat: no-repeat;
+}
