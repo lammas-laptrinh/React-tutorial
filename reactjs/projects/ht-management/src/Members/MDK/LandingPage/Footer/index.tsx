@@ -23,7 +23,7 @@ const Footer = () => {
             </Title>
           </Col>
         </Col>
-        <Col span={18} className="md:flex-50 md:max-w-50 md:ml-12">
+        <Col span={18} className="md:flex-50 md:max-w-50">
           <Row>
             {[
               {

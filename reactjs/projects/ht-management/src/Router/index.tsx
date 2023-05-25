@@ -1,5 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NotFound from "../Pages/Error/NotFound";
+import Room from "../Members/LHMTuan/Room";
+import RoomDetail from "../Members/LHMTuan/Room/RoomDetail";
 import KingDetail from "@src/Members/MDK/RoomDetail/KingDetail";
 import LandingPage from "@src/Members/MDK/LandingPage";
 import StandardDetail from "@src/Members/MDK/RoomDetail/StandardDetail";

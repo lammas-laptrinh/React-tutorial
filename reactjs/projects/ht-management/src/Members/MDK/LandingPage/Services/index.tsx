@@ -12,7 +12,7 @@ const Services = () => {
         {[1, 2, 3, 4].map((index) => (
           <Col
             key={index}
-            className="flex flex-col items-center flex-50 max-w-50 my-6"
+            className="flex flex-col items-center flex-25 max-w-25 my-6 sm:flex-50 sm:max-w-50"
           >
             <div className="rounded-full bg-[#C4C4C4] w-[64px] h-[63px]"></div>
             <Title level={3} className="mt-6 mb-2 sm:!text-[1rem]">

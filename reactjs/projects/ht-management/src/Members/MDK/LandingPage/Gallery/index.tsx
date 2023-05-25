@@ -10,7 +10,7 @@ const Gallery = () => {
   return (
     <Layout className="mt-32">
       <Row className="flex items-center sm:flex-col">
-        <Col className="flex-50 max-w-50 md:flex-50 md:mx-auto md:order-last md:mt-8 sm:flex-100 sm:mt-6 sm:order-last">
+        <Col className="flex-50 max-w-50 md:flex-50 md:max-w-50 md:mt-8 sm:flex-100 sm:mt-6 sm:order-last">
           <div className="ml-[15rem] md:ml-[4rem] sm:ml-[1rem]">
             <Title
               level={1}
@@ -27,8 +27,8 @@ const Gallery = () => {
             </Title>
           </div>
         </Col>
-        <Col className="flex-50 max-w-50 md:flex-50 md:mx-auto sm:flex-100 md:order-first sm:order-first">
-          <div className="flex items-center justify-between w-full md:!w-[510px] sm:!w-[280px]">
+        <Col className="flex-50 max-w-50 md:flex-50 sm:flex-100 sm:order-first">
+          <div className="flex items-center justify-between w-full sm:!w-[280px]">
             <div className="w-[33,33%]">
               <Image src={gal1} />
             </div>
