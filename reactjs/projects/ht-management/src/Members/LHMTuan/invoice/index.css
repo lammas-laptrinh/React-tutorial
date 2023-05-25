@@ -1,0 +1,74 @@
+.Form {
+  position: absolute;
+  width: 844px;
+  height: 650px;
+  left: 318px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+
+.img {
+  margin-top: 50px;
+  border-radius: 50px;
+}
+
+.title-1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: #000000;
+}
+
+.amount {
+  text-align: center;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 65px;
+  color: #000000;
+}
+
+.line-1 {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #000000;
+}
+
+.line-2 {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px dashed #000000;
+}
+
+.title-2 {
+  margin-left: 40px;
+  font-family: "Nunito";
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 43px;
+  text-align: left;
+  color: #000000;
+}
+
+.data {
+  text-align: right;
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 10px;
+  margin-right: 40px;
+  color: #000000;
+}
