@@ -71,9 +71,9 @@ const Rooms = () => {
           onSearch={handleSearch}
         />
       </Row>
-      <Row>
+      <Row className="md:gap-[1rem]">
         <Col span={24}>
-          <Title level={3} className="!mb-6">
+          <Title level={3} className="sm:!mb-8">
             Standard
           </Title>
         </Col>
@@ -83,7 +83,12 @@ const Rooms = () => {
             {roomsToDisplay.map((room) => {
               const displayBadge = room.notify === true;
               return (
-                <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
+                <Col
+                  style={{ flex: "0 0 20%" }}
+                  className="md:flex-33 md:max-w-33 sm:max-w-full sm:mb-8 sm:mx-auto"
+                  span={5}
+                  key={room.id}
+                >
                   {/* Ràng buộc hiển thị grid/list view */}
                   {displayBadge ? (
                     <Badge count={3}>
@@ -96,11 +101,12 @@ const Rooms = () => {
                               height: 160,
                               borderColor: "#ABAFB7",
                             }}
+                            className="md:!w-[180px] md:!h-[150px]"
                           >
                             <Space className="flex items-center justify-center">
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                             </Space>
                             <Title
                               level={5}
@@ -126,11 +132,12 @@ const Rooms = () => {
                           height: 160,
                           borderColor: "#ABAFB7",
                         }}
+                        className="md:!w-[180px] md:!h-[150px]"
                       >
                         <Space className="flex items-center justify-center">
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                         </Space>
                         <Title
                           level={5}
@@ -163,7 +170,7 @@ const Rooms = () => {
                           padding: "2rem",
                         }}
                       >
-                        <Col span={6}>
+                        <Col span={6} className="md:flex-50 sm:flex-100">
                           <Card
                             title={room.name}
                             extra={<a href="#">More</a>}
@@ -186,18 +193,24 @@ const Rooms = () => {
                             </Title>
                           </Card>
                         </Col>
-                        <Col span={18}>
+                        <Col
+                          span={18}
+                          className="md:flex-40 md:ml-28 md:h-[30px] sm:flex-100 "
+                        >
                           <div>
-                            <Title level={5}>
+                            <Title level={5} className="sm:hidden">
                               Lorem ipsum dolor sit amet consectetur adipisicing
                               elit. Dicta at ipsum quae iste totam quam illum
                               officia blanditiis. Ullam voluptas et magnam totam
                               quia facere vitae illo culpa minus eum?
                             </Title>
-                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                               <Image preview={false} src={feature} />
                             </div>
-                            <NavLink to="/standard-detail">
+                            <NavLink
+                              to="/standard-detail"
+                              className="md:hidden sm:hidden"
+                            >
                               <Button size="large">READ MORE</Button>
                             </NavLink>
                           </div>
@@ -211,7 +224,7 @@ const Rooms = () => {
                         padding: "2rem",
                       }}
                     >
-                      <Col span={6}>
+                      <Col span={6} className="md:flex-50">
                         <Card
                           title={room.name}
                           extra={<a href="#">More</a>}
@@ -234,18 +247,24 @@ const Rooms = () => {
                           </Title>
                         </Card>
                       </Col>
-                      <Col span={18}>
+                      <Col
+                        span={18}
+                        className="md:flex-40 md:ml-28 md:h-[30px]"
+                      >
                         <div>
-                          <Title level={5}>
+                          <Title level={5} className="sm:hidden">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Dicta at ipsum quae iste totam quam illum
                             officia blanditiis. Ullam voluptas et magnam totam
                             quia facere vitae illo culpa minus eum?
                           </Title>
-                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                             <Image preview={false} src={feature} />
                           </div>
-                          <NavLink to="/standard-detail">
+                          <NavLink
+                            to="/standard-detail"
+                            className="md:hidden sm:hidden"
+                          >
                             <Button size="large">READ MORE</Button>
                           </NavLink>
                         </div>
@@ -258,9 +277,9 @@ const Rooms = () => {
           </>
         )}
       </Row>
-      <Row className="!my-6">
+      <Row className="!my-6 md:gap-[1rem]">
         <Col span={24}>
-          <Title level={3} className="!mb-6">
+          <Title level={3} className="sm:!mb-8">
             Double
           </Title>
         </Col>
@@ -270,7 +289,12 @@ const Rooms = () => {
             {roomsToDisplay.map((room) => {
               const displayBadge = room.notify === true;
               return (
-                <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
+                <Col
+                  style={{ flex: "0 0 20%" }}
+                  className="md:flex-33 md:max-w-33 sm:max-w-full sm:mb-8 sm:mx-auto"
+                  span={5}
+                  key={room.id}
+                >
                   {/* Ràng buộc hiển thị grid/list view */}
                   {displayBadge ? (
                     <Badge count={3}>
@@ -283,11 +307,12 @@ const Rooms = () => {
                               height: 160,
                               borderColor: "#ABAFB7",
                             }}
+                            className="md:!w-[180px] md:!h-[150px]"
                           >
                             <Space className="flex items-center justify-center">
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                             </Space>
                             <Title
                               level={5}
@@ -313,11 +338,12 @@ const Rooms = () => {
                           height: 160,
                           borderColor: "#ABAFB7",
                         }}
+                        className="md:!w-[180px] md:!h-[150px]"
                       >
                         <Space className="flex items-center justify-center">
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                         </Space>
                         <Title
                           level={5}
@@ -350,7 +376,7 @@ const Rooms = () => {
                           padding: "2rem",
                         }}
                       >
-                        <Col span={6}>
+                        <Col span={6} className="md:flex-50">
                           <Card
                             title={room.name}
                             extra={<a href="#">More</a>}
@@ -373,18 +399,24 @@ const Rooms = () => {
                             </Title>
                           </Card>
                         </Col>
-                        <Col span={18}>
+                        <Col
+                          span={18}
+                          className="md:flex-40 md:ml-28 md:h-[30px]"
+                        >
                           <div>
-                            <Title level={5}>
+                            <Title level={5} className="sm:hidden">
                               Lorem ipsum dolor sit amet consectetur adipisicing
                               elit. Dicta at ipsum quae iste totam quam illum
                               officia blanditiis. Ullam voluptas et magnam totam
                               quia facere vitae illo culpa minus eum?
                             </Title>
-                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                               <Image preview={false} src={feature} />
                             </div>
-                            <NavLink to="/double-detail">
+                            <NavLink
+                              to="/double-detail"
+                              className="md:hidden sm:hidden"
+                            >
                               <Button size="large">READ MORE</Button>
                             </NavLink>
                           </div>
@@ -398,7 +430,7 @@ const Rooms = () => {
                         padding: "2rem",
                       }}
                     >
-                      <Col span={6}>
+                      <Col span={6} className="md:flex-50">
                         <Card
                           title={room.name}
                           extra={<a href="#">More</a>}
@@ -421,18 +453,24 @@ const Rooms = () => {
                           </Title>
                         </Card>
                       </Col>
-                      <Col span={18}>
+                      <Col
+                        span={18}
+                        className="md:flex-40 md:ml-28 md:h-[30px]"
+                      >
                         <div>
-                          <Title level={5}>
+                          <Title level={5} className="sm:hidden">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Dicta at ipsum quae iste totam quam illum
                             officia blanditiis. Ullam voluptas et magnam totam
                             quia facere vitae illo culpa minus eum?
                           </Title>
-                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                             <Image preview={false} src={feature} />
                           </div>
-                          <NavLink to="/double-detail">
+                          <NavLink
+                            to="/double-detail"
+                            className="md:hidden sm:hidden"
+                          >
                             <Button size="large">READ MORE</Button>
                           </NavLink>
                         </div>
@@ -445,9 +483,9 @@ const Rooms = () => {
           </>
         )}
       </Row>
-      <Row>
+      <Row className="md:gap-[1rem]">
         <Col span={24}>
-          <Title level={3} className="!mb-6">
+          <Title level={3} className="sm:!mb-8">
             King
           </Title>
         </Col>
@@ -457,7 +495,12 @@ const Rooms = () => {
             {roomsToDisplay.map((room) => {
               const displayBadge = room.notify === true;
               return (
-                <Col style={{ flex: "0 0 20%" }} span={5} key={room.id}>
+                <Col
+                  style={{ flex: "0 0 20%" }}
+                  className="md:flex-33 md:max-w-33 sm:max-w-full sm:mb-8 sm:mx-auto"
+                  span={5}
+                  key={room.id}
+                >
                   {/* Ràng buộc hiển thị grid/list view */}
                   {displayBadge ? (
                     <Badge count={3}>
@@ -470,11 +513,12 @@ const Rooms = () => {
                               height: 160,
                               borderColor: "#ABAFB7",
                             }}
+                            className="md:!w-[180px] md:!h-[150px]"
                           >
                             <Space className="flex items-center justify-center">
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                              <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                             </Space>
                             <Title
                               level={5}
@@ -500,11 +544,12 @@ const Rooms = () => {
                           height: 160,
                           borderColor: "#ABAFB7",
                         }}
+                        className="md:!w-[180px] md:!h-[150px]"
                       >
                         <Space className="flex items-center justify-center">
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
-                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
+                          <div className="circle rounded-full bg-[#D9D9D9] w-[30px] h-[30px] md:w-[20px] md:h-[20px]"></div>
                         </Space>
                         <Title
                           level={5}
@@ -537,7 +582,7 @@ const Rooms = () => {
                           padding: "2rem",
                         }}
                       >
-                        <Col span={6}>
+                        <Col span={6} className="md:flex-50">
                           <Card
                             title={room.name}
                             extra={<a href="#">More</a>}
@@ -560,18 +605,24 @@ const Rooms = () => {
                             </Title>
                           </Card>
                         </Col>
-                        <Col span={18}>
+                        <Col
+                          span={18}
+                          className="md:flex-40 md:ml-28 md:h-[30px]"
+                        >
                           <div>
-                            <Title level={5}>
+                            <Title level={5} className="sm:hidden">
                               Lorem ipsum dolor sit amet consectetur adipisicing
                               elit. Dicta at ipsum quae iste totam quam illum
                               officia blanditiis. Ullam voluptas et magnam totam
                               quia facere vitae illo culpa minus eum?
                             </Title>
-                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                            <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                               <Image preview={false} src={feature} />
                             </div>
-                            <NavLink to="/king-detail">
+                            <NavLink
+                              to="/king-detail"
+                              className="md:hidden sm:hidden"
+                            >
                               <Button size="large">READ MORE</Button>
                             </NavLink>
                           </div>
@@ -585,7 +636,7 @@ const Rooms = () => {
                         padding: "2rem",
                       }}
                     >
-                      <Col span={6}>
+                      <Col span={6} className="md:flex-50">
                         <Card
                           title={room.name}
                           extra={<a href="#">More</a>}
@@ -608,18 +659,24 @@ const Rooms = () => {
                           </Title>
                         </Card>
                       </Col>
-                      <Col span={18}>
+                      <Col
+                        span={18}
+                        className="md:flex-40 md:ml-28 md:h-[30px]"
+                      >
                         <div>
-                          <Title level={5}>
+                          <Title level={5} className="sm:hidden">
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Dicta at ipsum quae iste totam quam illum
                             officia blanditiis. Ullam voluptas et magnam totam
                             quia facere vitae illo culpa minus eum?
                           </Title>
-                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem]">
+                          <div className="flex item-center mt-[2.5rem] mb-[2.5rem] md:hidden sm:translate-y-[8rem] sm:pb-20">
                             <Image preview={false} src={feature} />
                           </div>
-                          <NavLink to="/king-detail">
+                          <NavLink
+                            to="/king-detail"
+                            className="md:hidden sm:hidden"
+                          >
                             <Button size="large">READ MORE</Button>
                           </NavLink>
                         </div>
