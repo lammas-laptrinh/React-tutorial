@@ -6,7 +6,7 @@ import KingDetail from "@src/Members/MDK/RoomDetail/KingDetail";
 import StandardDetail from "@src/Members/MDK/RoomDetail/StandardDetail";
 import DoubleDetail from "@src/Members/MDK/RoomDetail/DoubleDetail";
 import Dashboard from "@src/Members/MDK/Dashboard";
-import Routers from "./Members/NHH/Router";
+import Routers from "@src/Members/NHH";
 
 export default function Router() {
   return (

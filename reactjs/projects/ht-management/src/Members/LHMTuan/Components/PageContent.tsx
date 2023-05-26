@@ -16,7 +16,7 @@ const PageContent = ({ rooms }: RoomListProps) => {
 
   const handleSearch = (roomId: string) => {
     const foundRooms = rooms.filter(
-      (rooms: { id: string }) => rooms.id === roomId
+      (rooms: { id?: string }) => rooms.id === roomId
     );
     setRoomList(foundRooms);
     if (roomId === "") {
