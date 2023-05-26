@@ -144,6 +144,121 @@ a:hover {
 
 .item-title {
   margin-bottom: 10px;
+  font-size: 20px;
+
+}
+
+.payment {
+  margin: 5% 10%;
+  background: white;
+  width: 1440px;
+  height: 1024px;
+}
+
+.input {
+  text-align: left !important;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.paymentInput {
+  display: block;
+  margin: 10%;
+}
+
+.input-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: block;
+  color: #7C7E8A;
+}
+
+.title {
+  text-align: left !important;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.left-title {
+  text-align: left;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.right-title {
+  text-align: right;
+  color: #000;
+}
+
+.spacing {
+  margin-bottom: 40px;
+}
+
+.border {
+  border: 0.5px solid black;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.img {
+  width: 100%;
+}
+
+.paymentRoom {
+  display: block;
+  margin: 10% 0;
+  background-color: #F9FBFC;
+}
+
+.roomDetail {
+  display: block;
+  margin: 5%;
+}
+
+.roomInfo {
+  text-align: left !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.tick {
+  font-size: 20px;
+  display: flex;
+  align-items: center
+}
+
+.paypal-popup {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  top: 50%;
+  border-radius: 10px;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  background-color: #fff;
+  box-shadow: none;
+  color: #000;
+  border-radius: 10px;
+}
+
+.overlay {
+  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .SiderTittle {
@@ -480,6 +595,14 @@ a:hover {
   font-size: 24px;
 }
 
+.service-form-container {
+  background-color: white;
+  margin-top: 20px;
+  font-size: 20px;
+  width: 905px;
+  height: 785px;
+  margin: 5% 0;
+}
 
 .form-container {
   margin: 0 30px;
@@ -525,4 +648,34 @@ a:hover {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
+}
+
+
+
+
+
+
+.ant-select-selector {
+  height: 80px !important;
+}
+
+.ant-select-selection-placeholder {
+  font-size: 28px;
+  line-height: 80px !important;
+}
+
+.ant-select-selector {
+  height: 80px;
+}
+
+.ant-select-selection-search-input {
+  font-size: 28px !important;
+  line-height: 80px !important;
+  height: 80px !important;
+}
+
+.ant-select-item {
+  min-height: 80px !important;
+  font-size: 28px !important;
+  height: 80px !important;
 }

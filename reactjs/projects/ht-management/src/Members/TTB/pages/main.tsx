@@ -17,6 +17,7 @@ import Detail from './roomDetail';
 import Service from '../components/service';
 import Landing from '../components/Landing';
 import SignUp from '../components/SignUp';
+import Payment from '../Payment/paymentForm';
 
 const { Content } = Layout;
 
@@ -117,6 +118,7 @@ export default function Main() {
                         <Route path="/service" element={<Service />} />
                         <Route path="/landing" element={<Landing />} />
                         <Route path="/signup" element={<SignUp />} />
+                        <Route path="/payment" element={<Payment />} />
                     </Routes>
                 </Content>
             </Layout>
