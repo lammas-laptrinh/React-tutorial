@@ -15,6 +15,7 @@ import RoomList from '../components/RoomList';
 import { Route, Routes } from 'react-router-dom';
 import Detail from './roomDetail';
 import Service from '../components/service';
+import Payment from '../Payment/paymentForm';
 
 const { Content } = Layout;
 
@@ -113,6 +114,7 @@ export default function Main() {
                         <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
                         <Route path=":id" element={<Detail />} />
                         <Route path="/service" element={<Service />} />
+                        <Route path="/payment" element={<Payment />} />
                     </Routes>
                 </Content>
             </Layout>
