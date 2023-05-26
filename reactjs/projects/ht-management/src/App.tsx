@@ -1,9 +1,13 @@
-import Map from "./Members/TTB";
-
-export default function App() {
+import { BrowserRouter } from 'react-router-dom';
+import './App.css'
+import Router from './Router/index';
+function App() {
   return (
-    <div style={{ height: '100%' }}>
-      <Map />
-    </div>
-  );
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  )
 }
+
+export default App;
+
