@@ -1,5 +1,5 @@
 import { Button, Space, Tooltip } from 'antd';
-import { Rooms } from '../Types';
+import { Rooms } from '../../NHH/types';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/index.scss'
 

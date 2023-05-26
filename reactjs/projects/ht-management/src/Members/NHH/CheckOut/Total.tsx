@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
-import "./Payment.scss";
+import "./Payment.module.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ButtonCheckOut from './ButtonCheckOut';

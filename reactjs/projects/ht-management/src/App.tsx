@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-import Router from './Router/index';
+import Routers from './Members/NHH/Router';
 function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <Routers />
     </BrowserRouter>
   )
 }

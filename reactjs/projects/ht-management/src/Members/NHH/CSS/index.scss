@@ -34,37 +34,15 @@
 }
 // End Header
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Type-Room{
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 36px;
     line-height: 49px;
-    
+    margin-top: 40px;
     color: #000000;
 }
-
-
-
-
-
 
 
 /* rooom */
@@ -104,7 +82,7 @@ a:hover {
     min-width: 30px;
     min-height: 30px;
     margin-left: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 12px
 }
 
 .sideLogo {
@@ -122,6 +100,7 @@ a:hover {
     margin-left: 20px ;
     width: 80px;
     margin-bottom: 10px;
+    margin-top: 30px;
 }
 svg{
     font-size: 24px;
@@ -131,28 +110,22 @@ svg{
 
 
 
-
-
-
-
-
-
 // /////////////////////////////////////////////////////////// content
 .content {
-    margin: 0 36px;
     min-height: 800px;
+    background-color: #F5F5F5;
 }
 
 .heading {
-    align-items: center;
-    display: flex;
-    &__NameRoom{
+    align-items: baseline;
+    display: flex;   
+      &__NameRoom{
         font-family: 'Nunito', sans-serif;
         font-style: normal;
         font-weight: 800;
         font-size: 36px;    
         line-height: 49px;
-    
+        margin-top: 30px;
         color: #000000;
     }
 
@@ -169,7 +142,6 @@ svg{
     display: flex;
     align-items: center;
     justify-content: end;
-
      &__header{
         font-family: 'Nunito', sans-serif;
         font-style: normal;
@@ -179,5 +151,9 @@ svg{
         margin-right: 10px;
         color: #BFC3CD;
             }
+}
+
+.ant-layout-sider-children{
+    margin-top: 30px;
 }
 
