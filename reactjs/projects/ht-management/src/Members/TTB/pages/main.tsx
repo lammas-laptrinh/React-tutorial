@@ -18,6 +18,7 @@ import Service from '../components/service';
 import Landing from '../components/Landing';
 import SignUp from '../components/SignUp';
 import Payment from '../Payment/paymentForm';
+import Leaflet from '@src/Members/PBT/pages/Leaflet';
 
 const { Content } = Layout;
 
@@ -119,6 +120,7 @@ export default function Main() {
                         <Route path="/landing" element={<Landing />} />
                         <Route path="/signup" element={<SignUp />} />
                         <Route path="/payment" element={<Payment />} />
+                        <Route path="/leaflet" element={<Leaflet />} />
                     </Routes>
                 </Content>
             </Layout>
