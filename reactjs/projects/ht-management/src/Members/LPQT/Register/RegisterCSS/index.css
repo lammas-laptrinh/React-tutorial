@@ -1,0 +1,360 @@
+.flexGrow1 {
+    flex-grow: 1;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px solid #DEDEE0;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+
+.RegisterTittle {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: #201F1E;
+}
+
+.InputContainRegis {
+    height: 58px;
+    width: 360px;
+    border-radius: 8px;
+    border: 2px solid #DEDEE0;
+    font-size: 18px;
+    line-height: 17px;
+}
+
+.CoulumnShow {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.CoulumnShow1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+}
+
+.ResInputTitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #201F1E;
+}
+
+.InputContainRegisFull {
+    height: 58px;
+    width: 750px;
+    border-radius: 8px;
+    border: 2px solid #DEDEE0;
+    font-size: 18px;
+    line-height: 17px;
+}
+
+.MT8 {
+    margin-top: 8px;
+}
+
+.MT81 {
+    margin-top: 8px;
+    margin-left: 20px;
+}
+
+.ResInputTitle1 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #201F1E;
+    margin-left: 20px;
+}
+
+.ComfirmButtonRes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 10px;
+    color: white;
+    width: 748px;
+    height: 58px;
+    background: #ED712E;
+    border-radius: 8px;
+    margin-top: 59px;
+}
+
+.AlreadyHaveA {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.LoginText {
+    color: #ED712E;
+    margin-left: 6px;
+}
+
+.AlrdAText {
+    color: #6B7280;
+}
+
+.RegisContain {
+    position: absolute;
+    width: 828px;
+    min-height: 98vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.FBButtonRes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 10px;
+    width: 748px;
+    height: 48px;
+    border-radius: 8px;
+    margin-top: 39px;
+    border: 2px solid #A19F9D;
+}
+
+.GGButtonRes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 10px;
+    width: 748px;
+    height: 48px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid #A19F9D;
+}
+
+.BigContain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9em) {
+    .BigContain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .RegisContain {
+        position: absolute;
+        width: 700px;
+        height: 89vh;
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px;
+        overflow: auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .InputContainRegis {
+        height: 58px;
+        width: 300px;
+        border-radius: 8px;
+        border: 2px solid #DEDEE0;
+        font-size: 18px;
+        line-height: 17px;
+    }
+
+    .InputContainRegisFull {
+        height: 58px;
+        width: 600px;
+        border-radius: 8px;
+        border: 2px solid #DEDEE0;
+        font-size: 18px;
+        line-height: 17px;
+    }
+
+    .ComfirmButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        color: white;
+        width: 600px;
+        height: 58px;
+        background: #ED712E;
+        border-radius: 8px;
+        margin-top: 59px;
+    }
+
+    .GGButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        width: 600px;
+        height: 58px;
+        border-radius: 8px;
+        margin-top: 59px;
+    }
+
+    .FBButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        width: 600px;
+        height: 58px;
+        border-radius: 8px;
+        margin-top: 59px;
+    }
+}
+
+@media only screen and (max-width: 46.75em) {
+    .BigContain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .RegisContain {
+        position: absolute;
+        width: 350px;
+        min-height: 89vh;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .InputContainRegis {
+        height: 40px;
+        width: 130px;
+        border-radius: 8px;
+        border: 2px solid #DEDEE0;
+        font-size: 18px;
+        line-height: 17px;
+    }
+
+    .InputContainRegisFull {
+        height: 40px;
+        width: 270px;
+        border-radius: 8px;
+        border: 2px solid #DEDEE0;
+        font-size: 18px;
+        line-height: 17px;
+    }
+
+    .ComfirmButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        color: white;
+        width: 270px;
+        height: 40px;
+        background: #ED712E;
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+
+    .GGButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        width: 270px;
+        height: 40px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .FBButtonRes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 10px;
+        width: 270px;
+        height: 40px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .RegisterTittle {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 700px;
+        font-size: 20px;
+        line-height: 48px;
+        color: #201F1E;
+    }
+
+    .CoulumnShow1 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 18px;
+    }
+
+}
