@@ -1,16 +1,41 @@
 import { Input } from 'antd';
 import RoomList from '../components/RoomList';
-import { useState } from 'react';
-import { roomData } from '../../Constant/Global';
 import LineIcon from '../../../LPQT/assets/images/LineIcon.png'
 import GridIcon from '../../../LPQT/assets/images/GridIcon.png'
+import { firestoreDB } from '../../Firebase/firebase'
+import { collection, getDocs, collectionGroup, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import '../../CSS/index.css'
 
 
 export default function RoomPage() {
     const { Search } = Input;
     const [searchText, setSearchText] = useState<string>('');
     const [isGridView, setIsGridView] = useState<boolean>(true);
+    //setup FireBase
+    const [data, setData]: any = useState([]);
+    useEffect(() => {
+        const fetchCollection = async () => {
+            const allRoomsQuery = query(collection(firestoreDB, "rooms"));
+            const allRoomTypesQuery = collectionGroup(firestoreDB, "roomTypes");
+            const allStatusQuery = collectionGroup(firestoreDB, "status");
 
+            const [roomsSnapshot, roomTypesSnapshot, StatusSnapShot] = await Promise.all([
+                getDocs(allRoomsQuery),
+                getDocs(allRoomTypesQuery),
+                getDocs(allStatusQuery),
+               
+            ]);
+
+            const roomsData = roomsSnapshot.docs.map((doc) => doc.data());
+            const roomTypesData = roomTypesSnapshot.docs.map((doc) => doc.data());
+            const statusData = StatusSnapShot.docs.map((doc) => doc.data());
+            const data = { rooms: roomsData, roomTypes: roomTypesData, status: statusData };
+            setData(data);
+        };
+
+        fetchCollection();
+    }, [firestoreDB]);
     //This is url: /room UI Page 
     return (
         <div className='RoomPageContain'>
@@ -43,7 +68,9 @@ export default function RoomPage() {
                         </div>
                     </div>
                 </div>
-                <RoomList rows={roomData} searchText={searchText} isGridView={isGridView} /> {/* fill the roomData and searchData into Props */}
+                {data && (
+                    <RoomList rows={data} searchText={searchText} isGridView={isGridView} />
+                )}
             </div>
         </div>
     );

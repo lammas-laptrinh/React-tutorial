@@ -4,24 +4,27 @@ import renderRoomsAsList from './RenderList';
 import renderRoomsAsGrid from './RenderGrid';
 
 const RoomList = ({ rows, searchText, isGridView }: RoomListProps) => {
-    const roomTypes = [...new Set(rows.map((room) => room.roomType))];
 
-    const filteredRows = rows.filter(
-        (row) => row && row.name && row.name.toLowerCase().includes(searchText!.toLowerCase())
-    );
 
+    if (!rows) {
+        return <div>Loading...</div>; // add a loading state or error message
+    }
+
+    const filteredRows = rows?.rooms?.filter((row: any) => {
+        if (searchText) {
+            return row.name && row.name.toLowerCase().includes(searchText.toLowerCase());
+        } else {
+            return row
+        }
+    });
     return (
-        <div>
-            {roomTypes.map((roomType, index) => {
-                const roomsWithType = filteredRows.filter((room) => room.roomType === roomType);
+        <div className='RoomListContain'>
+            {rows?.roomTypes?.map((roomTypeName: any, index: any) => {
+                const roomsWithType = filteredRows.filter((row: any) => row.roomTypeId === roomTypeName.id);
                 return (
                     <div className="room-type-wrapper" key={index}>
-                        <Typography.Title level={2}>{roomType?.roomTypeName}</Typography.Title>
-                        {isGridView ?
-                            renderRoomsAsGrid({ rows: roomsWithType })
-                            :
-                            renderRoomsAsList({ rows: roomsWithType })
-                        }
+                        <Typography.Title level={2}>{roomTypeName.name}</Typography.Title>
+                        {isGridView ? renderRoomsAsGrid({ rows: roomsWithType }) : renderRoomsAsList({ rows: roomsWithType })}
                     </div>
                 );
             })}
@@ -30,3 +33,4 @@ const RoomList = ({ rows, searchText, isGridView }: RoomListProps) => {
 };
 
 export default RoomList;
+

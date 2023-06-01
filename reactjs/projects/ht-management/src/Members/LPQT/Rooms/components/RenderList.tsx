@@ -7,13 +7,13 @@ import '../../CSS/index.css'
 
 export default function renderRoomsAsList({ rows }: RoomListProps) {
     //this is the List Ui if user click List View
-    return rows.map((row, index) => (
+    return rows.map((row: any, index: any) => (
         <div className="PosRelative">
             <Link className="DecorateNone" key={index} to={`${window.location.pathname}/${row.id}`}>
                 <Card className="card" style={{ marginTop: 20 }}>
                     <div className="Bold">{row.name}</div>
                     {
-                        (row.status == "paid") ?
+                        (row.statusId == 3) ?
                             (
                                 <div className="top40">
                                     {Array(3).fill(null).map((_, i) => (
@@ -32,12 +32,7 @@ export default function renderRoomsAsList({ rows }: RoomListProps) {
                     }
                 </Card>
             </Link>
-            {row?.serviceCount! > 0 &&
-                (
-                    <ServiceBox row={row} />
-                )
-            }
-
+            {(row.statusId == 3) && <ServiceBox />}
         </div>
     ));
 };

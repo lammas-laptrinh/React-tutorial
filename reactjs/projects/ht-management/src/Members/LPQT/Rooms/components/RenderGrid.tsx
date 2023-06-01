@@ -7,18 +7,18 @@ import '../../CSS/index.css'
 export default function renderRoomsAsGrid({ rows }: RoomListProps) {
     //this is the Grid Ui if user click Grid View
     return (
-        rows.map((row, index) => (
+        rows.map((row: any, index: any) => (
             <div
                 className="GridContainer"
                 key={index}
             >
-                <Link className="DecorateNone" to={`${window.location.pathname}/${row.id}`}>
+                <Link className="DecorateNone" to={`${window.location.pathname}/${row.roomTypeId}`}>
                     <Card className="Card" hoverable>
                         <Typography className="GridName">
                             {row.name}
                         </Typography>
                         {
-                            (row.status == "paid") ?
+                            (row.statusId == 3) ?
                                 (
                                     <div className="top40">
                                         {Array(3).fill(null).map((_, i) => (
@@ -37,7 +37,7 @@ export default function renderRoomsAsGrid({ rows }: RoomListProps) {
                         }
                     </Card>
                 </Link>
-                {row?.serviceCount! > 0 && <ServiceBox row={row} />}
+                {(row.statusId == 3) && <ServiceBox />}
             </div >
         ))
     );

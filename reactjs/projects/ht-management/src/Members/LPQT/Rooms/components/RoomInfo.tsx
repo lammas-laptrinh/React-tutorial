@@ -1,5 +1,4 @@
 
-import { RoomProps } from "../type"
 import { Button, Dropdown, Rate, Space } from 'antd';
 import { Avatar, Divider, Tooltip, DatePicker } from 'antd';
 import {
@@ -15,12 +14,12 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function RoomInfo({ row }: RoomProps) {
+export default function RoomInfo({ row }: any) {
     //dropitem for RoomDetail info
     const items: any['items'] = [
         {
             label: row?.name,
-            key: row.id,
+            key: row?.roomTypeId,
             icon: <TagOutlined />,
         },
     ];
@@ -44,14 +43,13 @@ export default function RoomInfo({ row }: RoomProps) {
         setFullDescription(!showFullDescription);
     };
     const description = showFullDescription
-        ? row.description
-        : row.description?.slice(0, 90);
+        ? row?.description
+        : row?.description?.slice(0, 90);
 
     //handle Day
     dayjs.extend(customParseFormat);
     const { RangePicker } = DatePicker;
     const dateFormat = 'YYYY-MM-DD';
-
     const checkInFormatted = dayjs(row?.checkIn).format(dateFormat);
     const checkOutFormatted = dayjs(row?.checkOut).format(dateFormat);
     return (
@@ -117,7 +115,7 @@ export default function RoomInfo({ row }: RoomProps) {
             <div>
                 {/*   Could book Room if not paid yet and Can see Room currently State if had booked */}
                 {
-                    (row.status == 'paid') ?
+                    (row?.statusId == 3) ?
                         (
                             <div>
                                 <div className="RoomInfoTittle">
@@ -152,7 +150,7 @@ export default function RoomInfo({ row }: RoomProps) {
                                         </div>
                                         <div className="Flex1">
                                             <Button icon={<KeyOutlined />}>
-                                                {row.name}
+                                                {row?.name}
                                             </Button>
                                         </div>
                                     </div>
@@ -162,16 +160,16 @@ export default function RoomInfo({ row }: RoomProps) {
                                         </div>
                                         <div className="Flex1">
                                             {
-                                                (row.status == 'paid') ?
+                                                (row?.statusId == 3) ?
                                                     (
                                                         <Button style={{ backgroundColor: 'yellow' }} icon={<CheckCircleOutlined />}>
-                                                            {row.status}
+                                                            booked
                                                         </Button>
                                                     )
                                                     :
                                                     (
                                                         <Button icon={<CloseSquareOutlined />}>
-                                                            {row.status}
+                                                            {row.statusId}
                                                         </Button>
                                                     )
                                             }
@@ -188,7 +186,7 @@ export default function RoomInfo({ row }: RoomProps) {
                                         <div className="Flex1">
                                             <RangePicker
                                                 className="Flex12"
-                                                defaultValue={(row?.status == 'paid') ? [dayjs(checkInFormatted), dayjs(checkOutFormatted)] : null}
+                                                defaultValue={(row?.statusId == 3) ? [dayjs(checkInFormatted), dayjs(checkOutFormatted)] : null}
                                                 format={dateFormat}
                                             />
                                         </div>
@@ -197,7 +195,7 @@ export default function RoomInfo({ row }: RoomProps) {
                                                 <Button>
                                                     <TagOutlined />  &nbsp;
                                                     <Space>
-                                                        {row.name}
+                                                        {row?.name}
                                                         <CaretDownOutlined />
                                                     </Space>
                                                 </Button>
@@ -221,7 +219,7 @@ export default function RoomInfo({ row }: RoomProps) {
                                                 <Button>
                                                     <TagOutlined />  &nbsp;
                                                     <Space>
-                                                        {row.name}
+                                                        {row?.name}
                                                         <CaretDownOutlined />
                                                     </Space>
                                                 </Button>
