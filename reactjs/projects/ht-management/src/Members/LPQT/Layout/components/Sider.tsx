@@ -10,7 +10,7 @@ const items: MenuItemType[] = MenuItem.map((item) => ({
   key: item.id.toString(),
   label:
     <Link to={item.url}>
-      <img src={item.icon} alt="Dashboard" className='SiderItem' />
+      <item.icon style={{ fontSize: 40 }} />
     </Link>
 }));
 
