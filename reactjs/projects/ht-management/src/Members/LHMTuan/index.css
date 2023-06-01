@@ -1,0 +1,348 @@
+#root {
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 5rem;
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*PaymentInfo*/
+.Paymentleft-title {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 25px;
+  min-height: 55px;
+  justify-content: space-between;
+}
+
+.payment-info-container {
+  position: relative;
+}
+
+.payment-info-top-box {
+  height: 280px;
+  width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+.payment-info-bottom-box {
+  height: 300px;
+  width: 350px;
+  background-color: #f3f5f9;
+  display: block;
+}
+
+.payment-info-middle-box {
+  height: 70px;
+  width: 280px;
+  background-color: white;
+  position: absolute;
+  top: 235px;
+  left: 35px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  line-height: 0.2;
+}
+
+.payment-info-middle-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.payment-info-middle-image {
+  height: 55px;
+  width: 55px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 8px;
+  left: 25px;
+}
+
+.payment-info-details-box {
+  height: 250px;
+  width: 300px;
+  background-color: #f3f5f9;
+  position: absolute;
+  top: 300px;
+  left: 25px;
+}
+
+.payment-info-details-item {
+  margin-top: 25px;
+}
+
+.payment-info-details-circle {
+  position: relative;
+  top: 15px;
+  left: -20px;
+  height: 10px;
+  width: 10px;
+  background-color: #34a7c1;
+  border-radius: 50%;
+}
+
+.payment-info-modify-plan {
+  margin-top: 20px;
+  font-weight: bold;
+  margin-right: 210px;
+  border-bottom: #c1c1c1 1px solid;
+  border-color: blue;
+}
+
+.ItemRoomType {
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.ItemDes {
+  font-family: "Nunito";
+  margin-top: 15px;
+}
+
+.Strikethrough {
+  margin-top: 10px;
+  position: absolute;
+  height: 0px;
+  width: 320px;
+  border: 1px solid #000000;
+}
+
+.service {
+  margin-top: 20px;
+  font-family: "Nunito";
+  font-style: normal;
+  line-height: 24px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.ItemService {
+  margin-top: 10px;
+  position: absolute;
+  font-family: "Nunito";
+  font-style: normal;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  left: 186px;
+  color: #000000;
+  top: 118px;
+}
+
+.checkout {
+  margin-top: 10px;
+  font-family: "Nunito";
+  font-style: normal;
+  line-height: 24px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.ItemCheckout {
+  position: absolute;
+  font-family: "Nunito";
+  font-style: normal;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  left: 144px;
+  color: #000000;
+  top: 162px;
+}
+
+.Secure {
+  margin-top: 10px;
+  position: absolute;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  top: 200px;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+/*PaymentDetailsForm*/
+.mb-3 {
+  margin-bottom: 20px;
+  text-align: left;
+  color: #7c7e8a;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.mb-4 {
+  font-weight: bold;
+}
+
+.ControlEmail {
+  height: 35px;
+  width: 345px;
+  background: #ffffff;
+  border: 2px solid #dedee0;
+  border-radius: 8px;
+}
+
+.ControlCreditCard {
+  height: 35px;
+  width: 345px;
+  background: #ffffff;
+  border: 2px solid #dedee0;
+  border-radius: 8px;
+}
+
+.Feedback {
+  color: red;
+}
+
+.form-item {
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.Col1 {
+  flex-direction: column;
+  color: #7c7e8a;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.Col2 {
+  flex-direction: column;
+  margin-left: 15px;
+  color: #7c7e8a;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.ControlED {
+  height: 35px;
+  width: 140px;
+  background: #ffffff;
+  border: 2px solid #dedee0;
+  border-radius: 8px;
+}
+
+.ControlCVV {
+  height: 35px;
+  width: 140px;
+  background: #ffffff;
+  border: 2px solid #dedee0;
+  border-radius: 8px;
+}
+
+.Paymentleft-title-p {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #c1c1c1 1px solid;
+  line-height: 40px;
+  width: 100%;
+}
+
+.Button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  height: 40px;
+  width: 350px;
+  gap: 10px;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  background: #ed712e;
+  border-radius: 8px;
+}
+
+.paypal-popup {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  top: 50%;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  background-color: #fff;
+  box-shadow: none;
+  color: #000;
+  border-radius: 10px;
+}
+.overlay {
+  margin-bottom: 15px;
+}

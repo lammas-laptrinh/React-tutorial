@@ -144,8 +144,8 @@ export default function Service() {
                             onEditorChange={handleEditorChange}
                         />
                     </div>
-                    <div className='form-item submit-btn' style={{ marginBottom: '20px', marginTop: '40px' }}>
-                        <Button className='btn-sub'  danger>
+                    <div className='form-item submit-btn'>
+                        <Button className='btn-sub' danger>
                             Gửi
                         </Button>
                     </div>
