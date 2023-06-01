@@ -4,6 +4,7 @@ import RoomDetail from "../Rooms/pages/Detail";
 import ServicePage from "../Service/pages";
 import MainLayout from "../Layout/mainLayout/MainLayout";
 import Landing from '../Landing/index'
+import RegisterPage from "../Register/page";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ export default function Router() {
         <Route path='/room' element={<MainLayout children={<RoomMain />} />} />
         <Route path='/room/:roomId' element={<RoomDetail />} />
         <Route path='/landing' element={<Landing />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
   );
