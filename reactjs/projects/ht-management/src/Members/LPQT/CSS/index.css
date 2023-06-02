@@ -328,6 +328,7 @@ body {
 
 .card {
   margin-top: 20px;
+  min-height: 180px;
 }
 
 .top40 {

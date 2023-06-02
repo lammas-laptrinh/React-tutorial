@@ -9,6 +9,7 @@ import NotFound from "@src/Pages/Error/NotFound";
 import PaymentPage from '../../LPQT/Payment/page/index'
 import { Navigate } from "react-router-dom";
 import InvoiceForm from "../Invoice";
+import PrivateRoute from "../PrivateRoute";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -20,7 +21,12 @@ export default function Router() {
         <Route path='/room' element={<MainLayout children={<RoomMain />} />} />
         <Route path='/room/:roomId' element={<RoomDetail />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/payment" element={<PaymentPage />} />
+
+        <Route path="/payment" element={
+          <PrivateRoute>
+            <PaymentPage />
+          </PrivateRoute>} />
+
         <Route path="/succespaid" element={<InvoiceForm />} />
       </Routes>
     </BrowserRouter>

@@ -4,8 +4,6 @@ import '../../CSS/index.css'
 import { MenuItem } from '../../Constant/Global';
 import { MenuItemType } from '../../Rooms/type';
 
-
-
 const items: MenuItemType[] = MenuItem.map((item) => ({
   key: item.id.toString(),
   label:
@@ -17,7 +15,9 @@ const items: MenuItemType[] = MenuItem.map((item) => ({
 export default function CustomSider() {
   return (
     <Layout className='SiderLayout'>
-      <div className='SiderTittle'>DTD</div>
+      <Link to={'/'}>
+        <div className='SiderTittle'>DTD</div>
+      </Link>
       <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={items} className='SiderMenu' />
     </Layout>
   );

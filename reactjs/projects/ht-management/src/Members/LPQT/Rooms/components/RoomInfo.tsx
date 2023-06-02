@@ -11,6 +11,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import '../../CSS/index.css';
 import RoomBenefit from '../../../LPQT/assets/images/RoomBenefits.png'
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 
@@ -228,9 +229,11 @@ export default function RoomInfo({ row }: any) {
                                     </div>
                                 </div>
                                 <div className="ButtonPos">
-                                    <Button className="ChooseRoomButon">
-                                        Chọn phòng
-                                    </Button>
+                                    <Link to={'/payment'}>
+                                        <Button className="ChooseRoomButon">
+                                            Chọn phòng
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         )

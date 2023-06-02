@@ -20,7 +20,6 @@ export default function RoomDetail() {
                 getDocs(allRoomTypesQuery),
                 getDocs(allStatusQuery)
             ]);
-
             const roomsData = roomsSnapshot.docs.map((doc) => doc.data());
             const roomTypesData = roomTypesSnapshot.docs.map((doc) => doc.data());
             const statusData = StatusSnapShot.docs.map((doc) => doc.data());
@@ -40,7 +39,6 @@ export default function RoomDetail() {
             <div className="RoomInfoFlex">
                 <RoomInfo row={matchedRoom!} />
             </div>
-
         </div>
     )
 }
