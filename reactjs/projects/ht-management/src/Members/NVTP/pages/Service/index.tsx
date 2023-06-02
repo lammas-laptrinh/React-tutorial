@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Col, Row } from 'antd';
-import SideBar from "../Service/SideBar"
-import HeaderBar from "../Service/HeaderBar"
+import SideBar from "../Layout/SideBar"
+import HeaderBar from "../Layout/HeaderBar"
 import ServiceForm from './Service';
 const Service: React.FC = () => {
     return (

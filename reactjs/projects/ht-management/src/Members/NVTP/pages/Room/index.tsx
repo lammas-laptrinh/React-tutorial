@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './index.css';
-import { Layout } from 'antd';
-import SideBar from "../Room/SideBar"
-import HeaderBar from "../Room/HeaderBar"
+import { Layout, } from 'antd';
+import SideBar from "../Layout/SideBar"
+import HeaderBar from "../Layout/HeaderBar"
 import FormRoom from "./FormRoom"
 
 const Room: React.FC = () => {

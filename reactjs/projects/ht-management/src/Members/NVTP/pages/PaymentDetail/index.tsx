@@ -73,7 +73,7 @@ export default function PaymentDetail() {
                                     htmlType="submit"
                                     className="make-payment-button"
                                 >
-                                    <span className="btn">Thanh toán</span>
+                                    <span className="btn-payment">Thanh Toán</span>
                                 </Button>
                             </Form.Item>
                         )}
@@ -81,7 +81,7 @@ export default function PaymentDetail() {
                     </Form>
                 </Col>
                 <Col span={12}>
-                    <div className="desc">
+                    <div className="desc-paypal">
                         <Desc />
                     </div>
                 </Col>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import './SearchInput.css'
 interface Props {
   onSearch: (searchTerm: string) => void;
 }
@@ -17,7 +18,7 @@ const SearchInput: React.FC<Props> = ({ onSearch }) => {
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
       onPressEnter={handleSearch}
-      style={{ width: 200, marginLeft: 50, borderRadius: 30, fontFamily: 'Nunito, sans-serif' }} // Added fontFamily style
+      className='search'
     />
   );
 };

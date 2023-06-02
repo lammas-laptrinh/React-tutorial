@@ -1,14 +1,43 @@
 import React, { useState } from 'react';
+// useEffect,
 import { Form, Input, Select, Button } from 'antd';
 import { Editor } from '@tinymce/tinymce-react';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { ServiceFormValues } from './type'
 import './Service.css'
-
+// import { collection, getDocs } from 'firebase/firestore';
+// import { db } from '../../firebase';
 const { Option } = Select;
-
+const serviceOptions = [
+  { value: 'Dịch Vụ Gọi Đồ Ăn', label: 'Dịch Vụ Gọi Đồ Ăn' },
+  { value: 'Dịch Vụ Gọi Dọn Phòng', label: 'Dịch Vụ Gọi Dọn Phòng' },
+  { value: 'Dịch Vụ Gọi Sửa Chữa', label: 'Dịch Vụ Gọi Sửa Chữa' },
+];
 const ServiceForm: React.FC = () => {
+  // const [serviceForm, SetserviceForm] = useState<any[]>([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const querySnapshot = await getDocs(collection(db, 'services'));
+  //       const data = querySnapshot.docs.map((doc) => doc.data());
+  //       SetserviceForm(data);
+
+  //       if (data.length > 0) {
+  //         const ServiceFormItem = data[0];
+  //         for (const key in ServiceFormItem) {
+  //           console.log(`Field: ${key}, Type: ${typeof ServiceFormItem[key]}`);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error('Error retrieving bill data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   const [form] = Form.useForm();
   const [editorContent, setEditorContent] = useState('');
   const notifySuccess = () => {
@@ -43,9 +72,9 @@ const ServiceForm: React.FC = () => {
       <label className='desc'>Loại</label>
       <Form.Item name="type" rules={[{ required: true, message: 'Vui lòng chọn loại dịch vụ' }]} >
         <Select placeholder="Sửa chữa">
-          <Option value="Dịch Vụ Gọi Đồ Ăn">Dịch Vụ Gọi Đồ Ăn</Option>
-          <Option value="Dịch Vụ Gọi Dọn Phòng">Dịch Vụ Gọi Dọn Phòng</Option>
-          <Option value="Dịch Vụ Gọi Sửa Chữa">Dịch Vụ Gọi Sửa Chữa</Option>
+          {serviceOptions.map(option => (
+            <Option key={option.value} value={option.value}>{option.label}</Option>
+          ))}
         </Select>
       </Form.Item>
       <label className='desc-room'>Số phòng</label>
@@ -78,7 +107,7 @@ const ServiceForm: React.FC = () => {
           Gửi
         </Button>
       </Form.Item>
-    </Form>
+    </Form >
   );
 };
 

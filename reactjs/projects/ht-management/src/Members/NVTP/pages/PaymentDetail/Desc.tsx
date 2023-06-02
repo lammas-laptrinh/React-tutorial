@@ -2,8 +2,7 @@ import { Col, Row, Image } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import { RoomData } from './type';
 import './Desc.css';
-import Payment_1 from '../PaymentDetail/img/Desc.svg';
-
+import Payment_1 from '../../Img/payment.svg';
 export default function Desc() {
     const roomData: RoomData[] = [
         {
@@ -26,19 +25,19 @@ export default function Desc() {
                                     <Image src={room.src} />
                                 </Col>
                             </Row>
-                            <Row className='form'>
-                                <h5 className="title">{room.title}</h5>
-                                <p className="description">{room.description}</p>
+                            <Row className='form-payment'>
+                                <h5 className="title-payment">{room.title}</h5>
+                                <p className="description-payment">{room.description}</p>
                             </Row>
-                            <Row className="title-line" >
-                                <h5 className="title">Dịch vụ</h5>
-                                <p className='text-right'>{room.services}</p>
+                            <Row className="title-line-payment" >
+                                <h5 className="title-payment">Dịch vụ</h5>
+                                <p className='text-right-payment'>{room.services}</p>
                             </Row>
-                            <Row className="title-time" >
-                                <h5 className="title">Thời gian</h5>
-                                <p className='text-right-1'>{room.time}</p>
+                            <Row className="title-time-payment" >
+                                <h5 className="title-payment">Thời gian</h5>
+                                <p className='text-right-1-payment'>{room.time}</p>
                             </Row>
-                            <Row className="title-line">
+                            <Row className="title-line-payment">
                                 <Col span={24}>
                                     <p className="title checkmark">
                                         <CheckCircleOutlined /> Secure Payment

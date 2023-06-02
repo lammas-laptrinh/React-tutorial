@@ -1,5 +1,5 @@
 import { Space } from 'antd';
-import UserImage from '../Room/Img/Rectangle 2725.svg';
+import UserImage from '../../Img/Rectangle 2725.svg';
 const SmileIcons = () => {
   const iconArray = [
     { id: 1, image: UserImage },

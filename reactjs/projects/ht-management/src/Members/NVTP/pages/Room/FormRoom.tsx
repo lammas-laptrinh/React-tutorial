@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, Row, Col, Space, Tooltip, Button } from 'antd';
+import { Row, Col } from 'antd';
 import View from './View';
 import SearchInput from './SearchInput';
-import { Link } from 'react-router-dom';
-import SmileIcons from './SmileIcons';
 import { rooms } from './common';
 import './FormRoom.css'
+import ListRooms from './ListRooms';
 interface Props {
     isGridView: boolean;
     onToggleView: () => void;
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const FormRoom: React.FC<Props> = ({ isGridView, onToggleView, searchValue, onSearch }) => {
-    const { Meta } = Card;
     const filteredRooms = rooms.filter((room) =>
         room.title.toLowerCase().includes(searchValue.toLowerCase())
     );
@@ -26,122 +24,20 @@ const FormRoom: React.FC<Props> = ({ isGridView, onToggleView, searchValue, onSe
             <div className='form-room'>
                 <Row>
                     <Col span={12} style={{ display: 'flex', alignItems: 'center' }}><h1 className='room-name'>Rooms</h1>
-                        <SearchInput onSearch={onSearch} /></Col>
+                        <SearchInput onSearch={onSearch} />
+                    </Col>
                     <Col span={12} style={{ textAlign: 'end', marginTop: 40 }}>
-                        <span className='view'>Views :</span> <View isGridView={isGridView} onToggleView={onToggleView} /></Col>
+                        <span className='view-room'>View :</span>
+                        <View isGridView={isGridView} onToggleView={onToggleView} />
+                    </Col>
                 </Row>
                 <p className='title'>Standard</p>
-                <Row gutter={32} >
-                    {type1Rooms.map((room) => (
-                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
-                            <Card
-                                title={room.title}
-                                extra={room.modal ? (
-                                    <Tooltip color='#FC7D72'
-                                        title={
-                                            <>
-                                                {room.modalContent?.map((item, idx) => (
-                                                    <p key={idx}>{item}</p>
-                                                ))}
-                                            </>
-                                        }
-                                    >
-                                        <Button type="link" className="btn">
-                                            {room.modal}
-                                        </Button>
-                                    </Tooltip>
-                                ) : null}
-                                className='card'
-                            >
-                                <Link to={`/room/${room.id}`}>
-                                    <SmileIcons />
-                                </Link>
-                                <Meta
-                                    title={
-                                        <Space>
-                                            <p className='time'>{room.time}</p>
-                                        </Space>
-                                    }
-                                />
-                            </Card>
-                        </Col>
-                    ))}
-                </Row >
+                <ListRooms isGridView={isGridView} rooms={type1Rooms} />
                 <p className='title'>Double</p>
-                <Row gutter={32}>
-                    {type2Rooms.map((room) => (
-                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
-                            <Card
-                                title={room.title}
-                                extra={room.modal ? (
-                                    <Tooltip color='#FC7D72'
-                                        title={
-                                            <>
-                                                {room.modalContent?.map((item, idx) => (
-                                                    <p key={idx}>{item}</p>
-                                                ))}
-                                            </>
-                                        }
-                                    >
-                                        <Button type="link" className="btn">
-                                            {room.modal}
-                                        </Button>
-                                    </Tooltip>
-                                ) : null}
-                                className='card'
-                            >
-                                <Link to={`/room/${room.id}`}>
-                                    <SmileIcons />
-                                </Link>
-                                <Meta
-                                    title={
-                                        <Space>
-                                            <p className='time'>{room.time}</p>
-                                        </Space>
-                                    }
-                                />
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
+                <ListRooms isGridView={isGridView} rooms={type2Rooms} />
                 <p className='title'>King</p>
-                <Row gutter={32}>
-                    {type3Rooms.map((room) => (
-                        <Col span={isGridView ? 4 : 23} key={room.title} className='room-list'>
-                            <Card
-                                title={room.title}
-                                extra={room.modal ? (
-                                    <Tooltip color='#FC7D72'
-                                        title={
-                                            <>
-                                                {room.modalContent?.map((item, idx) => (
-                                                    <p key={idx} className='tooltip'>{item}</p>
-                                                ))}
-                                            </>
-                                        }
-                                    >
-                                        <Button type="link" className="btn">
-                                            {room.modal}
-                                        </Button>
-                                    </Tooltip>
-                                ) : null}
-                                className='card'
-                            >
-                                <Link to={`/room/${room.id}`}>
-                                    <SmileIcons />
-                                </Link>
-                                <Meta
-                                    title={
-                                        <Space>
-                                            <p className='time'>{room.time}</p>
-                                        </Space>
-                                    }
-                                />
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </div >
+                <ListRooms isGridView={isGridView} rooms={type3Rooms} />
+            </div>
         </>
     );
 };
