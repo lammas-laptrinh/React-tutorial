@@ -1,19 +1,16 @@
-import Contents from "./Contents";
-import Footer from "./Footer";
-import HeaderPage from "./HeaderPage";
-import OurGallery from "./OurGallery";
-import Services from "./Services";
+import HeaderPage from "./HeaderPage/HeaderPage";
+import Services from "./Services/Services";
+import TypeRoom from "./TypeRoom/TypeRoom";
+import OurGallery from "./OurGallerys/OurGallerys";
+import Footer from "./Footer/Footer";
 
-export default function Homepage() {
-    return (
-     <>
-     <HeaderPage />      
-     <Contents />
-     <Services />
-     <OurGallery />
-     <Footer />
-     </>
-                                                                                          
-    );
-  }
-  
+export default function HomePage() {
+    return (  
+    <>
+    <HeaderPage />
+    <TypeRoom />
+    <Services />
+    <OurGallery />
+    <Footer />
+    </> );
+}

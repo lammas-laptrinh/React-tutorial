@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'antd';
-import "./Payment.module.scss"
+import "./Payment.scss"
 import { BiCheckShield } from "react-icons/bi";
 const DetailRoom = [
   {

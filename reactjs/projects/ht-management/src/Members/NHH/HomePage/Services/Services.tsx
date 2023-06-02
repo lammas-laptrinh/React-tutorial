@@ -1,5 +1,5 @@
 import { services } from "@src/HomePages";
-
+import './Services.css';
 export default function Services() {
     return (
         <>

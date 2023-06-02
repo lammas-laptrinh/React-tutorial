@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Patua+One&display=swap');
+
+.bill {
+    width: 1000px;
+    height: 700px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: absolute;
+    left: 250px;
+    top: 30px;
+    background-color: #f4f4f4;
+}
+
+.bill-icon {
+    position: absolute;
+    left: 500px;
+}
+
+.cricle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0px;
+    top: 30px;
+    background: #E5F4ED;
+    border-radius: 49px;
+}
+
+.icon {
+
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    left: 20px;
+    top: 20px;
+    color: green;
+    font-size: 30px;
+
+}
+
+.bill-title {
+    position: relative;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    top: 120px;
+    left: 400px;
+    color: #000000;
+}
+
+.bill-price {
+    position: absolute;
+    top: 180px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    left: 470px;
+    font-size: 48px;
+    line-height: 65px;
+    color: #000000;
+}
+
+.hr {
+    padding: 100px;
+    position: relative;
+    top: 120px;
+}
+
+.bill-paymentId {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    line-height: 44px;
+}
+
+.data {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    color: #000000;
+    line-height: 44px;
+}
+.hr1{
+    padding: 10px 100px;
+    position: relative;
+}

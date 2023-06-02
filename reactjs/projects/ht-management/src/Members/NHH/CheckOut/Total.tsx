@@ -1,11 +1,12 @@
 
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
-import "./Payment.module.scss";
+import "./Payment.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ButtonCheckOut from './ButtonCheckOut';
 import FormCheckOuts from './FormCheckOuts';
+import { Link } from 'react-router-dom';
 const App: React.FC = () => {
 
   // modal
@@ -77,24 +78,20 @@ const App: React.FC = () => {
 
         <div className="item-total"  >
           <div className="item-price">
-            <div className="total-subtotal" style={{marginBottom: 10 }}>
               <div className='Type-price'>Subtotal</div>
-            </div>
-            <div className="total-price"><p>100$</p></div>
+            <div className="total-price">100$</div>
           </div>
 
           <div className="item-price" style={{marginBottom: 10}}>
             <div className="total-Flatform">
               <div className='Type-price' >Flatform Fee</div>
             </div>
-            <div className="total-price"><p>0$</p></div>
+            <div className="total-price">0$</div>
           </div>
           <hr />
-          <div className="item-price" style={{marginBottom: 10}}>
-            <div className="total-Amount">
+          <div className="item-price" style={{marginBottom: 10}}>         
               <div className='Type-price'>Total Amount</div>
-            </div>
-            <div className="total-price"><p>100$</p></div>
+            <div className="total-price">100$</div>
           </div>
         </div>
 {/* end Total */}
@@ -106,7 +103,7 @@ const App: React.FC = () => {
           {checkout ? (
             <ButtonCheckOut />
           ) : (
-            <Button style={{ width: 480, textAlign: "center" }} onClick={() => { setCheckOut(true); }}> Xác nhận thanh toán</Button>
+            <Button style={{ width: 480, textAlign: "center" }} onClick={() => { setCheckOut(true); }}> <Link to="/SuccessCheckout">Xác nhận thanh toán</Link></Button>
           )}
         </Modal>
       </form>

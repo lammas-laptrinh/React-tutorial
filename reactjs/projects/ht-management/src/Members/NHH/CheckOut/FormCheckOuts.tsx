@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-import "./Payment.module.scss";
+import "./Payment.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from 'react-router-dom';
