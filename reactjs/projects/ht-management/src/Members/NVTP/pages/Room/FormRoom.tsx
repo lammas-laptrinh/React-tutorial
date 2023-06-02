@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import View from './View';
 import SearchInput from './SearchInput';
-import { rooms } from './common';
+import { rooms } from './commom/common';
 import './FormRoom.css'
 import ListRooms from './ListRooms';
 interface Props {
