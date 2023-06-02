@@ -1,0 +1,229 @@
+.roomManager {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.AppHeader {
+  position: fixed;
+  top: 5px;
+  left: 200px;
+  right: 0;
+  height: 50px;
+  color: #fff;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+}
+
+.BellFilled {
+  font-size: 24;
+  text-align: left;
+}
+
+.TextDTD {
+  margin-bottom: 16px;
+  color: orange;
+  background-color: white;
+  font-weight: bold;
+}
+
+.Position {
+  position: absolute;
+  width: 100px;
+  top: 30px;
+  padding: 10px;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.MenuUnfoldOutlined {
+  display: none;
+}
+
+.PageContent {
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  right: 0;
+  height: 100%;
+  color: #333;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DashBoard {
+  position: absolute;
+  top: -10px;
+}
+
+.Search {
+  top: -55px;
+  left: 90px;
+}
+
+.FormRoom {
+  height: 100%;
+  margin: 10px;
+  padding: 5px;
+}
+
+.View {
+  left: 300px;
+}
+
+/*titleRoom*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.Card {
+  border: 1px solid grey;
+  border-radius: 12px;
+  margin: 20px;
+  min-width: 200px;
+  min-height: 150px;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  margin-left: 40%;
+}
+
+.title {
+  text-align: right;
+}
+
+.member {
+  border-radius: 50%;
+  background-color: gray;
+  min-width: 25px;
+  min-height: 25px;
+}
+
+/*RoomDetail*/
+.ChooseRoom {
+  background: #f1e2d3;
+  border: 2px solid #c18346;
+  border-radius: 20px;
+  width: 490px;
+  height: 60px;
+  color: #000;
+  font-weight: 700;
+  top: 400px;
+}
+
+.bed {
+  border-radius: 50%;
+  background-color: gray;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.cd {
+  background-color: #9875;
+}
+
+.modalContent {
+  background: #fc7d72;
+}
+
+.review {
+  position: absolute;
+  left: 650px;
+  top: 135px;
+  font-size: 20px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.des {
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.image {
+  position: absolute;
+  top: 300px;
+  border-radius: 20px;
+}
+
+.calendar {
+  position: absolute;
+  top: 400px;
+  background: #f7f6fb;
+  border-radius: 20px;
+}
+
+.rate {
+  margin: 10px 0px;
+}
+
+.FullDes {
+  text-decoration: underline;
+  color: blue;
+  text-align: left;
+}
+
+.RoomInfoContainer {
+  position: absolute;
+  width: 500px;
+  height: 125px;
+  top: 450px;
+  background: #f7f6fb;
+  border-radius: 20px;
+}
+
+.RoomInfoItem {
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 10px;
+  left: 10px;
+  height: 50px;
+  width: 170px;
+  box-sizing: border-box;
+  background: #f7f6fb;
+}
+
+.RangePicker {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
+  border-radius: 20px;
+}
+.room-id {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
+  border-radius: 20px;
+}
+
+.room-member {
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  border: 2px solid #e5e5e9;
+  border-radius: 20px;
+}
