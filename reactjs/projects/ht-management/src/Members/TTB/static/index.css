@@ -97,10 +97,13 @@ a:hover {
 .content {
   /*   padding: 10px 40px; */
   min-height: 800px;
+  display: flex;
+  justify-content: center;
 }
 
 .room-list {
   padding: 10px 50px;
+  width: 100%;
 }
 
 .heading {
@@ -149,7 +152,7 @@ a:hover {
 }
 
 .payment {
-  margin: 5% 10%;
+/*   margin: 5% 10%; */
   background: white;
   width: 1440px;
   height: 1024px;
@@ -435,6 +438,8 @@ a:hover {
 
 .RoomInfoFlex {
   flex: 2;
+  width: 600px;
+  box-sizing: border-box;
 }
 
 .RoomInfoContainer {
@@ -649,7 +654,9 @@ a:hover {
   display: flex;
   flex-direction: row-reverse;
 }
-
+.btn-full-width{
+  width: 100% !important;
+}
 .ant-select-selector {
   height: 80px !important;
 }

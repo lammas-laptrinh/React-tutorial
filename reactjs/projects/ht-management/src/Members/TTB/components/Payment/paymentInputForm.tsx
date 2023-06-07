@@ -38,10 +38,12 @@ export default function PaymentInputForm() {
                         showPaypal={showPaypal}
                     />
                 )}
-                <Button onClick={handleClick} htmlType="button" className="submit-btn" type="primary" block>
-                    Submit
-                </Button>
-                
+                <div className='form-item '>
+                    <Button onClick={handleClick} htmlType="button" className='btn-sub  btn-full-width' danger>
+                        Gửi
+                    </Button>
+                </div>
+
             </Space>
         </form>
     )

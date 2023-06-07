@@ -1,7 +1,7 @@
 import { Space } from "antd"
-import room from '../static/room.png'
+import room from '../../static/room.png'
 import SubInfo from "./subInfo"
-import Icon from '../static/Icon.png'
+import Icon from '../../static/Icon.png'
 
 export default function PaymentRoomDetail() {
     return (

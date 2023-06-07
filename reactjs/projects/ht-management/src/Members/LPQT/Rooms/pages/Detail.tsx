@@ -17,7 +17,7 @@ export default function RoomDetail() {
             <div className="RoomImageFlex">
                 <RoomImage row={matchedRoom!} />
             </div>
-            <div className="RoomInfoFlex">
+            <div className="RoomInfoFlex" style={{width:'600px'}}>
                 <RoomInfo row={matchedRoom!} />
             </div>
 

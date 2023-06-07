@@ -1,7 +1,7 @@
 import { Col, Row } from "antd";
 import PaymentInputForm from "./paymentInputForm";
 import PaymentRoomDetail from "./paymentRoomDetail";
-import '../static/index.css'
+import '../../static/index.css'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 

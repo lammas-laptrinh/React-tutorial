@@ -4,59 +4,40 @@ import { useParams } from "react-router-dom";
 import { Rooms } from "../types";
 import RoomImage from "../components/RoomImage";
 import RoomInfo from "../components/roomInfo";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { firestoreDB } from "@src/firebase";
 
 export default function Detail() {
     const { id } = useParams();
-    const rooms: Rooms[] = [
-        {
-            id: "1",
-            roomName: 'Room 1',
-            bedAmount: 3,
-            checkinDate: '11/12',
-            checkoutDate: '16/12',
-            roomType: 'Standard',
-            serviceCount: 2,
-            service: ['service 1', 'service 2']
-        },
-        {
-            id: "2",
-            roomName: 'Room 2',
-            bedAmount: 3,
-            checkinDate: '18/12',
-            checkoutDate: '20/12',
-            roomType: 'Double',
-            serviceCount: 0,
-        },
-        {
-            id: "3",
-            roomName: 'Room 3',
-            bedAmount: 3,
-            checkinDate: '18/12',
-            checkoutDate: '20/12',
-            roomType: 'King',
-            serviceCount: 0,
-        },
-        {
-            id: "4",
-            roomName: 'Room 4',
-            bedAmount: 3,
-            checkinDate: '12/12',
-            checkoutDate: '16/12',
-            roomType: 'Standard',
-            serviceCount: 0,
-        },
-        {
-            id: "5",
-            roomName: 'Room 5',
-            bedAmount: 3,
-            checkinDate: '12/12',
-            checkoutDate: '16/12',
-            roomType: 'King',
-            serviceCount: 3,
-            service: ['service 1', 'service 2', 'service 3']
-        },
-    ]
-    const getRoom = rooms.find(room => room.id === id);
+    const [roomList, setRoomList] = useState<any[]>([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const roomsRef = collection(firestoreDB, 'rooms');
+            const roomSnapshot = await getDocs(roomsRef);
+
+            const rooms = Promise.all(roomSnapshot.docs.map(async (doc) => {
+                const roomData = doc.data();
+                const roomId = doc.id;
+                const userCheckInRef = collection(roomsRef, roomId, 'usersCheckIn');
+                const userCheckInSnapshot = await getDocs(userCheckInRef);
+                const userCheckInData = userCheckInSnapshot.docs.map(checkinDoc => checkinDoc.data());
+                return {
+                    ...roomData,
+                    id: roomId,                
+                    userCheckIn: userCheckInData[0],
+                };
+            }));
+            setRoomList(await rooms);
+        };
+
+        fetchData();
+    }, []);
+/*     console.log(roomList); */
+    
+    const getRoom = roomList?.find(room => room?.id === id);
+/*     console.log("getroom", getRoom); */
+    
     return (
         <div className="displayFlex roomDetailSite">
             <div className="RoomImageFlex">
