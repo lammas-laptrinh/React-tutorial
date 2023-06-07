@@ -7,7 +7,7 @@ import HeaderBar from "./HeaderBar";
 import "./index.css";
 const Landing = () => {
   return (
-    <Layout>
+    <Layout className="Layout">
       <Row>
         <Col className="room-header">
           <HeaderBar />

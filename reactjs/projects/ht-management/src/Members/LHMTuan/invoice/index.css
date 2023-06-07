@@ -8,6 +8,7 @@
   background: #ffffff;
   border-radius: 20px;
   border: 1px solid #000000;
+  text-align: center;
 }
 
 .img {
@@ -54,7 +55,11 @@
 }
 
 .title-2 {
+  margin-top: 10px;
   margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Nunito";
   font-weight: normal;
   font-size: 32px;

@@ -11,7 +11,7 @@ const Service = () => {
       <div className="services">Services</div>
       <Row>
         <Col span={6} className="service-col">
-          <Image src={Service_1} preview={false} className="img" />
+          <Image src={Service_1} alt="imgService" />
           <h2 className="title">Lorem Ipsum</h2>
           <Title className="desc">
             orem Ipsum has been the industry's standard dummy text ever since

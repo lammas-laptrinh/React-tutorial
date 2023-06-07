@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
+//import { useParams } from "react-router-dom";
+import { addDoc, collection, getDocs } from "@firebase/firestore";
+import { firestoreDB } from "../../../firebase";
 
 interface LoginFormProps {
   onSignUp: (
-    fullName: string,
-    userName: string,
-    email: string,
-    password: string,
-    referralCode: string
+    fullName: any,
+    userName: any,
+    email: any,
+    password: any,
+    referralCode: any
   ) => void;
   onFacebookSignUp: () => void;
   onGoogleSignUp: () => void;
@@ -20,7 +23,7 @@ const SignUpPage: React.FC<LoginFormProps> = ({
   onGoogleSignUp,
 }) => {
   const [fullName, setFullName] = useState("");
-  const [userName, setUserName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [referralCode, setReferralCode] = useState("");
@@ -29,8 +32,8 @@ const SignUpPage: React.FC<LoginFormProps> = ({
     if (!fullName) {
       toast.error("FullName không được trống!");
       return false;
-    } else if (!userName) {
-      toast.error("UserName không được trống!");
+    } else if (!phoneNumber) {
+      toast.error("phoneNumber không được trống!");
       return false;
     } else if (!email) {
       toast.error("Email không được trống!");
@@ -44,11 +47,42 @@ const SignUpPage: React.FC<LoginFormProps> = ({
     }
     return true;
   };
-  const handleClick = () => {
-    if (validate()) {
-      toast.success(`${userName} sign up success!`);
+
+  const handleClick = async () => {
+    try {
+      if (validate()) {
+        await addDoc(collection(firestoreDB, "users"), {
+          name: fullName,
+          phoneNumber: phoneNumber,
+        });
+        toast.success(`${phoneNumber} sign up success!`);
+        setTimeout(() => {
+          window.location.href = `/Login`;
+        }, 1500);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again.");
     }
   };
+
+  const [signupForm, setsignupForm] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(firestoreDB, "users"));
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setsignupForm(data);
+        console.log("dataUsers", data);
+      } catch (error) {
+        console.error("Error retrieving users data:", error);
+      }
+    };
+
+    fetchData();
+    console.log(signupForm);
+  }, []);
 
   return (
     <div className="login-form">
@@ -65,9 +99,9 @@ const SignUpPage: React.FC<LoginFormProps> = ({
         <div className="title-UN">Username</div>
         <input
           type="text-2"
-          placeholder="Enter your user name"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
+          placeholder="Enter your phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </div>
       <div className="form-group">
@@ -96,7 +130,6 @@ const SignUpPage: React.FC<LoginFormProps> = ({
           value={referralCode}
           onChange={(e) => setReferralCode(e.target.value)}
         />
-        <ToastContainer />
       </div>
       <div className="form-group">
         <button className="btn btn-primary" onClick={handleClick}>
@@ -128,6 +161,7 @@ const SignUpPage: React.FC<LoginFormProps> = ({
           />
           <div className="title-other"> Sign up with Google</div>
         </button>
+        <ToastContainer />
       </div>
     </div>
   );

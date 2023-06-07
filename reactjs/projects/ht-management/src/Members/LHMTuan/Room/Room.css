@@ -181,8 +181,11 @@ a:hover {
 
 .FullDes {
   text-decoration: underline;
-  color: blue;
+  font-family: "Nunito";
+  font-style: normal;
+  color: black;
   text-align: left;
+  font-weight: bold;
 }
 
 .RoomInfoContainer {
