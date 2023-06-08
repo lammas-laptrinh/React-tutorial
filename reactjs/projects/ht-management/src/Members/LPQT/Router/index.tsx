@@ -7,7 +7,6 @@ import Landing from '../Landing/index'
 import RegisterPage from "../Register/page";
 import NotFound from "@src/Pages/Error/NotFound";
 import PaymentPage from '../../LPQT/Payment/page/index'
-import { Navigate } from "react-router-dom";
 import InvoiceForm from "../Invoice/page";
 import PrivateRoute from "../PrivateRoute";
 import InvoiceFaileForm from "../Invoice/page/failePage";
