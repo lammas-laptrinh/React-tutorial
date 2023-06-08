@@ -73,9 +73,9 @@ body {
 }
 
 .ViewChangeContainer {
-  margin-left: 1100px;
   display: flex;
-  align-items: center
+  align-items: center;
+  margin-left: auto;
 }
 
 .MainViewContainner {
@@ -89,6 +89,12 @@ body {
 .MainViewFlex {
   display: flex;
   align-items: center
+}
+
+.MainViewFlexDB {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .MainViewTextTittle {
@@ -161,8 +167,13 @@ body {
 }
 
 .NavUserName {
-  margin-bottom: 90px;
   margin-top: 11px;
+  font-weight: bold;
+}
+
+.NavLogin {
+  margin-top: 16px;
+  margin-right: 10px;
   font-weight: bold;
 }
 
@@ -338,6 +349,18 @@ body {
 .AvatarMain {
   background-color: #D9D9D9;
   margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+
+}
+
+.AvatarMainSmall {
+  background-color: #D9D9D9;
+  margin-left: 40px;
+  margin-bottom: 15px;
+  height: 60px;
+  width: 60px;
+
 }
 
 .SubmmitButtonContain {
@@ -570,7 +593,6 @@ body {
 .RoomPageContain {
   background-color: #E5E5E5;
   min-height: 100vh;
-  overflow: hidden
 }
 
 .ServiceBoxCount {
@@ -592,7 +614,13 @@ body {
 
 .SearchBar {
   width: 15%;
-  min-width: 80px
+  min-width: 200px
+}
+
+.SearchBarDB {
+  width: 15%;
+  min-width: 200px;
+  margin-left: 20px;
 }
 
 .SiderItem {
@@ -707,6 +735,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-bottom: 15px;
 }
 
 .Width515 .ant-select-selector {
@@ -756,4 +785,61 @@ body {
 
 .RoomListContain {
   margin-top: 70px;
+}
+
+.DashboardBigTittle {
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 49px;
+  color: #000000;
+}
+
+.overViewBoxContain {
+  height: 300px;
+  color: black;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.overViewBoxItem {
+  font-weight: bold;
+  margin-left: 16px;
+  padding: 16px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #000000;
+}
+
+.dayReContain {
+  background-color: #eb7d34;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.dayReItem {
+  padding: 16px;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  margin-left: 16px;
+}
+
+.MT20 {
+  margin-top: 20px;
+}
+
+.customAccContain {
+  background-color: #ede2e1;
+  height: 250px;
+  margin-top: 70px;
+}
+
+.customAccTittle {
+  margin-bottom: 16px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #000000;
 }

@@ -14,14 +14,12 @@ export default function ServiceBox() {
             const [servicesSnapshot] = await Promise.all([
                 getDocs(allRoomsQuery),
             ]);
-
             const serviceData = servicesSnapshot.docs.map((doc) => doc.data());
             const data = { service: serviceData };
             setData(data);
         };
         fetchCollection();
     }, [firestoreDB]);
-    console.log('service', data)
     //The popUp Content
     const content = data?.service?.map((item: any, index: any) => (
        

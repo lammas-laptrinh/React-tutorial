@@ -8,8 +8,13 @@ import RegisterPage from "../Register/page";
 import NotFound from "@src/Pages/Error/NotFound";
 import PaymentPage from '../../LPQT/Payment/page/index'
 import { Navigate } from "react-router-dom";
-import InvoiceForm from "../Invoice";
+import InvoiceForm from "../Invoice/page";
 import PrivateRoute from "../PrivateRoute";
+import InvoiceFaileForm from "../Invoice/page/failePage";
+import DashboardPage from "../Dashboard/pages";
+import SignInPage from "../SignIn/page";
+import MyAccount from "../User/page";
+
 export default function Router() {
   return (
     <BrowserRouter>
@@ -17,17 +22,28 @@ export default function Router() {
         <Route path='/' element={<Navigate to="/homepage" />} />
         <Route path='/homepage' element={<Landing />} />
         <Route path="*" element={<MainLayout children={<NotFound />} />} />
-        <Route path="/service" element={<MainLayout children={<ServicePage />} />} />
         <Route path='/room' element={<MainLayout children={<RoomMain />} />} />
         <Route path='/room/:roomId' element={<RoomDetail />} />
         <Route path="/register" element={<RegisterPage />} />
-
-        <Route path="/payment" element={
+        <Route path="/login" element={<SignInPage />} />
+        <Route path="/successpaid" element={<InvoiceForm />} />
+        <Route path="/failepaid" element={<InvoiceFaileForm />} />
+        <Route path="/account/:userId" element={<MyAccount />} />
+        <Route path="/service" element={
+          <PrivateRoute>
+            <MainLayout children={<ServicePage />} />
+          </PrivateRoute>
+        } />
+        <Route path='/dashboard' element={
+          <PrivateRoute>
+            <MainLayout children={<DashboardPage />} />
+          </PrivateRoute>}
+        />
+        <Route path="/payment/:roomId" element={
           <PrivateRoute>
             <PaymentPage />
-          </PrivateRoute>} />
-
-        <Route path="/succespaid" element={<InvoiceForm />} />
+          </PrivateRoute>}
+        />
       </Routes>
     </BrowserRouter>
   );

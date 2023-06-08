@@ -19,8 +19,7 @@
 }
 
 
-
-.RegisterTittle {
+.LoginterTittle {
     margin-top: 20px;
     text-align: center;
     font-weight: 700;
@@ -29,7 +28,7 @@
     color: #201F1E;
 }
 
-.InputContainRegis {
+.InputContainLogin {
     height: 58px;
     width: 360px;
     border-radius: 8px;
@@ -57,7 +56,7 @@
     color: #201F1E;
 }
 
-.InputContainRegisFull {
+.InputContainLoginFull {
     height: 58px;
     width: 750px;
     border-radius: 8px;
@@ -161,8 +160,8 @@
     height: 100%;
 }
 
-.RegisContain {
-    margin-top: 15px;
+.LoginContain {
+    margin-top: 80px;
     width: 828px;
     background-color: white;
     border-radius: 10px;
@@ -173,7 +172,8 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    height: 100%;
+    overflow: auto;
+    height: 70vh;
 }
 
 @media only screen and (min-width: 46.25em) and (max-width: 63.9em) {
@@ -184,9 +184,9 @@
         height: 100vh;
     }
 
-    .RegisContain {
-        width: 700px;
-        height: 89vh;
+    .LoginContain {
+        width: 600px;
+        height: 70vh;
         background-color: white;
         border-radius: 10px;
         padding: 40px;
@@ -194,7 +194,7 @@
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     }
 
-    .InputContainRegis {
+    .InputContainLogin {
         height: 58px;
         width: 300px;
         border-radius: 8px;
@@ -203,7 +203,7 @@
         line-height: 17px;
     }
 
-    .InputContainRegisFull {
+    .InputContainLoginFull {
         height: 58px;
         width: 600px;
         border-radius: 8px;
@@ -271,15 +271,15 @@
         height: 100vh;
     }
 
-    .RegisContain {
+    .LoginContain {
         width: 350px;
-        min-height: 89vh;
+        min-height: 60vh;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     }
 
-    .InputContainRegis {
+    .InputContainLogin {
         height: 40px;
         width: 130px;
         border-radius: 8px;
@@ -288,7 +288,7 @@
         line-height: 17px;
     }
 
-    .InputContainRegisFull {
+    .InputContainLoginFull {
         height: 40px;
         width: 270px;
         border-radius: 8px;
@@ -347,7 +347,7 @@
         margin-top: 20px;
     }
 
-    .RegisterTittle {
+    .LoginterTittle {
         margin-top: 10px;
         text-align: center;
         font-weight: 700px;

@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function RoomInfo({ row }: any) {
+export default function RoomInfo({ row, roomId }: any) {
     //dropitem for RoomDetail info
     const items: any['items'] = [
         {
@@ -57,7 +57,7 @@ export default function RoomInfo({ row }: any) {
         <div className="RoomInfoContain">
             {/*  this is room Detail Tittle */}
             <div style={{ display: 'flex' }}>
-                <div className="RoomInfoTypeName">{row?.roomType?.roomTypeName}</div>
+                <div className="RoomInfoTypeName">{row?.name}</div>
                 <button
                     onClick={() => navigate(-1)}
                     className="RoomInfoBack"
@@ -116,7 +116,7 @@ export default function RoomInfo({ row }: any) {
             <div>
                 {/*   Could book Room if not paid yet and Can see Room currently State if had booked */}
                 {
-                    (row?.statusId == 3) ?
+                    (row?.statusId == 1) ?
                         (
                             <div>
                                 <div className="RoomInfoTittle">
@@ -229,7 +229,7 @@ export default function RoomInfo({ row }: any) {
                                     </div>
                                 </div>
                                 <div className="ButtonPos">
-                                    <Link to={'/payment'}>
+                                    <Link to={`/payment/${roomId!}`}>
                                         <Button className="ChooseRoomButon">
                                             Chọn phòng
                                         </Button>

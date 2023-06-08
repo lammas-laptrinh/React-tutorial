@@ -28,6 +28,7 @@ export type RoomListProps = {
     rows: any;
     searchText?: string;
     isGridView?: boolean;
+    rowUser?: any;
 };
 export type RoomType = {
     id: string;

@@ -1,7 +1,30 @@
 import '../RegisterCSS/index.css'
 import FBImage from '../../assets/images/facebook.svg'
 import GGImage from '../../assets/images/google.svg'
+import { useNavigate } from 'react-router-dom';
+import {  useState } from 'react';
+import { firestoreDB } from '../../Firebase/firebase';
+import { collection, addDoc } from 'firebase/firestore';
+
 export default function RegisterPage() {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('');
+    const collectionRef = collection(firestoreDB, 'users');
+    const onSubmit = async (e: any) => {
+        e.preventDefault()
+        addDoc(collectionRef, {
+            name: userName,
+            email: email
+        })
+            .then((docRef: any) => {
+                console.log("Document written with ID: ", docRef.id);
+                navigate('/')
+            })
+            .catch((error: any) => {
+                console.error("Error adding document: ", error);
+            });
+    }
     return (
         <div className='BigContain'>
             <div className='RegisContain'>
@@ -26,6 +49,8 @@ export default function RegisterPage() {
                         <div className='MT81'>
                             <input
                                 className='InputContainRegis'
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
                             />
                         </div>
                     </div>
@@ -37,6 +62,8 @@ export default function RegisterPage() {
                     <div className='MT8'>
                         <input
                             className='InputContainRegisFull'
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
                         />
                     </div>
                 </div>
@@ -60,7 +87,9 @@ export default function RegisterPage() {
                         />
                     </div>
                 </div>
-                <button className='ComfirmButtonRes'>
+                <button
+                    className='ComfirmButtonRes'
+                    onClick={onSubmit}>
                     Sign up
                 </button>
                 <div className='divider'>

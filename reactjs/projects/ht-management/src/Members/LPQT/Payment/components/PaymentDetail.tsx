@@ -1,15 +1,45 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import paypalApi from '../../Api/paypalApi';
+import { useNavigate, useParams } from "react-router-dom";
+import { addDoc, collection, getDocs, serverTimestamp } from 'firebase/firestore';
+import { firestoreDB } from '../../Firebase/firebase';
 
 
 export default function PaymentDetail(props: any) {
+    const { roomId } = useParams<{ roomId: string }>();
     const { row } = props
-    //do total Price
-   /*  const totalPrice = row?.price ? (row.price.subtotal! + row.price.flatform!) : 0; */
+    const [data, setData]: any = useState([]);
+
+    //userID
+    const userId = localStorage.getItem('currentLogin');
+    //get all need data from firebase
+    useEffect(() => {
+        const fetchCollection = async () => {
+            const roomDocRef = collection(firestoreDB, "rooms");
+            const [roomsSnapshot] = await Promise.all([
+                getDocs(roomDocRef),
+            ]);
+            //the Firebase rooms data
+            const rooms = await Promise.all(roomsSnapshot.docs.map(async (doc) => {
+                const roomId = doc.id;
+                const roomData = doc.data();
+                return {
+                    ...roomData,
+                    roomId: roomId,
+                };
+            }));
+            //the Firebase room data
+            const getRooms: any = rooms.find((roomInfo) => roomInfo.roomId == roomId)
+            // After get the neeed data, push all in a new data object 
+            setData(getRooms)
+        };
+        fetchCollection();
+    }, [firestoreDB]);
+    const navigate = useNavigate();
     //these guys are for validate
     const paymentDetailsSchema = Yup.object().shape({
         email: Yup.string().email('Invalid email').required('Email is required'),
@@ -46,7 +76,7 @@ export default function PaymentDetail(props: any) {
             .required('CVV is required'),
     });
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(paymentDetailsSchema),
     });
     const onSubmitHandler = (/* data: any */) => {
@@ -67,8 +97,8 @@ export default function PaymentDetail(props: any) {
                     },
                     items: [
                         {
-                            name: row.name,
-                            description: row.description?.slice(0, 60),
+                            name: row?.name,
+                            description: row?.description?.slice(0, 60),
                             quantity: '1',
                             unit_amount: {
                                 currency_code: 'USD',
@@ -83,6 +113,7 @@ export default function PaymentDetail(props: any) {
                 cancel_url: 'https://example.com/cancel',
             },
         };
+
         //CrateOder through Paypal APi
         paypalApi.createOrder(bookRoomData!)
             .then((response) => {
@@ -94,7 +125,6 @@ export default function PaymentDetail(props: any) {
                         const orderDetails = orderDetailsResponse.data;
                         // find the aprove link 
                         const approveLink = orderDetails.links.find((link: { rel: string; }) => link.rel === 'approve');
-                        console.log(approveLink)
                         //this guy is notify message
                         toast.success('Create Oder Success. Moving to the Payment', {
                             autoClose: 4000,
@@ -106,9 +136,30 @@ export default function PaymentDetail(props: any) {
                             :
                             console.log('No approve link found');
                         //will Capture after 1 minute
+                        const checkInDate = new Date('2023-07-20T00:00:00');
+                        const checkOutDate = new Date('2023-07-30T00:00:00');
                         setTimeout(() => {
                             paypalApi.captureById(orderId)
-                        }, 60000)
+                                .then(async () => {
+                                    const bookingData = {
+                                        checkIn: {
+                                            seconds: Math.floor(checkInDate.getTime() / 1000),
+                                            nanoseconds: 0
+                                        },
+                                        checkOut: {
+                                            seconds: Math.floor(checkOutDate.getTime() / 1000),
+                                            nanoseconds: 0
+                                        },
+                                        createdAt: serverTimestamp(),
+                                        roomId: roomId,
+                                        userId: userId,
+                                        statusId: '1',
+                                        roomTypeId: data.roomTypeId
+                                    };
+                                    await addDoc(collection(firestoreDB, 'booking'), bookingData);
+                                    navigate("/successpaid");
+                                })
+                        }, 30000);
                     })
                     .catch((error) => {
                         console.error('Error getting order details:', error);
@@ -117,9 +168,7 @@ export default function PaymentDetail(props: any) {
             .catch((error) => {
                 console.error('Error creating order:', error);
             });
-        reset();
     };
-
     //return this to UI
     return (
         <form className='PaymentDetaiContain' onSubmit={handleSubmit(onSubmitHandler)}>
