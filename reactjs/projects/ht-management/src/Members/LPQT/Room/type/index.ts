@@ -31,10 +31,9 @@ export type RoomProps = {
     row: Room;
 };
 export type RoomListProps = {
-    rows: any;
+    rows: Room[];
     searchText?: string;
     isGridView?: boolean;
-    rowUser?: any;
 };
 export type RoomType = {
     id: string;
@@ -43,6 +42,6 @@ export type RoomType = {
 
 export type MenuItemType = {
     key: string;
-    icon?: JSX.Element;
+    icon: JSX.Element;
     label?: any;
 };

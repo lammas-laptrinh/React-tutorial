@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import RoomMain from "../Rooms/pages";
 import RoomDetail from "../Rooms/pages/Detail";
 import ServicePage from "../Service/pages";

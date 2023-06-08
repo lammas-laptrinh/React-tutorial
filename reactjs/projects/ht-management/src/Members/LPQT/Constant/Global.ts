@@ -19,6 +19,7 @@ export const roomData: Room[] = [
         img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8&w=1000&q=80',
         description: 'Đây là mô tả của căn phòng này, không ngắn cũng không dài',
         status: 'paid',
+        price: { subtotal: 10, flatform: 5 },
         serviceCount: 2,
         service: [
             { id: 'svSt_1', serviceType: { id: 'svt_1', serviceTypeName: 'Giao đồ' }, detail: 'Đói quá, giao đồ ăn lên đây', roomId: 'St_1' },
@@ -34,6 +35,7 @@ export const roomData: Room[] = [
         img: 'https://thumbs.dreamstime.com/b/hotel-bed-room-21064950.jpg',
         description: 'Đây là mô tả của căn phòng này, không ngắn cũng không dài',
         status: 'paid',
+        price: { subtotal: 10, flatform: 5 },
         serviceCount: 1,
         service: [
             { id: 'svSt_3', serviceType: { id: 'svt_1', serviceTypeName: 'Giao đồ' }, detail: 'Đói quá bợn ơi, đồ ăn sáng đâu', roomId: 'St_2' },
@@ -48,6 +50,7 @@ export const roomData: Room[] = [
         img: 'https://media.radissonhotels.net/image/radisson-hotel-antananarivo-waterfront/guest-room/16256-125560-f72546759_3xl.jpg?impolicy=CustomCrop&cwidth=670&cheight=603',
         description: 'Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V',
         status: 'paid',
+        price: { subtotal: 10, flatform: 5 },
         serviceCount: 1,
         service: [
             { id: 'svSt_4', serviceType: { id: 'svt_2', serviceTypeName: 'Sửa chữa' }, detail: 'Bồn cầu tắt nghẽn rồi', roomId: 'St_3' },
@@ -60,6 +63,7 @@ export const roomData: Room[] = [
         img: 'https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/227/2018/03/04090558/SGMS8290.jpg',
         description: 'Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V',
         status: 'not pay',
+        price: { subtotal: 10, flatform: 5 },
     },
     {
         id: 'K_1',
@@ -71,6 +75,7 @@ export const roomData: Room[] = [
         description: 'Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V. Đây là mô tả của căn phòng này. Do tôi muốn nó dài nên sẽ Ctr C + V',
         status: 'paid',
         serviceCount: 1,
+        price: { subtotal: 10, flatform: 5 },
         service: [
             { id: 'svK_1', serviceType: { id: 'svt_2', serviceTypeName: 'Sửa chữa' }, detail: 'Phòng có ma, cửa sổ tự đóng mở', roomId: 'K_1' },
         ]
