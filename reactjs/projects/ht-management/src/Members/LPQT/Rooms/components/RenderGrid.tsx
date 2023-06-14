@@ -3,30 +3,52 @@ import { Avatar, Card, Typography } from "antd";
 import { RoomListProps } from "../type";
 import ServiceBox from "./ServiceBox";
 import '../../CSS/index.css'
+import { useEffect, useState } from "react";
 
-export default function renderRoomsAsGrid({ rows }: RoomListProps) {
+export default function renderRoomsAsGrid({ rows, rowUser }: RoomListProps) {
+    const [roomsWithUser, setroomsWithUser]: any = useState();
+    //Find the user that affacted the room
+    useEffect(() => {
+        const data = rows?.map((row: any) => {
+            const usersWithMatchingRoomId = rowUser.filter((user: any) => user.roomId == row.roomId);
+            const latestUser = usersWithMatchingRoomId[usersWithMatchingRoomId.length - 1];
+            console.log('latestUser for roomId', row.roomId, ':', latestUser);
+            return { ...row, user: latestUser };
+        });
+        setroomsWithUser(data);
+    }, []);
+    console.log('setroomsWithUser', roomsWithUser)
     //this is the Grid Ui if user click Grid View
     return (
-        rows.map((row, index) => (
+        roomsWithUser?.map((row: any, index: any) => (
             <div
                 className="GridContainer"
                 key={index}
             >
-                <Link className="DecorateNone" to={`${window.location.pathname}/${row.id}`}>
+                <Link className="DecorateNone" to={`${window.location.pathname}/${row?.roomId}`}>
                     <Card className="Card" hoverable>
                         <Typography className="GridName">
-                            {row.name}
+                            {row?.name}
                         </Typography>
                         {
-                            (row.status == "paid") ?
+                            (row?.user?.statusId == '1') ?
                                 (
                                     <div className="top40">
-                                        {Array(3).fill(null).map((_, i) => (
-                                            <Avatar key={i} className="AvatarMain"></Avatar>
-                                        ))}
-                                        <Typography className="GridDate">
-                                            {row.checkIn?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric' })} - {row.checkOut?.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric' })}
-                                        </Typography >
+                                        <Avatar src={row?.user?.user?.avatar} className="AvatarMainSmall"></Avatar>
+                                        {
+                                            row.user ? (
+                                                <Typography className="GridDate">
+                                                    {new Date(row?.user?.checkIn?.seconds * 1000).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' })}
+                                                    -
+                                                    {new Date(row?.user?.checkOut?.seconds * 1000).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' })}
+                                                </Typography >
+                                            ) :
+                                                (
+                                                    <Typography className="GridDate">
+                                                        Error Detected
+                                                    </Typography >
+                                                )
+                                        }
                                     </div>
                                 ) :
                                 (
@@ -37,7 +59,7 @@ export default function renderRoomsAsGrid({ rows }: RoomListProps) {
                         }
                     </Card>
                 </Link>
-                {row?.serviceCount! > 0 && <ServiceBox row={row} />}
+                {(row?.statusId == 1) && <ServiceBox />}
             </div >
         ))
     );

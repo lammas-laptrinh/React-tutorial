@@ -1,0 +1,27 @@
+.introduce-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+}
+.introduce-title-content{
+    display: grid;
+    grid-template-rows: auto auto; 
+    gap: 5px;
+    width: 250px;
+    margin-right: 150px;
+}
+.title-introduce{
+    font-size: 30px;
+    font-weight: bold;
+}
+.introduce-content{
+    font-size: 22px;
+}
+.img-introduce{
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+    margin-left: 15px;
+}

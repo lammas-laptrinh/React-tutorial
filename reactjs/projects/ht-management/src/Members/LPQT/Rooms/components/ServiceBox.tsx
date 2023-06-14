@@ -1,16 +1,32 @@
-import { RoomProps } from "../type";
+
 import { useState, useEffect } from "react";
 import "../../CSS/index.css";
+import { collection, getDocs, query } from "firebase/firestore";
+import { firestoreDB } from "../../Firebase/firebase";
 
-export default function ServiceBox({ row }: RoomProps) {
+export default function ServiceBox() {
     const [isClick, setIsClick] = useState(false);
+    //setup FireBase
+    const [data, setData]: any = useState([]);
+    useEffect(() => {
+        const fetchCollection = async () => {
+            const allRoomsQuery = query(collection(firestoreDB, "services"));
+            const [servicesSnapshot] = await Promise.all([
+                getDocs(allRoomsQuery),
+            ]);
+            const serviceData = servicesSnapshot.docs.map((doc) => doc.data());
+            const data = { service: serviceData };
+            setData(data);
+        };
+        fetchCollection();
+    }, [firestoreDB]);
     //The popUp Content
-    const content = row?.service?.map((item, index) => (
+    const content = data?.service?.map((item: any, index: any) => (
+       
         <div style={{ color: "white" }} key={index}>
-            {item?.detail}
+            {item?.name}
         </div>
     ));
-
     //To detect when user Click outside
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
@@ -38,7 +54,7 @@ export default function ServiceBox({ row }: RoomProps) {
                     className="ServiceBoxCount"
                     onClick={handleServiceBoxClick}
                 >
-                    {row.serviceCount}
+                    4
                 </div>
             )}
         </div>

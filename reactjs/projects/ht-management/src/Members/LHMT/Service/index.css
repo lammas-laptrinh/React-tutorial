@@ -1,0 +1,78 @@
+/*index*/
+.roomService {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+/*Header*/
+.AppHeader {
+  position: absolute;
+  top: 5px;
+  left: 200px;
+  right: 0;
+  height: 50px;
+  color: #fff;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Sidebar*/
+.AppSidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+}
+
+.BellFilled {
+  font-size: 24;
+  text-align: left;
+}
+
+.TextDTD {
+  margin-bottom: 16px;
+  color: orange;
+  background-color: white;
+  font-weight: bold;
+}
+
+.Position {
+  position: absolute;
+  width: 100px;
+  top: 30px;
+  padding: 10px;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.MenuUnfoldOutlined {
+  display: none;
+}
+
+/*ServicePage*/
+
+.PageContent {
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  right: 0;
+  height: 100%;
+  color: #333;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*ServicePage*/
+.form {
+  position: absolute;
+  top: 5px;
+  left: 200px;
+  margin: 30px;
+  padding: 10px;
+}

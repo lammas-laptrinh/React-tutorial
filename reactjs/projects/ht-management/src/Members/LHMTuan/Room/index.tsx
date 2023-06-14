@@ -3,7 +3,7 @@ import AppHeader from "../Components/AppHeader";
 import AppSidebar from "../Components/AppSidebar";
 import PageContent from "../Components/PageContent";
 import "./room.css";
-import { rooms } from "./common/types";
+//import { rooms } from "./common/types";
 
 function roomManager() {
   return (
@@ -11,7 +11,7 @@ function roomManager() {
       <AppHeader />
       <Space>
         <AppSidebar />
-        <PageContent rooms={rooms} />
+        <PageContent rooms={[]} />
       </Space>
     </div>
   );
