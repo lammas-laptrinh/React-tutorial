@@ -1,5 +1,7 @@
 import { Room } from "../Rooms/type";
-import DashboardIcon from '../assets/images/DashboardIcon.svg'
+import {PieChartOutlined} from '@ant-design/icons';
+import {TeamOutlined} from '@ant-design/icons';
+import {FileTextOutlined} from '@ant-design/icons';
 
 export const options = [
     { value: "ship", label: "Giao đồ" },
@@ -83,14 +85,20 @@ export const roomData: Room[] = [
 export const MenuItem = [
     {
         id: 1,
-        name: 'Service',
-        icon: DashboardIcon,
-        url: '/service'
+        name: 'Dashboard',
+        icon: PieChartOutlined,
+        url: '/dashboard'
     },
     {
         id: 2,
         name: 'Room',
-        icon: DashboardIcon,
+        icon: TeamOutlined,
         url: '/room'
+    },
+    {
+        id: 3,
+        name: 'Service',
+        icon: FileTextOutlined,
+        url: '/service'
     },
 ];
