@@ -1,7 +1,7 @@
 import { Button, Col, Row, Space } from "antd";
 import Search from "antd/es/input/Search";
 import Room from "./room";
-import { Rooms } from "../Types";
+import { Rooms } from "../../NHH/types";
 import {
     UnorderedListOutlined,
     AppstoreOutlined,

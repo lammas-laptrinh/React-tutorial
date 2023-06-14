@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Patua+One&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.errorMsgs {
+    margin-left: 10px;
+    margin-top: 70px;
+    font-size: 13px;
+    color: red;
+    display: inline-block;
+}
+
+input {
+    width: 500px;
+    height: 50px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 2px solid #DEDEE0;
+    margin-bottom: 25px;
+    margin-top: 20px;
+
+}
+
+label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* T/1 */
+
+    color: #201F1E;
+}
+
+.button {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    margin-top: 15px;
+    position: absolute;
+    width: 560px;
+    height: 74px;
+    left: 106px;
+
+
+    /* Theme/1 */
+
+    background: #ED712E;
+    border-radius: 8px;
+}
+
+
+
+.close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.h3 {
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 30px;
+    color: #000000;
+    text-align: center;
+    margin: 40px;
+}
+
+.form {
+    position: absolute;
+    top: 50px;
+    left: 320px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+.btn-Signup {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 690px;
+    /* Theme/1 */
+    border: 1px solid #ED712E;
+    background: #ED712E;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.h2 {
+    display: flex;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+    /* identical to box height, or 140% */
+
+    text-align: center;
+
+    color: #6B7280;
+}
+
+.divContainer {
+    display: flex;
+    align-items: center;
+}
+
+.divLine {
+    flex: 1;
+    border-top: 1px solid #ECECEC;
+    margin-right: 8px;
+}
+
+.divLineLeft {
+    flex: 1;
+    border-top: 1px solid #ECECEC;
+    margin-left: 8px;
+}
+
+.btn-SignupOrther {
+    box-sizing: border-box;
+    display: block;
+    width: 690px;
+
+    margin: 20px 0px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border: 2px solid #A19F9D;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #1C1C1E;
+}
+
+
+.btn-SignupOrther p{
+  font-size: 14px;
+  margin-right: 250px;
+
+}

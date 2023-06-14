@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import {
-  ContainerOutlined,
-  DesktopOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
+  FileTextOutlined,
+  TeamOutlined,
   PieChartOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
@@ -28,9 +26,9 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("", "1", <PieChartOutlined />),
-  getItem("", "2", <DesktopOutlined />),
-  getItem("", "3", <ContainerOutlined />),
+  getItem("DashBoard", "1", <PieChartOutlined />),
+  getItem("Room", "2", <TeamOutlined />),
+  getItem("Service", "3", <FileTextOutlined />),
 ];
 
 const AppSidebar: React.FC = () => {
@@ -44,11 +42,6 @@ const AppSidebar: React.FC = () => {
     <div className="Position">
       <Button className="TextDTD" type="primary" onClick={toggleCollapsed}>
         DTD
-        {collapsed ? (
-          <MenuUnfoldOutlined style={{ display: "none" }} />
-        ) : (
-          <MenuFoldOutlined style={{ width: "70px", height: "auto" }} />
-        )}
       </Button>
       <Menu
         defaultSelectedKeys={["1"]}
@@ -57,6 +50,17 @@ const AppSidebar: React.FC = () => {
         theme="light"
         inlineCollapsed={collapsed}
         items={items}
+        onClick={({ key }) => {
+          if (typeof key === "string") {
+            if (key === "1") {
+              window.location.href = "/dashboard";
+            } else if (key === "2") {
+              window.location.href = "/room-management";
+            } else if (key === "3") {
+              window.location.href = "/room-management/service";
+            }
+          }
+        }}
       />
     </div>
   );

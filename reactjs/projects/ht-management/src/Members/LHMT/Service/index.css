@@ -7,7 +7,7 @@
 
 /*Header*/
 .AppHeader {
-  position: fixed;
+  position: absolute;
   top: 5px;
   left: 200px;
   right: 0;
@@ -21,7 +21,7 @@
 
 /*Sidebar*/
 .AppSidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 200px;
@@ -70,6 +70,9 @@
 
 /*ServicePage*/
 .form {
-  margin: 300px;
+  position: absolute;
+  top: 5px;
+  left: 200px;
+  margin: 30px;
   padding: 10px;
 }

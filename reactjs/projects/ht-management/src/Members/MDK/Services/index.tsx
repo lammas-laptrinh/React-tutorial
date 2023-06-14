@@ -1,18 +1,9 @@
 import { useState } from "react";
-import {
-  Layout,
-  Typography,
-  Col,
-  Row,
-  Select,
-  Button,
-  Form,
-  Input,
-} from "antd";
-import HeaderMain from "../Dashboard/HeaderMain";
-import SidebarMain from "../Dashboard/SidebarMain";
+import { Typography, Col, Row, Select, Button, Form, Input } from "antd";
 import { Editor } from "@tinymce/tinymce-react";
 import { toast } from "react-toastify";
+import Sidebar from "../Sidebar";
+import HeaderPage from "../HeaderPage";
 
 const { Title } = Typography;
 
@@ -21,10 +12,6 @@ const { Option } = Select;
 const layout = {
   labelCol: { span: 24, color: "#7C7E8A" },
   wrapperCol: { span: 24 },
-};
-
-const tailLayout = {
-  wrapperCol: { offset: 18, span: 6 },
 };
 
 const Services = () => {
@@ -55,12 +42,12 @@ const Services = () => {
 
   return (
     <div>
-      <Layout>
-        <HeaderMain />
-      </Layout>
-      <Row style={{ margin: "2rem 1rem" }}>
-        <Col span={20} push={4}>
-          <div className="services max-w-[626px] mx-auto my-0">
+      <Row className="grid">
+        <HeaderPage />
+      </Row>
+      <Row className="mx-4 my-8 sm:mx-0">
+        <Col span={20} push={4} className="sm:!flex-100">
+          <div className="services max-w-[626px] mx-auto my-0 md:max-w-[400px] sm:max-w-[250px]">
             <Title level={3} className="!font-bold">
               Đặt dịch vụ
             </Title>
@@ -130,10 +117,11 @@ const Services = () => {
                   }}
                 />
               </Form.Item>
-              <Form.Item {...tailLayout}>
+              <Form.Item>
                 <Button
                   type="primary"
                   htmlType="submit"
+                  className="float-right sm:!w-[40%] sm:float-right"
                   style={{
                     background: "#ED712E",
                     borderRadius: "8px",
@@ -149,8 +137,8 @@ const Services = () => {
             </Form>
           </div>
         </Col>
-        <Col span={4} pull={20}>
-          <SidebarMain />
+        <Col span={4} pull={20} className="sm:hidden">
+          <Sidebar />
         </Col>
       </Row>
     </div>

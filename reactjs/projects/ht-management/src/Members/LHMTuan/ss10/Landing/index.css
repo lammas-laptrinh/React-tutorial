@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+#root {
+  max-width: 1440px;
+  min-width: 100%;
+}
+
+/*Headerbar*/
+.img {
+  border-radius: 40px;
+}
+
+.header-row-top {
+  position: absolute;
+  justify-content: flex-end;
+  top: 10px;
+  right: 0;
+}
+
+.header-row-top .top {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 100px;
+}
+
+.header-row-top .top .top-desc {
+  padding: 0 10px;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+.header-row-bottom {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  border-radius: 0 0 40px 40px;
+  background-color: #f1e2d3;
+  color: #000000;
+  height: 98px;
+}
+
+.header-row-bottom .bottom-1 {
+  width: 30%;
+  margin-left: 100px;
+}
+.header-row-bottom .bottom-1 .bottom-desc-1 {
+  font-size: 40px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  line-height: 57px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.header-row-bottom .bottom-2 {
+  width: 30%;
+}
+.header-row-bottom .bottom-2 .bottom-desc-2 {
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  line-height: 24px;
+  margin-top: 40px;
+}
+.header-row-bottom .bottom-3 {
+  width: 30%;
+}
+.header-row-bottom .bottom-3 .bottom-desc-3 {
+  font-size: 18px;
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  line-height: 24px;
+  border: 2px solid #c18346;
+  background: #f1e2d3;
+  height: 55px;
+  border-radius: 20px;
+  width: 214px;
+  font-weight: bold;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/*RoomType*/
+.room {
+  font-size: 48px;
+  font-family: "Nunito", sans-serif;
+  line-height: 65px;
+}
+
+.row .col .header {
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  line-height: 32px;
+  margin: 30px;
+}
+
+.room-col .title {
+  position: absolute;
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  line-height: 40px;
+  left: 8%;
+  top: 50%;
+}
+
+.room-col .desc {
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  line-height: 20px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col h2 {
+  border-bottom: 5px solid #d9d9d9;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+}
+.col h2:hover {
+  border-bottom: 5px solid #c18346;
+  padding-bottom: 5px;
+}
+
+/*Services*/
+.box {
+  background: #f5f3f4;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.service-col .desc {
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+  line-height: 22px;
+  margin: 20px;
+  width: 50%;
+}
+
+.service-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.service-col .title {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  text-align: center;
+}
+.img {
+  margin: auto;
+}
+
+.services {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 48px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  line-height: 65px;
+  margin-bottom: 50px;
+}
+
+/*Gallery*/
+.gallery-col .title {
+  display: flex;
+  justify-content: center;
+  font-size: 48px;
+  line-height: 66px;
+  font-family: "Nunito", sans-serif;
+  margin-top: 100px;
+}
+.gallery-col .desc {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/*Footer*/
+.about-col .title {
+  font-size: 26px;
+  font-family: "Nunito", sans-serif;
+  line-height: 22px;
+  text-align: left;
+}
+
+.about-col .desc {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  line-height: 22px;
+}
+.about-col-1 .title {
+  font-size: 26px;
+  font-family: "Nunito", sans-serif;
+  line-height: 22px;
+  text-align: left;
+}
+
+.about-col-1 .desc {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  line-height: 22px;
+}
+.about-col {
+  width: 14%;
+  margin: 0 25px;
+}
+.about-col-1 {
+  width: 26%;
+}
+.copy {
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+/*index*/
+.room-header {
+  margin: 0 40px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+
+.room-type {
+  margin: 100px 100px;
+}
+
+.galley {
+  margin: 100px 100px;
+}
+
+.footer-col {
+  margin: 0 70px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .row .col .header {
+    margin: 10px;
+  }
+
+  .header-row-top .top {
+    margin-right: 50px;
+  }
+
+  .room-col .title {
+    line-height: 4px;
+    margin-left: 10px;
+  }
+
+  .gallery-col .title {
+    margin-right: 50px;
+  }
+
+  .header-row-bottom .bottom-1 {
+    margin-left: 50px;
+    width: 35%;
+  }
+
+  .about-col {
+    width: 13%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-row-bottom .bottom-1 {
+    width: 30%;
+  }
+  .header-row-bottom .bottom-1 .bottom-desc-1 {
+    font-size: 29px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+  .header-row-bottom .bottom-2 .bottom-desc-2 {
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-right: 5px;
+  }
+  .header-row-bottom .bottom-3 .bottom-desc-3 {
+    height: 50px;
+    width: 150px;
+    font-size: 10px;
+    margin-top: 20px;
+  }
+  .room {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  .row .col .header {
+    font-size: 18px;
+    margin: 12px;
+    margin-bottom: 50px;
+  }
+  .room-col .title {
+    font-size: 18px;
+    top: 40%;
+  }
+  .services {
+    font-size: 30px;
+  }
+  .service-col .title {
+    font-size: 25px;
+  }
+  .service-col .desc {
+    font-size: 14px;
+
+    margin: 14px;
+    line-height: 14px;
+  }
+  .gallery-col .title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-right: 40px;
+  }
+  .gallery-col .desc {
+    font-size: 18px;
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    left: 50px;
+    top: 90px;
+  }
+  .about-col {
+    width: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-row-top {
+    justify-content: center;
+  }
+
+  .header-row-top .top {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 40px;
+  }
+
+  .header-row-top .top .top-desc {
+    font-size: 12px;
+  }
+
+  .header-row-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80px;
+    padding: 5px;
+  }
+
+  .header-row-bottom .bottom-1 .bottom-desc-1 {
+    font-size: 21px;
+    line-height: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-row-bottom .bottom-2 .bottom-desc-2 {
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-row-bottom .bottom-3 .bottom-desc-3 {
+    font-size: 8px;
+    line-height: 20px;
+    height: 38px;
+    border-radius: 20px;
+    width: 130px;
+    margin-top: 18px;
+  }
+
+  .room {
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  .row .col .header {
+    font-size: 12px;
+    margin: 10px;
+    margin-bottom: 20px;
+  }
+
+  .header-row-bottom .bottom-1,
+  .header-row-bottom .bottom-2,
+  .header-row-bottom .bottom-3 {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .room-col .title,
+  .room-col .desc {
+    display: none;
+  }
+
+  .services {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    line-height: 25px;
+    margin-bottom: 50px;
+  }
+
+  .service-col .title {
+    font-size: 18px;
+  }
+  .service-col .desc {
+    font-size: 10px;
+    margin: 10px;
+    line-height: 18px;
+  }
+
+  .gallery-col .title {
+    justify-content: center;
+    font-size: 25px;
+    line-height: 25px;
+    font-family: "Nunito", sans-serif;
+    margin-top: 50px;
+    margin-right: 10px;
+  }
+  .gallery-col .desc {
+    font-size: 15px;
+    line-height: 25px;
+    width: 200px;
+    position: absolute;
+    left: 10px;
+    top: 90px;
+  }
+
+  .about-col .title {
+    font-size: 20px;
+  }
+  .about-col .desc {
+    font-size: 12px;
+  }
+
+  .about-col-1 .title {
+    font-size: 20px;
+  }
+
+  .about-col-1 .desc {
+    font-size: 12px;
+  }
+
+  .about-col {
+    width: 8%;
+  }
+  .about-col-1 {
+    width: 30%;
+  }
+}

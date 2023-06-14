@@ -5,17 +5,18 @@ import {
     PieChartOutlined,
     FileTextOutlined,
 } from '@ant-design/icons';
-import { MenuProps } from 'antd';
+import { Button, MenuProps } from 'antd';
 import { Layout } from 'antd';
 // import { collection, getDocs, query } from "firebase/firestore";
 // import { db } from '../../../firebase';
 import SideBar from '../components/sidebar';
 import Header from '../components/header';
-import { Rooms } from '../Types';
+import { Rooms } from '../../NHH/types';
 import RoomList from '../components/RoomList';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Detail from './RoomDetail/roomDetail';
-// import ServicePage from '../Service/ServicePage';
+
+import { BsBackspace } from "react-icons/bs";
 const { Content } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -208,6 +209,7 @@ export default function Main() {
             <Layout className="site-layout">
                 <Header version='Version 1.0.0' username='Nguyễn Huy Hoàng' />
                 <Content className='content'>
+                <div className=""><Button style={{margin: 10, background: "#ddd"}}><Link to="/"><BsBackspace /></Link></Button></div>          
                     <Routes>
                         <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
                         <Route path=":id" element={<Detail />} />                       

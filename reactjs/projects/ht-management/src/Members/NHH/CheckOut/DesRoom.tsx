@@ -14,7 +14,7 @@ const DetailRoom = [
 const App: React.FC = () => (
   <><Image className='img'
     width={510} height={300}
-    src="https://s3-alpha-sig.figma.com/img/528b/145f/221d81a17c9eab180b803385b4c31fb1?Expires=1684108800&Signature=ay8CK8xS6CYkNrkmuo1eCzY5Qalw8DKz~gfkynrG-wPQgu4tx4VVoIN4LcGZfxR5VQQONCK-4hhI4VS6xNKv~gyUopGNlv9bAsasMjHKZeJUQ1eestzJ80U2GXmOP-nWZR0ZQx8Ko6uFxDgb1VZC0ebhesy6VITJuRn9MbA~UEKRAyYECIuURfUW15OoNuMofMvwM-jhhCIFGYokpwmpeHTUkqubHI582ZxaxDqILorherB6Jn1-LKeH3gJOryOxTKNhuzpwprwpuAVGJBJiQkfSqdHBZrBjVnIeeLPRtFmpL7W453Bk9dh79BqGsIIhJ5LKc0EW9Vxv0gd0~HByWw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+    src="https://s3-alpha-sig.figma.com/img/528b/145f/221d81a17c9eab180b803385b4c31fb1?Expires=1685923200&Signature=J732MexuKAeTgPl3pzd5-4ry-aLJuP5qMpNtg1GyzrYwA-x3WNAVVvtGGErf2BZwrA9ZWyfSirvK-eHnK~JABDg0VuxE5xJiSCiREajHsXAtnHJ6~dOb0WRvhn3aRpxbs-sIbc7UaG1uSrIZ945S-zWYVbqR32x~vt3O6p7jyppPikK8N6zZVMTlgTQPfACpyRNhi5sHe6ooqrBqhZ-JAVEcpWTE68HzYDzOPNyNedtopfc-Ud93a40nts~lKC9YWJx6bjhWpfNSUnWensDRl9j8x71EAYtw2-lZZgtJzZXTZ4ypZnVtA2sYaRm2Y8PlFO4cgo27X3Z3QLbcpTNVlg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     {DetailRoom.map((item) => (
       <div className="Room">
         <div className="Room__Type">{item.roomType}</div>

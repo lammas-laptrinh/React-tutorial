@@ -10,12 +10,12 @@
     height: 100%;
 }
 
-.room-image {
+.room-image-detail {
     width: 50%;
     height: 100%;
 }
 
-h1 {
+.title-room {
     font-size: 25px;
 }
 
@@ -77,6 +77,7 @@ h1 {
 
 .action {
     margin-top: 30px;
+    width: 100%;
 }
 
 .action-button-room {
