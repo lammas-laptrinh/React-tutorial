@@ -6,7 +6,8 @@ export interface PaymentDetailProps {
     code: string;
     people: number;
     request: string[];
-    countRequest:number;
+    userRequestData:string[];
+    userRequestCount:number;
     startDate: string;
     endDate: string;
     roomType:string;

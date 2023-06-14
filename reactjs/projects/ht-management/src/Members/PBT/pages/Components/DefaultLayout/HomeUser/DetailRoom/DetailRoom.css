@@ -15,10 +15,13 @@
     height: 100%;
 }
 
-.title-room {
-    font-size: 25px;
+.title-room-detail-home {
+    font-size: 26px;
 }
-
+.title-room-wrapper {
+    width: 400px;
+    display: flex;
+}
 .i-room {
     object-fit: cover;
     width: 100%;
@@ -27,9 +30,11 @@
 
 .room-detail {
     width: 50%;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: #fff;
-    padding: 60px;
+    padding: 20px;
 }
 
 .avatar-wrapper {
@@ -72,11 +77,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .action {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -92,6 +97,8 @@
 
 .back-wrapper{
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .back{
