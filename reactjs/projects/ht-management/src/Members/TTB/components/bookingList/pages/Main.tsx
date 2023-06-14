@@ -138,7 +138,6 @@ const Dashboard: React.FC = () => {
         fetchStatus();
     }, []);
     /*     console.log("user", users); */
-    console.log(users);
 
     useEffect(() => {
         const updatedRoomListUser = data?.map(data => {
@@ -170,8 +169,8 @@ const Dashboard: React.FC = () => {
             return updatedRoomListUser;
         });
         setData(updatedRoomStatus);
-    }, [roomType])
-    /*     console.log(data); */
+    }, [users])
+
 
     return (
         <div className='dashboardd-container'>
