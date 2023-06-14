@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Payment() {
   return (
     <div style={{ display: "flex" }}>
-      <div style={{ flex: 1, marginRight: "80px" }}>
+      <div style={{ flex: 0.7, marginRight: "100px" }}>
         <PaymentDetailsForm
           onSubmit={function (): void {
             throw new Error("Function not implemented.");

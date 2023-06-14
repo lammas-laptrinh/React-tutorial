@@ -10,7 +10,6 @@ export interface Room {
   modalContent?: string[];
   status?: string;
 }
-
 export const rooms: Room[] = [
   {
     id: "1",

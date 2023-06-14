@@ -2,8 +2,10 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { toast } from "react-toastify";
 import { Button } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 export default function PaypalCheckout(props: any) {
+  const navigate = useNavigate();
   const handleClick = () => {
     props.setShowPaypal(!props.showPaypal);
   };
@@ -27,6 +29,9 @@ export default function PaypalCheckout(props: any) {
       return;
     }
     toast.success(`Thanh toán thành công`);
+    setTimeout(() => {
+      navigate("/invoice");
+    }, 1500);
   }
   return (
     <div className="paypal-popup">

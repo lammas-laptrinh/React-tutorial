@@ -8,8 +8,14 @@ export type Room = {
     img?: string;
     description?: string;
     serviceCount?: number;
-    service?: Service[]
+    service?: Service[];
+    price?: RoomPrice;
 };
+export type RoomPrice ={
+    flatform?: number;
+    subtotal?: number
+
+}
 export type Service = {
     id: string;
     serviceType?: ServiceType;
@@ -25,9 +31,10 @@ export type RoomProps = {
     row: Room;
 };
 export type RoomListProps = {
-    rows: Room[];
+    rows: any;
     searchText?: string;
     isGridView?: boolean;
+    rowUser?: any;
 };
 export type RoomType = {
     id: string;
