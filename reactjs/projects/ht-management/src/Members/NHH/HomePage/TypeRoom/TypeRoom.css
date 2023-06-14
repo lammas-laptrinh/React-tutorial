@@ -1,0 +1,82 @@
+.TypeRoom {
+    width: 508px;
+    height: 52px;
+    left: 100px;
+    top: 700px;
+    margin-bottom: 30px;
+    position: absolute;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 65px;
+    color: #2D2019;
+    font-family: 'Nunito', sans-serif;
+}
+.ant-tabs-ink-bar {
+    padding: 3px;
+    font-family: 'Nunito', sans-serif;
+}
+.RoomType {
+    position: absolute;
+    width: 1308px;
+    height: 70px;
+    left: 30px;
+    top: 750px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #2D2019;
+}
+
+.ant-tabs-tab-btn {
+    padding: 0 35px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    font-family: 'Nunito', sans-serif;
+    color: #2D2019;
+}
+
+.RoomBox {
+    display: inline-block;
+    width: 25%;
+    margin-top: 20px;
+}
+
+.Content-img img {
+    height: 155px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 30px;
+
+}
+
+.Content-Roomtype {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #000000;
+}
+
+.Content-des {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #000000;
+
+}
+.des{
+    font-size: 15px;
+    
+}

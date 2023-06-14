@@ -5,7 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import { ServicesValues } from "../Service/Types/types";
 import './service.scss';
-
+import { Link } from "react-router-dom";
+import { BsBackspace } from "react-icons/bs";
 const { Title } = Typography;
 
 const { Option } = Select;
@@ -38,13 +39,16 @@ const ServicePage: React.FC = () => {
     height: "80px",
   };
   return (
+    
     //
     <Form
+    
       className="Form-Service"
       form={form}
       layout="vertical"
       onFinish={handleSubmit}
     >
+      <div className=""><Button style={{margin: 10, background: "#ddd"}}><Link to="/"><BsBackspace /></Link></Button></div>          
       <Title level={3}>Đặt Dịch Vụ</Title>
       <Title level={5}>Loại</Title>
       <Form.Item
