@@ -68,7 +68,7 @@ export default function Main() {
             const rooms = Promise.all(roomSnapshot.docs.map(async (doc) => {
                 const roomData = doc.data();
                 const roomId = doc.id;
-                const userCheckInRef = collection(roomsRef, roomId, 'usersCheckIn');
+                const userCheckInRef = collection(roomsRef, roomId, 'userCheckIn');
                 const userCheckInSnapshot = await getDocs(userCheckInRef);
                 const userCheckInData = userCheckInSnapshot.docs.map(checkinDoc => checkinDoc.data());
                 return {
@@ -81,7 +81,7 @@ export default function Main() {
         };
 
         fetchData();
-    }, []);
+    }, [roomList]);
     /* useEffect(() => {
         const fetchData = async () => {
             const roomsRef = collection(firestoreDB, 'services');
