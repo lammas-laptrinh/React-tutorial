@@ -1,9 +1,9 @@
 
 import { useParams } from "react-router-dom";
 
-import { Rooms } from "../types";
-import RoomImage from "../components/RoomImage";
-import RoomInfo from "../components/roomInfo";
+// import { Rooms } from "../types";
+// import RoomImage from "../components/RoomImage";
+// import RoomInfo from "../components/roomInfo";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { firestoreDB } from "@src/firebase";
@@ -41,10 +41,10 @@ export default function Detail() {
     return (
         <div className="displayFlex roomDetailSite">
             <div className="RoomImageFlex">
-                <RoomImage row={getRoom!} />
+                {/* <RoomImage row={getRoom!} /> */}
             </div>
             <div className="RoomInfoFlex">
-                <RoomInfo row={getRoom!} />
+                {/* <RoomInfo row={getRoom!} /> */}
             </div>
 
         </div>

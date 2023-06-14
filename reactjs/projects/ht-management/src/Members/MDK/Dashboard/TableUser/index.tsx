@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Space, Table, Tag, Button, Typography } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { db } from "@src/firebase";
+import { firestoreDB } from "@src/firebase";
 import {
   CollectionReference,
   collection,
@@ -82,7 +82,7 @@ const TableUser = () => {
   const [data, setData] = useState<DataType[]>([]);
 
   useEffect(() => {
-    const colRef: CollectionReference = collection(db, "users");
+    const colRef: CollectionReference = collection(firestoreDB, "users");
     const queries = query(colRef);
     const unsubscribe = onSnapshot(queries, (snapshot) => {
       const results = snapshot.docs.map((doc) => {
@@ -107,7 +107,7 @@ const TableUser = () => {
 
   const handleDelete = async (documentId: string) => {
     try {
-      await deleteDoc(doc(db, "users", documentId));
+      await deleteDoc(doc(firestoreDB, "users", documentId));
       console.log("Document successfully deleted!");
       // Xử lý khi tài liệu được xóa thành công
       toast.success("Xóa thành công"); // Thông báo thành công

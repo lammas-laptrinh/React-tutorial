@@ -8,8 +8,8 @@ import { MenuProps } from 'antd';
 import { Layout } from 'antd';
 // import { collection, getDocs, query } from "firebase/firestore";
 // import { db } from '../../../firebase';
-import SideBar from '../components/sidebar';
-import Header from '../components/header';
+// import SideBar from '../components/sidebar';
+// import Header from '../components/header';
 import RoomList from '../components/RoomList/RoomList';
 import { Route, Routes } from 'react-router-dom';
 import Detail from './roomDetail';
@@ -82,6 +82,7 @@ export default function Main() {
 
         fetchData();
     }, [roomList]);
+    
     /* useEffect(() => {
         const fetchData = async () => {
             const roomsRef = collection(firestoreDB, 'services');
@@ -108,9 +109,9 @@ export default function Main() {
 
     return (
         <Layout className='layout' >
-            <SideBar name='DTD' item={items} />
+            {/* <SideBar name='DTD' item={items} /> */}
             <Layout className="site-layout">
-                <Header version='Version 1.0.0' username='Nguyễn Văn B' />
+                {/* <Header version='Version 1.0.0' username='Nguyễn Văn B' /> */}
                 <Content className='content'>
                     <Routes>
                         <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
@@ -128,4 +129,4 @@ export default function Main() {
             </Layout>
         </Layout>
     );
-};
+}

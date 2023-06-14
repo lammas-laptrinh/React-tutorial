@@ -3,7 +3,7 @@
 
 .header-row-top {
     position: absolute;
-    justify-content: end;
+    justify-content: flex-end;
     top: 25px;
     right: 20px
 }

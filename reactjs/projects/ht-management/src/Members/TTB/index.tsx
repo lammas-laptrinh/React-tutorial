@@ -1,12 +1,6 @@
-
-
-import { Route, Routes } from 'react-router-dom';
-import Main from './pages/main';
+import { Route, Routes } from "react-router-dom";
+import Main from "./pages/main";
 
 export default function Room() {
-    return (
-        <Routes>
-            <Route path="/" element={<Main />} />
-        </Routes>
-    );
+  return <Route path="/TTB" element={<Main />} />;
 }

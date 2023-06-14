@@ -13,9 +13,9 @@ const HeaderBar: React.FC = () => {
                     <Row className="header-row-top">
                         <Col className="top">
                             <Link to="/" className="top-desc">Home</Link>
-                            <Link to="/room" className="top-desc">Room</Link>
-                            <Link to="/service" className="top-desc">Services</Link>
-                            <Link to="/about" className="top-desc">About us</Link>
+                            <Link to="room" className="top-desc">Room</Link>
+                            <Link to="service" className="top-desc">Services</Link>
+                            <Link to="about" className="top-desc">About us</Link>
                         </Col>
                     </Row>
                 </div>

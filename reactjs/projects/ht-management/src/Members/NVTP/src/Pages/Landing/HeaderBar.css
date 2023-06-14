@@ -8,7 +8,7 @@
 
 .header-row-top {
   position: absolute;
-  justify-content: end;
+  justify-content: flex-end;
   top: 0;
   right: 0;
 }

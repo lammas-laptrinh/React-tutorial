@@ -141,7 +141,7 @@ svg{
 .view {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
      &__header{
         font-family: 'Nunito', sans-serif;
         font-style: normal;
