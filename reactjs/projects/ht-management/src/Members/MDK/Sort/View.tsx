@@ -7,10 +7,10 @@ import { useGrid } from "@src/context/view_context";
 const { Title } = Typography;
 
 const View: React.FC = () => {
-  const { grid_view, toggleGrid, toggleList } = useGrid();
+  const { toggleGrid, toggleList } = useGrid();
 
   return (
-    <Space className="flex items-center justify-center pr-5">
+    <Space className="flex items-center justify-center pr-5 sm:!pr-0 sm:!my-8">
       <Title
         level={3}
         className="relative top-[4px] !text-[#BFC3CD] !text-[24px]"
