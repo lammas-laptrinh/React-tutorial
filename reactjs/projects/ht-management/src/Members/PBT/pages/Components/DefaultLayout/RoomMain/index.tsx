@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from 'react'
 import { Col, MenuProps, Row } from 'antd';
-import { Link } from 'react-router-dom';
+
 import { Layout } from 'antd';
 import { UnorderedListOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 const { Content } = Layout;
 import {
 
@@ -14,7 +15,6 @@ import {
 import Header from '../Header/Header';
 import Search from '../Search/Search';
 import SiderLayout from '../Sider/SiderLayout';
-
 import './RoomService.css'
 
 import { db } from '../firebase';
@@ -22,10 +22,10 @@ import {
     CollectionReference,
     collection,
     onSnapshot,
-    query,
+    getDocs,
+    where, query,
 } from "firebase/firestore";
 import Room from './Room';
-import { RoomMain } from './Room/type';
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
     label: React.ReactNode,
@@ -41,71 +41,124 @@ function getItem(
 const items: MenuItem[] = [
     getItem(<PieChartOutlined style={{ fontSize: 20 }} />),
     getItem(<DesktopOutlined style={{ fontSize: 20 }} />),
-    getItem(<UserOutlined style={{ fontSize: 20 }} />, [
-
-    ]),
+    getItem(<Link to="/service"><UserOutlined style={{ fontSize: 20 }} /></Link>, []),
 ];
 
+
 type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
-function RoomService(props: any) {
-    const [database, setDatabase] = useState<RoomMain[]>([]);
-    const [searchValue, setSearchValue] = useState('');
+function RoomService() {
+    const [room, setRoom] = useState<any[]>([]);
+    const [roomtype, setRoomTypes] = useState<any[]>([]);
     const [Direction, setFlexDirection] = useState<FlexDirection>('row');
-    const [searchResult, setSearchResult] = useState<RoomMain[]>([]);
+    const [checkInData, setCheckInData] = useState([]);
+    // const { rooms } = props;
+    console.log(roomtype);
 
-    const { rooms } = props;
-
-    function searchRooms(code: string) {
-        const result = database.filter((room) => room.code.toLowerCase().includes(code.toLowerCase()));
-        setSearchResult(result);
-    }
-
-    const handleSearchValueChange = (value: string) => {
-        setSearchValue(value);
-        searchRooms(value);
-    };
-    console.log(searchValue,rooms);
-    
     const handleListClick = () => {
         setFlexDirection('column');
     };
     const handleGridClick = () => {
         setFlexDirection('row');
     };
-
     useEffect(() => {
-        const colRef: CollectionReference = collection(db, "King");
-        const queries = query(colRef);
-        const unsubscribe = onSnapshot(queries, (snapshot) => {
-            const respon = snapshot.docs.map((doc) => {
-                const req = doc.data();
-                return {
-                    code: req.Code,
-                    people: req.People,
-                    request: req.Request,
-                    startDate: req.StartDate,
-                    endDate: req.EndDate,
-                    roomType: req.TypeRoom,
-                    countRequest: req.CountRequest,
-                };
-            });
-            setDatabase(respon);
-        }, (error) => {
-            console.log(error);
-        });
+        const colRef = collection(db, 'rooms');
+        const unsubscribe = onSnapshot(
+            colRef,
+            async (snapshot) => {
+                const respon = snapshot.docs.map(async (doc) => {
+                    const roomData = doc.data();
+
+                    // Truy cập vào các collection con trong document "rooms"
+                    const collection1Ref = collection(doc.ref, 'userRequest');
+                    const collection2Ref = collection(doc.ref, 'usersCheckIn');
+
+                    // Lấy dữ liệu của các collection con
+                    const collection1Snapshot = await getDocs(collection1Ref);
+                    const UserRequest = collection1Snapshot.docs.map((doc) => doc.data());
+
+
+
+                    const collection2Snapshot = await getDocs(collection2Ref);
+                    const UsersCheckIn = collection2Snapshot.docs.map((doc) => doc.data());
+                    console.log(UsersCheckIn);
+                    // Đếm số lượng item trong UserRequest
+                    const userRequestCount = UserRequest.length;
+
+                    // Lưu lại data của item trong UserRequest
+                    const userRequestData = UserRequest.map((item) => {
+                        const { content } = item;
+                        return { content };
+                    });
+
+
+                    // Lấy tên roomTypeId từ collection roomTypes
+                    const roomTypeId = roomData.roomTypeId;
+                    const roomTypeQuery = query(collection(db, 'roomTypes'), where('id', '==', roomTypeId));
+                    const roomTypeSnapshot = await getDocs(roomTypeQuery);
+                    const roomTypeData = roomTypeSnapshot.docs[0]?.data();
+                    const roomTypeName = roomTypeData?.name || '';
+
+                    return {
+                        ...roomData,
+                        UserRequest,
+                        UsersCheckIn,
+                        roomTypeName, // Thêm field roomTypeName vào object roomData
+                        userRequestCount, // Thêm field userRequestCount vào object roomData
+                        userRequestData, // Thêm field userRequestData vào object roomData
+                    };
+                });
+
+                Promise.all(respon).then((results) => {
+                    setRoom(results);
+                    const checkInDataArray: any = [];
+                    results.forEach((room) => {
+                        room.UsersCheckIn.forEach((checkInData) => {
+                            const { checkIn, checkOut, userId } = checkInData;
+                            checkInDataArray.push({ checkIn, checkOut, userId });
+                        });
+                    });
+
+                    // Lưu dữ liệu vào state
+                    setCheckInData(checkInDataArray);
+                });
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+
         return () => unsubscribe();
     }, []);
 
+    function formatDate(timestamp: any) {
+        const seconds = timestamp.seconds;
+        const dateObj = new Date(seconds * 1000);
 
-    const standardRooms = database.filter((room) => room.roomType === "Standard");
-    const doubleRooms = database.filter((room) => room.roomType === "Double");
-    const KingRooms = database.filter((room) => room.roomType === "King");
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+        const year = dateObj.getFullYear();
 
-    const standardSearchResult = searchResult.filter(room => room.roomType === 'Standard');
-    const doubleSearchResult = searchResult.filter(room => room.roomType === 'Double');
-    const kingSearchResult = searchResult.filter(room => room.roomType === 'King');
+        return `${day}/${month}/${year}`;
+    }
+    console.log(checkInData);
+    useEffect(() => {
+        const colRef: CollectionReference = collection(db, 'roomTypes');
+        const unsubscribe = onSnapshot(
+            colRef,
+            (snapshot) => {
+                const respon = snapshot.docs.map((doc) => {
+                    return doc.data();
+                });
+                setRoomTypes(respon);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+        return () => unsubscribe();
+    }, []);
 
-
+    console.log(room);
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -121,7 +174,7 @@ function RoomService(props: any) {
                                 <Row>
                                     <h2>Rooms</h2>
                                 </Row>
-                                <Row style={{ width: 200, height: 40, borderRadius: 100, marginLeft: 20 }}><Search onSearch={handleSearchValueChange} title='Tìm kiếm ....' /></Row>
+                                <Row style={{ width: 200, height: 40, borderRadius: 100, marginLeft: 20 }}><Search  title='Tìm kiếm ....' /></Row>
                             </Row>
                             <Row style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                                 <span style={{ fontSize: '20px' }}>View:</span>
@@ -134,74 +187,112 @@ function RoomService(props: any) {
                             </Row>
                         </Col>
                     </Row>
-                    {searchResult.length > 0 ? (
-                        <>
-                            <h2>Standard</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {standardSearchResult.map((room, index) => (
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                        <div key={index}>
-                                            <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </div>
-                                    </Link>
-                                ))}
-                            </Row>
-                            <h2>Double</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {doubleSearchResult.map((room, index) => (
+                    <>
+                        <h2>All Room</h2>
+                        <Row style={{ display: 'flex', flexDirection: Direction }}>
+                            {room.map((roomData, index) => (
+                                <div key={index}>
+                                    {roomData.UsersCheckIn.map((checkInData: any, dataIndex: any) => {
+                                        const { checkIn, checkOut } = checkInData;
+                                        const FormatCheckIn = formatDate(checkIn);
+                                        const FormatCheckOut = formatDate(checkOut);
+                                        const endDate = FormatCheckOut;
+                                        const date = FormatCheckIn;
+                                        return (
+                                            <Room
+                                                key={dataIndex}
+                                                people="3"
+                                                roomName={roomData.roomTypeName}
+                                                date={date}
+                                                endDate={endDate}
+                                                room={roomData}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            ))}
+                        </Row>
+                        <h2>Luxury</h2>
+                        <Row style={{ display: 'flex', flexDirection: 'row' }}>
+                            {room
+                                .filter((roomData) => roomData.roomTypeId === 'l01')
+                                .map((roomData, index) => (
                                     <div key={index}>
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                            <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </Link>
+                                        {roomData.UsersCheckIn.map((checkInData: any, dataIndex: any) => {
+                                            const { checkIn, checkOut } = checkInData;
+                                            const FormatCheckIn = formatDate(checkIn);
+                                            const FormatCheckOut = formatDate(checkOut);
+                                            const endDate = FormatCheckOut;
+                                            const date = FormatCheckIn;
+                                            return (
+                                                <Room
+                                                    key={dataIndex}
+                                                    people="3"
+                                                    roomName={roomData.roomTypeName}
+                                                    date={date}
+                                                    endDate={endDate}
+                                                    room={roomData}
+                                                />
+                                            );
+                                        })}
                                     </div>
+                                ))}
+                        </Row>
 
-                                ))}
-                            </Row>
-                            <h2>King</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {kingSearchResult.map((room, index) => (
+                        <h2>Lanai</h2>
+                        <Row style={{ display: 'flex', flexDirection: 'row' }}>
+                            {room
+                                .filter((roomData) => roomData.roomTypeId === 'l02')
+                                .map((roomData, index) => (
                                     <div key={index}>
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                            <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </Link>
+                                        {roomData.UsersCheckIn.map((checkInData: any, dataIndex: any) => {
+                                            const { checkIn, checkOut } = checkInData;
+                                            const FormatCheckIn = formatDate(checkIn);
+                                            const FormatCheckOut = formatDate(checkOut);
+                                            const endDate = FormatCheckOut;
+                                            const date = FormatCheckIn;
+                                            return (
+                                                <Room
+                                                    key={dataIndex}
+                                                    people="3"
+                                                    roomName={roomData.roomTypeName}
+                                                    date={date}
+                                                    endDate={endDate}
+                                                    room={roomData}
+                                                />
+                                            );
+                                        })}
                                     </div>
                                 ))}
-                            </Row>
-                        </>
-                    ) : (
-                        <>
-                            <h2>Standard</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {standardRooms.map((room, index) => (
+                        </Row>
+                        <h2>Single</h2>
+                        <Row style={{ display: 'flex', flexDirection: 'row' }}>
+                            {room
+                                .filter((roomData) => roomData.roomTypeId === 's01')
+                                .map((roomData, index) => (
                                     <div key={index}>
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                        <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </Link>
+                                        {roomData.UsersCheckIn.map((checkInData: any, dataIndex: any) => {
+                                            const { checkIn, checkOut } = checkInData;
+                                            const FormatCheckIn = formatDate(checkIn);
+                                            const FormatCheckOut = formatDate(checkOut);
+                                            const endDate = FormatCheckOut;
+                                            const date = FormatCheckIn;
+                                            return (
+                                                <Room
+                                                    key={dataIndex}
+                                                    people="3"
+                                                    roomName={roomData.roomTypeName}
+                                                    date={date}
+                                                    endDate={endDate}
+                                                    room={roomData}
+                                                />
+                                            );
+                                        })}
                                     </div>
                                 ))}
-                            </Row>
-                            <h2>Double</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {doubleRooms.map((room, index) => (
-                                    <div key={index}>
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                        <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </Link>
-                                    </div>
-                                ))}
-                            </Row>
-                            <h2>King</h2>
-                            <Row style={{ display: 'flex', flexDirection: Direction }}>
-                                {KingRooms.map((room, index) => (
-                                    <div key={index}>
-                                        <Link className="link-style" to={`/${room.code}/${room.roomType}`}>
-                                        <Room people={room.people} roomName={room.code} date={room.startDate} endDate={room.endDate} room={room} />
-                                        </Link>
-                                    </div>
-                                ))}
-                            </Row>
-                        </>
-                    )}
+                        </Row>
+                    </>
+
                 </Content>
             </Layout>
         </Layout>

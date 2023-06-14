@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invoice-form {
+    width: 800px;
+    height: 90vh;
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.invoice-form-faile {
+    width: 800px;
+    height: 600px;
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.success-img {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.invoice-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+}
+
+.invoice-header-sub {
+    font-size: 32px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.invoice-header-sub-h2 {
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    line-height: 65px;
+    margin-top: 16px;
+}
+
+.invoice-line-header {
+    border: 1px solid #000000;
+    width: 750px;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 58px;
+    margin-bottom: 70px;
+}
+
+.invoice-title {
+    flex-direction: row;
+    margin-left: 75px;
+    margin-right: 35px;
+}
+
+.column {
+    flex-direction: column;
+}
+
+
+.invoice-sub {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.invoice-sub-right {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    text-align: right;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.invoice-line-bottom {
+    border: 1px dashed #000000;
+    border-top-width: 2px;
+    border-bottom-width: 0px;
+    width: 750px;
+    height: 0px;
+    margin-bottom: 48px;
+}
+
+.last {
+    margin-bottom: 75px;
+}
+
+.invoiceContain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E5E5E5;
+}
+
+.faileImg {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.backButton {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 60px;
+    margin-top: 170px;
+}
