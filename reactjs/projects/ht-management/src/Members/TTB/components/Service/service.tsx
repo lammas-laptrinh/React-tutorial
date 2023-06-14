@@ -6,7 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import { Button, Select, Space } from "antd";
 import 'react-toastify/dist/ReactToastify.css';
 import { Editor } from '@tinymce/tinymce-react';
-import { rooms } from '../commons';
+import { rooms } from '../../commons';
 
 const { Option } = Select;
 

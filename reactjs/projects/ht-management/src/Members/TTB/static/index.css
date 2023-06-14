@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
 
 /* body */
 .version {
@@ -91,8 +95,15 @@ a:hover {
 } */
 
 .content {
-  margin: 0 36px;
+  /*   padding: 10px 40px; */
   min-height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.room-list {
+  padding: 10px 50px;
+  width: 100%;
 }
 
 .heading {
@@ -121,13 +132,18 @@ a:hover {
 }
 
 .service-form-container {
-
   background-color: white;
   margin-top: 20px;
   padding: 50px;
   font-size: 20px;
-
+  margin: 5% 40%;
+  background-color: white;
+  margin-top: 20px;
+  font-size: 20px;
+  width: 905px;
+  height: 785px;
 }
+
 
 .item-title {
   margin-bottom: 10px;
@@ -136,7 +152,7 @@ a:hover {
 }
 
 .payment {
-  margin: 5% 10%;
+/*   margin: 5% 10%; */
   background: white;
   width: 1440px;
   height: 1024px;
@@ -422,6 +438,8 @@ a:hover {
 
 .RoomInfoFlex {
   flex: 2;
+  width: 600px;
+  box-sizing: border-box;
 }
 
 .RoomInfoContainer {
@@ -559,6 +577,7 @@ a:hover {
   top: 0px;
   border-radius: 0px;
   background: #FFFFFF;
+  height: revert;
 }
 
 .tooltipContent {
@@ -635,12 +654,9 @@ a:hover {
   display: flex;
   flex-direction: row-reverse;
 }
-
-
-
-
-
-
+.btn-full-width{
+  width: 100% !important;
+}
 .ant-select-selector {
   height: 80px !important;
 }

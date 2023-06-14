@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     PieChartOutlined,
     UsergroupAddOutlined,
@@ -10,13 +10,19 @@ import { Layout } from 'antd';
 // import { db } from '../../../firebase';
 import SideBar from '../components/sidebar';
 import Header from '../components/header';
-import { Rooms } from '../types';
-import RoomList from '../components/RoomList';
+import RoomList from '../components/RoomList/RoomList';
 import { Route, Routes } from 'react-router-dom';
 import Detail from './roomDetail';
-import Service from '../components/service';
-import Payment from '../Payment/paymentForm';
+import Service from '../components/Service/service';
+import Landing from '../components/Landing';
+import SignUp from '../components/SignUp';
+import Payment from '../components/Payment/paymentForm';
 import Leaflet from '@src/Members/PBT/pages/Leaflet';
+import InvoiceForm from '../components/Invoice';
+import { collection, getDocs } from 'firebase/firestore';
+import { firestoreDB } from '@src/firebase';
+import Dashboard from '../components/bookingList/pages/Main';
+import Login from '../components/Login';
 
 const { Content } = Layout;
 
@@ -45,66 +51,61 @@ const items: MenuItem[] = [
 ];
 
 
-const rooms: Rooms[] = [
-    {
-        id: "1",
-        roomName: 'Room 1',
-        bedAmount: 3,
-        checkinDate: '11/12',
-        checkoutDate: '16/12',
-        roomType: 'Standard',
-        serviceCount: 2,
-        service: ['service 1', 'service 2']
-    },
-    {
-        id: "2",
-        roomName: 'Room 2',
-        bedAmount: 3,
-        checkinDate: '18/12',
-        checkoutDate: '20/12',
-        roomType: 'Double',
-        serviceCount: 0,
-    },
-    {
-        id: "3",
-        roomName: 'Room 3',
-        bedAmount: 3,
-        checkinDate: '18/12',
-        checkoutDate: '20/12',
-        roomType: 'King',
-        serviceCount: 0,
-    },
-    {
-        id: "4",
-        roomName: 'Room 4',
-        bedAmount: 3,
-        checkinDate: '12/12',
-        checkoutDate: '16/12',
-        roomType: 'Standard',
-        serviceCount: 0,
-    },
-    {
-        id: "5",
-        roomName: 'Room 5',
-        bedAmount: 3,
-        checkinDate: '12/12',
-        checkoutDate: '16/12',
-        roomType: 'King',
-        serviceCount: 3,
-        service: ['service 1', 'service 2', 'service 3']
-    },
-]
-
 export default function Main() {
-    const [roomList, setRoomList] = useState<Rooms[]>(rooms);
-
+    const [roomList, setRoomList] = useState<any[]>([]);
     const handleSearch = (roomId: string) => {
-        const foundRooms = rooms.filter((room: { id: string; }) => room.id === roomId);
+        const foundRooms = roomList.filter((room: { id: string; }) => room.id === roomId);
         setRoomList(foundRooms);
         if (roomId === "") {
-            setRoomList(rooms)
+            setRoomList(roomList)
         }
     };
+    useEffect(() => {
+        const fetchData = async () => {
+            const roomsRef = collection(firestoreDB, 'rooms');
+            const roomSnapshot = await getDocs(roomsRef);
+
+            const rooms = Promise.all(roomSnapshot.docs.map(async (doc) => {
+                const roomData = doc.data();
+                const roomId = doc.id;
+                const userCheckInRef = collection(roomsRef, roomId, 'userCheckIn');
+                const userCheckInSnapshot = await getDocs(userCheckInRef);
+                const userCheckInData = userCheckInSnapshot.docs.map(checkinDoc => checkinDoc.data());
+                return {
+                    ...roomData,
+                    id: roomId,                
+                    userCheckIn: userCheckInData[0],
+                };
+            }));
+            setRoomList(await rooms);
+        };
+
+        fetchData();
+    }, [roomList]);
+    /* useEffect(() => {
+        const fetchData = async () => {
+            const roomsRef = collection(firestoreDB, 'services');
+            const roomSnapshot = await getDocs(roomsRef);
+
+            const rooms = Promise.all(roomSnapshot.docs.map(async (doc) => {
+                const roomData = doc.data();
+                const roomId = doc.id;
+                const userCheckInRef = collection(roomsRef, roomId, 'usersCheckIn');
+                const userCheckInSnapshot = await getDocs(userCheckInRef);
+                const userCheckInData = userCheckInSnapshot.docs.map(checkinDoc => checkinDoc.data());
+                return {
+                    ...roomData,
+                    id: roomId,                
+                    userCheckIn: userCheckInData[0],
+                };
+            }));
+            setRoomList(await rooms);
+        };
+
+        fetchData();
+    }, []); */
+/*     console.log("data", data); */
+
     return (
         <Layout className='layout' >
             <SideBar name='DTD' item={items} />
@@ -115,8 +116,13 @@ export default function Main() {
                         <Route path="/" element={<RoomList roomList={roomList} onSearch={handleSearch} />} />
                         <Route path=":id" element={<Detail />} />
                         <Route path="/service" element={<Service />} />
+                        <Route path="/landing" element={<Landing />} />
+                        <Route path="/signup" element={<SignUp />} />
                         <Route path="/payment" element={<Payment />} />
                         <Route path="/leaflet" element={<Leaflet />} />
+                        <Route path="/invoice" element={<InvoiceForm />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/login" element={<Login />} />
                     </Routes>
                 </Content>
             </Layout>
