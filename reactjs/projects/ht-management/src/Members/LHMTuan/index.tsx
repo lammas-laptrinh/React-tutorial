@@ -1,8 +1,12 @@
 import "./index.css";
-import Payment from "./session_1/Payment";
+import Payment from "../LHMTuan/session_1/Payment";
 
 function PaymentApp() {
-  return <Payment />;
+  return (
+    <div className="main">
+      <Payment />
+    </div>
+  );
 }
 
 export default PaymentApp;

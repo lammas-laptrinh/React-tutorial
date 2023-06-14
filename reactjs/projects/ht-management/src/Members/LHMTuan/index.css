@@ -1,36 +1,10 @@
-#root {
-  max-width: 770px;
-  margin: 0 auto;
+.main {
+  max-width: 1250px;
+  margin: 10px;
   padding: 5rem;
   text-align: left;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  position: absolute;
+  left: 280px;
 }
 
 .card {
@@ -65,7 +39,7 @@
 }
 
 .payment-info-bottom-box {
-  height: 300px;
+  height: 320px;
   width: 350px;
   background-color: #f3f5f9;
   display: block;
@@ -138,7 +112,7 @@
 
 .ItemDes {
   font-family: "Nunito";
-  margin-top: 15px;
+  margin-top: 1px;
 }
 
 .Strikethrough {
@@ -153,7 +127,7 @@
   margin-top: 20px;
   font-family: "Nunito";
   font-style: normal;
-  line-height: 24px;
+  line-height: 40px;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -163,6 +137,7 @@
 
 .ItemService {
   margin-top: 10px;
+  margin-bottom: 10px;
   position: absolute;
   font-family: "Nunito";
   font-style: normal;
@@ -172,14 +147,15 @@
   text-align: right;
   left: 186px;
   color: #000000;
-  top: 118px;
+  top: 115px;
+  width: 120px;
 }
 
 .checkout {
   margin-top: 10px;
   font-family: "Nunito";
   font-style: normal;
-  line-height: 24px;
+  line-height: 40px;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -188,6 +164,7 @@
 }
 
 .ItemCheckout {
+  margin-top: 10px;
   position: absolute;
   font-family: "Nunito";
   font-style: normal;
@@ -197,7 +174,8 @@
   text-align: right;
   left: 144px;
   color: #000000;
-  top: 162px;
+  top: 168px;
+  width: 200px;
 }
 
 .Secure {
@@ -206,7 +184,7 @@
   font-family: "Nunito";
   font-style: normal;
   font-weight: bold;
-  top: 200px;
+  top: 250px;
   font-size: 20px;
   line-height: 24px;
   display: flex;
