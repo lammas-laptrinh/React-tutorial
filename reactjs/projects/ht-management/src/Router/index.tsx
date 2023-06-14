@@ -1,26 +1,27 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NotFound from "../Pages/Error/NotFound";
-import Room from "../Members/LHMTuan/Room";
-import RoomDetail from "../Members/LHMTuan/Room/RoomDetail";
-import KingDetail from "@src/Members/MDK/RoomDetail/KingDetail";
-import StandardDetail from "@src/Members/MDK/RoomDetail/StandardDetail";
-import DoubleDetail from "@src/Members/MDK/RoomDetail/DoubleDetail";
+import LandingPage from "@src/Members/MDK/LandingPage";
+import Services from "@src/Members/MDK/Services";
+import RoomManage from "@src/Members/MDK/RoomManage";
+import Payment from "@src/Members/MDK/Payment";
+import SignUp from "@src/Members/MDK/SignUp";
+import Invoice from "@src/Members/MDK/Invoice";
 import Dashboard from "@src/Members/MDK/Dashboard";
-import Routers from "@src/Members/NHH";
+import RoomDetail from "@src/Members/MDK/RoomDetail";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Routers />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/room-management" element={<Room />} />
-        <Route path="/room-detail" element={<RoomDetail />} />
-        <Route path="" element={<Dashboard />} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/standard-detail" element={<StandardDetail />} />
-        <Route path="/double-detail" element={<DoubleDetail />} />
-        <Route path="/king-detail" element={<KingDetail />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/invoice" element={<Invoice />} />
+        <Route path="/room" element={<RoomManage />} />
+        <Route path="/room-detail/:typeroom" element={<RoomDetail />} />
       </Routes>
     </BrowserRouter>
   );

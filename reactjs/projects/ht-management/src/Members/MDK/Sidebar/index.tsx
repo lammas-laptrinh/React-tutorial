@@ -72,12 +72,10 @@ const Sidebar = () => {
     <Menu
       onClick={onClick}
       style={{
-        width: 240,
         height: "100%",
         backgroundColor: "#fff",
-        // padding: "1.5rem 0",
       }}
-      className="border-gray-300"
+      className="border-gray-300 !w-[240px] md:!w-[160px]"
       defaultSelectedKeys={["1"]}
       defaultOpenKeys={["sub1"]}
       mode="inline"
